@@ -1,12 +1,13 @@
 .navBar {
   background-color: rgba(245, 252, 255, 1);
-  height: 10.8vh;
-  width: 100vw;
+  height: 108px;
+  width: 100%;
   position: sticky;
+  top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  gap: 328px;
 }
 
 .navBar ul {
@@ -33,22 +34,6 @@
 .Link_nav:hover {
   color: #ff5733;
   transition: color 0.3s;
-}
-
-.download-btn {
-  background-color: #003366;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: "Poppins", sans-serif;
-}
-
-.download-btn:hover {
-  background-color: rgba(57, 127, 194, 1);
-  transition: background-color 0.3s;
 }
 
 .menu-icon {

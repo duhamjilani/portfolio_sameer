@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import MainButton from "../mainButton/MainButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,9 +56,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <button className="download-btn" onClick={openCV}>
+        <MainButton title={"Download CV"} functionality={openCV}>
           Download CV
-        </button>
+        </MainButton>
       </nav>
     </div>
   );

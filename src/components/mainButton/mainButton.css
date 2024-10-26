@@ -1,0 +1,22 @@
+.main-button {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.main-button:hover {
+  background-color: rgba(57, 127, 194, 1);
+  transition: background-color 0.3s;
+}
+
+
