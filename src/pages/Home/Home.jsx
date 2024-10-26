@@ -1,10 +1,13 @@
 import React from "react";
-import { Hero, MainContent } from "../../components/index";
-import Title from "../../components/title/Title";
-import Counter from "../../components/MyProjects_counter/Counter";
+import {
+  Hero,
+  MainContent,
+  WorkTitle,
+  Counter,
+  Title,
+} from "../../components/index";
 import "./home.css";
-import WorkTitle from "../../components/WorkTitle/WorkTitle";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Home = () => {
@@ -14,15 +17,14 @@ const Home = () => {
       <div className="My_projects_container section-container">
         <Title MainTitle="My Projects" />
         <div className="My_projects_text">
-        <MainContent>
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetraLorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-          Turpis tempus pharetra
-        </MainContent>
+          <MainContent>
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+            nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
+            tempus pharetraLorem ipsum dolor sit amet consectetur. Tristique
+            amet sed massa nibh lectus netus in. Aliquet donec morbi convallis
+            pretium. Turpis tempus pharetra
+          </MainContent>
         </div>
-       
 
         <div className="My_projects-counters">
           <Counter
@@ -39,21 +41,18 @@ const Home = () => {
       </div>
       <div className="MyExp_container section-container">
         <div className="MyExp_text">
-        <Title MainTitle="My Work Experience" />
-       
-        <Link to='/experience' className="MyExp_seeMore">
-             See More <FaArrowRightLong />
-              </Link>
+          <Title MainTitle="My Work Experience" />
 
+          <Link to="/experience" className="MyExp_seeMore">
+            See More <FaArrowRightLong />
+          </Link>
         </div>
-     
+
         <div className="work_title_container">
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001"/>
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001"/>
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001"/>
-
+          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
         </div>
-
       </div>
     </>
   );
