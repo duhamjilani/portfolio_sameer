@@ -10,6 +10,7 @@ import "./home.css";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import ExpTitle from "../../components/ExpTitle/ExpTitle";
+import ExpTimeline from "../../components/ExpTimeline/ExpTimeline";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
         <div className="My_projects-counters">
           <Counter
             CounterTitle="Years Experience"
-            endNum="500"
+            endNum="11"
             color={"rgba(252, 128, 31, 1)"}
           />
           <Counter
@@ -48,21 +49,38 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-<div className="MyExp_small_container">
-<div className="work_title_container">
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
-          <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+        <div className="MyExp_small_container">
+          <div className="work_title_container">
+            <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+            <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+            <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
+          </div>
+          <div className="ExpTimeline">
+            <ExpTimeline numOfCircles={3} />
+          </div>
+          <div className="exp_title_container">
+            <ExpTitle ExpTitle="lorem lorem" Desc="frl.fcgkvtrm.trbm" />
+            <ExpTitle ExpTitle="lorem lorem" Desc="frl.fcgkvtrm.trbm" />
+            <ExpTitle ExpTitle="lorem lorem" Desc="frl.fcgkvtrm.trbm" />
+          </div>
         </div>
+      </div>
+      <div className="Training_container section-container">
+        <Title MainTitle="Training" />
 
-        <div className="exp_title_container">
-          <ExpTitle Exptitle="lorem lorem" Desc="frl.fcgkvtrm.trbm" />
-        
-        </div>
-
+        <div className="Training-container-outer-circle">
+  <div className="Training-container-inner-circle"></div>
+  
+  <div className="Training-container-box top">Text</div>
+  <div className="Training-container-box top-left">Text</div>
+  <div className="Training-container-box left">Text</div>
+  <div className="Training-container-box bottom-left">Text</div>
+  <div className="Training-container-box bottom">Text</div>
+  <div className="Training-container-box bottom-right">Text</div>
+  <div className="Training-container-box right">Text</div>
+  <div className="Training-container-box top-right">Text</div>
 </div>
 
-       
       </div>
     </>
   );

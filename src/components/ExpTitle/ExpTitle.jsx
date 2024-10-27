@@ -1,11 +1,11 @@
 import React from 'react'
 import './ExpTitle.css'
-const ExpTitle = ({Exptitle, Desc} ) => {
+const ExpTitle = ({ExpTitle, Desc} ) => {
   return (
     <div>
-       <div className="WorkTitle-Container font-Poppins ">
-      <div className="WorkTitle_title">{Exptitle}</div>
-      <div className="WorkTitle_date">{Desc}</div>
+       <div className="ExpTitle-Container font-Poppins ">
+      <div className="ExpTitle_title">{ExpTitle}</div>
+      <div className="ExpTitle_desc">{Desc}</div>
     </div>
     </div>
   )
