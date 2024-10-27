@@ -9,6 +9,7 @@ import {
 import "./home.css";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import ExpTitle from "../../components/ExpTitle/ExpTitle";
 
 const Home = () => {
   return (
@@ -47,12 +48,21 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-
-        <div className="work_title_container">
+<div className="MyExp_small_container">
+<div className="work_title_container">
           <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
           <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
           <WorkTitle WorkTitle="lorem lorem" Date="4-3-2001" />
         </div>
+
+        <div className="exp_title_container">
+          <ExpTitle Exptitle="lorem lorem" Desc="frl.fcgkvtrm.trbm" />
+        
+        </div>
+
+</div>
+
+       
       </div>
     </>
   );
