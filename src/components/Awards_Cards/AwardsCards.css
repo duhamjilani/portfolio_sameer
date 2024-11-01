@@ -1,0 +1,30 @@
+.Awards-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+height: 343px;
+padding: 24px 0px 0px 0px;
+gap: 25px;
+border-radius: 8px 0px 0px 0px;
+opacity: 0px;
+background: rgba(245, 252, 255, 1);
+border-radius: 8px;
+text-align: center;
+}
+.Trophy{
+    color:rgba(237, 221, 43, 1);
+    font-size: 70px;
+}
+.Awards-text{
+    color: rgba(0, 0, 0, 1);
+font-size: 15px;
+font-weight: 400;
+
+letter-spacing: 0.03em;
+text-align: center;
+max-width: fit-content;
+
+
+}

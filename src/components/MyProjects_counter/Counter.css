@@ -3,14 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  
   width: 792px;
 }
 .Counter_style {
   font-family: Poppins;
   font-size: 80px;
   font-weight: 700;
-  line-height: 144px;
+  line-height: 100px;
   letter-spacing: -0.015em;
 
   /* color: rgba(252, 128, 31, 1); */

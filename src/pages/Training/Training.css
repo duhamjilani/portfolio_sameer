@@ -1,0 +1,59 @@
+.TrainingAndMembership-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.TrainingAndMembership-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.TrainingAndMembership-card {
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+ 
+}
+
+
+.trainingPic {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(245, 252, 255, 1);
+  padding: 3px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0 0 8px 8px;
+}
+
+.card-title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 .hero_section-container {
-  height: 700px;
+  height: 750px;
   width: 100%;
   background: rgba(245, 252, 255, 1);
 }
@@ -50,7 +50,7 @@
   display: grid;
   place-items: center;
   position: relative;
-  top: 150px;
+  top: 200px;
 }
 
 .image-container_inner-circle {
@@ -62,6 +62,6 @@
 
 .image-container_inner-circle_img {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   height: 700px;
 }

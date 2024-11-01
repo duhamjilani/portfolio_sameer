@@ -6,6 +6,8 @@ import Navbar from "./Navbar/Navbar";
 import Counter from "./MyProjects_counter/Counter";
 import Title from "./title/Title";
 import WorkTitle from "./WorkTitle/WorkTitle";
+import AwardsCards from "./Awards_Cards/AwardsCards";
+import ResearchCards from "./Research_Cards/ResearchCards";
 
 export {
   Footer,
@@ -16,4 +18,6 @@ export {
   Counter,
   Title,
   WorkTitle,
+  AwardsCards,
+  ResearchCards
 };

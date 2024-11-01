@@ -26,7 +26,7 @@
   height: 714px;
   background-color: rgba(245, 252, 255, 1);
 
-  padding: 40px 152px 40px 152px;
+  /* padding: 40px 152px 40px 152px; */
 }
 .work_title_container {
   display: flex;
@@ -40,11 +40,14 @@
 }
 
 .MyExp_text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   gap: 20px;
+}
+.dd {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .MyExp_seeMore {
   display: flex;
@@ -55,6 +58,9 @@
   font-weight: 500;
   line-height: 28.8px;
   text-decoration: none;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  justify-self: flex-end;
 }
 .MyExp_small_container {
   display: flex;
@@ -69,69 +75,135 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: Fill (522.67px) px;
+  width: Fill (522.67px);
   height: fill(534px);
   gap: 48px;
   opacity: 0px;
 }
-.Training_container {
-    width: 100%;
-    padding: 0 152px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .Training-container-outer-circle {
-    width: 70%;
-    max-width: 700px;
-    aspect-ratio: 1; /* Makes it a perfect circle */
-    background: conic-gradient(
-      from 90deg,
-      rgba(255, 235, 219, 0.2) -90deg,
-      rgba(253, 111, 0, 0.3) 248.28deg,
-      rgba(255, 235, 219, 0.2) 270deg,
-      rgba(253, 111, 0, 0.3) 608.28deg
-    );
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .Training-container-inner-circle {
-    width: 75%;
-    height: 75%;
-    background-color: white;
-    border-radius: 50%;
-  }
-  
-  .Training-container-box {
-    width: 260px;
-    height: 96px;
-    background-color: rgba(79, 189, 210, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 31px ;
-    font-size: 18px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 1);
-    position: absolute;
-    box-shadow: 0px 4.29px 8.59px 0px rgba(0, 0, 0, 0.1);
+.Research-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  height: 800px;
+}
 
-    
-  }
-  
-  /* Positioning each box around the circle */
-  .Training-container-box.top { top: 0%; left: 50%; transform: translateX(-50%); }
-  .Training-container-box.top-left { top: 20%; left: 5%; }
-  .Training-container-box.left { top: 50%; left: 0%; transform: translateY(-50%); }
-  .Training-container-box.bottom-left { bottom: 20%; left: 7%; }
-  .Training-container-box.bottom { bottom: 0%; left: 50%; transform: translateX(-50%); }
-  .Training-container-box.bottom-right { bottom: 20%; right: 4%; }
-  .Training-container-box.right { top: 50%; right: -7%; transform: translateY(-50%); }
-  .Training-container-box.top-right { top: 20%; right: 5%; }
-  
+.Research-container-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.Awards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  height: 800px;
+}
+.Awards-container-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.Training_container {
+  width: 100%;
+  padding: 0 152px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.Training-container-outer-circle {
+  width: 70%;
+  max-width: 700px;
+  aspect-ratio: 1; /* Makes it a perfect circle */
+  background: conic-gradient(
+    from 90deg,
+    rgba(255, 235, 219, 0.2) -90deg,
+    rgba(253, 111, 0, 0.3) 248.28deg,
+    rgba(255, 235, 219, 0.2) 270deg,
+    rgba(253, 111, 0, 0.3) 608.28deg
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.Training-container-inner-circle {
+  width: 75%;
+  height: 75%;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.Training-container-box {
+  width: 260px;
+  height: 96px;
+  background-color: rgba(79, 189, 210, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 31px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  box-shadow: 0px 4.29px 8.59px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Training-container-box.top {
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Training-container-box.top-left {
+  top: 15%;
+  left: -7%;
+}
+.Training-container-box.left {
+  top: 40%;
+  left: -6%;
+  transform: translateY(-50%);
+}
+.Training-container-box.left2 {
+  top: 60%;
+  left: -5%;
+  transform: translateY(-50%);
+}
+.Training-container-box.bottom-left {
+  bottom: 15%;
+  left: -4%;
+}
+.Training-container-box.bottom {
+  bottom: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Training-container-box.bottom-right {
+  bottom: 15%;
+  right: -4%;
+}
+.Training-container-box.right {
+  top: 40%;
+  right: -6%;
+  transform: translateY(-50%);
+}
+.Training-container-box.right2 {
+  top: 60%;
+  right: -5%;
+  transform: translateY(-50%);
+}
+.Training-container-box.top-right {
+  top: 15%;
+  right: -7%;
+}
