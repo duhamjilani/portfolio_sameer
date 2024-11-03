@@ -16,7 +16,7 @@ const Counter = ({ endNum, CounterTitle, color }) => {
   return (
     <div className="Counter" ref={ref}>
       <div className="Counter_style" style={{ color: color }}>
-        {hasStarted ? <CountUp start={0} end={endNum} duration={5} /> : 0}
+        {hasStarted ? <CountUp start={0} end={endNum} duration={4} /> : 0}
       </div>
       <div className="Counter_text">{CounterTitle}</div>
     </div>

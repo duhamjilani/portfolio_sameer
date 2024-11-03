@@ -1,3 +1,4 @@
+/* Styling for large screens above 1024px */
 .navBar {
   background-color: rgba(245, 252, 255, 1);
   height: 108px;
@@ -42,32 +43,30 @@
   cursor: pointer;
 }
 
-@media (max-width: 1024px) {
-  .center_list {
-    flex-direction: row;
-    justify-content: space-evenly;
+
+@media (max-width: 1300px) and (min-width: 1025px) {
+  .navBar {
+    gap: 250px;
   }
 
   .navBar ul li {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  .download-btn {
-    padding: 1px 6px;
+    padding: 8px 15px;
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) and (min-width: 769px) {
   .navBar {
-    flex-direction: row;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
   }
 
   .center_list {
-    display: none;
+    display: none; 
     flex-direction: column;
     position: absolute;
-    top: 10.8vh;
+    top: 108px;
     left: 0;
     width: 100%;
     background-color: rgba(245, 252, 255, 1);
@@ -75,7 +74,7 @@
   }
 
   .center_list.open {
-    display: flex;
+    display: flex; 
   }
 
   .navBar ul {
@@ -91,11 +90,60 @@
 
   .menu-icon {
     display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 
   .download-btn {
     margin-top: 4px;
+    width: auto;
+  }
+}
 
-    width: 23%;
+
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .center_list {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(245, 252, 255, 1);
+    align-items: center;
+  }
+
+  .center_list.open {
+    display: flex; 
+  }
+
+  .navBar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navBar ul li {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .download-btn {
+    margin-top: 4px;
+    width: auto;
   }
 }

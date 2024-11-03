@@ -13,7 +13,7 @@ import microsoft from "../../assets/microsoft.png";
 import { Hero, Title } from "../../components/index";
 const About = () => {
   return (
-    <div>
+    <div >
       <Hero />
       <div className="personalInfo-container section-container">
         <Title MainTitle="Personal information" />
@@ -63,7 +63,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="Education-container section-container">
+       <div className="Education-container section-container">
         <Title MainTitle="Education" />
         <div className="Education-text-container font-Poppins">
           <div className="Education-text-container-title ">Bachelore</div>
@@ -88,7 +88,7 @@ const About = () => {
             nunc, posuere in justo vulputate, bibendum sodales
           </div>
         </div>
-      </div>
+      </div> 
       <div className="Language-container section-container">
         <Title MainTitle="Language" />
         <div className="Language-container-parts">
@@ -138,7 +138,7 @@ const About = () => {
           </div>
 
           <div className="computerSkills-card">
-            <div className="computerSkills-card-Circle">
+            <div className="computerSkills-card-Circle latex">
               <SiLatex className="latex-icon" />
             </div>
             <div className="computerSkills-text font-Poppins">Latex</div>
@@ -193,7 +193,7 @@ const About = () => {
             nunc, posuere in justo vulputate, bibendum sodales
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };

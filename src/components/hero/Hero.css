@@ -40,13 +40,8 @@
 .hero_section-right_side-image-container {
   height: 609px;
   width: 609px;
-  background-color: aqua;
   border-radius: 50%;
-  background: linear-gradient(
-    182.68deg,
-    #ff8233 39.73%,
-    rgba(255, 255, 255, 0) 78.4%
-  );
+  background: linear-gradient(182.68deg, #ff8233 39.73%, rgba(255, 255, 255, 0) 78.4%);
   display: grid;
   place-items: center;
   position: relative;
@@ -64,4 +59,45 @@
   position: absolute;
   bottom: 30px;
   height: 700px;
+}
+
+@media (max-width: 1721px) and (min-width:1024) {
+  .hero_section-doctor-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38.4px;
+    letter-spacing: 0.03em;
+  }
+  .hero_section-container{
+    height: 0px;
+    
+  }
+  .hero_section-left_side{
+gap:0px;
+  }
+}
+@media (max-width: 850px) {
+  .hero_section-right_side-image-container, .image-container_inner-circle, .image-container_inner-circle_img {
+   
+  }
+  
+  .hero_section-center {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero_section-left_side {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_section-doctor-title {
+    font-size: 24px;
+  }
+  
+  .hero_section-doctor-name {
+    font-size: 36px;
+  }
 }

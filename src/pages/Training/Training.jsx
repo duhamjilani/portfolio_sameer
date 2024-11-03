@@ -6,14 +6,14 @@ import trainingPic from "../../assets/training-pic.png";
 
 const Training = () => {
   return (
-    <div className="TrainingAndMembership-container section-container">
+    <div className="TrainingAndMembership-container section-container font-Poppins">
       <Title MainTitle="Training And Memberships" />
       <div className="TrainingAndMembership-cards">
         <div className="TrainingAndMembership-card">
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
             <div className="card-title">Training</div>
-            <div className="card-text font-Poppins">
+            <div className="card-text ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Repellendus suscipit fugit voluptatum odio explicabo maiores
               dignissimos quos qui quasi autem ipsum vero id, aliquid quia

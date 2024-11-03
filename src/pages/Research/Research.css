@@ -1,0 +1,113 @@
+.research-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 10px;
+}
+.research-container-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.research-container-card {
+  width: 500px;
+  height: 399px;
+  padding: 26px 18px;
+  gap: 16px;
+  border-radius: 12px 0px 0px 0px;
+  opacity: 1; 
+ 
+ 
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 52, 102, 1);
+}
+
+.corner-circle-right {
+  background-color: rgba(255, 130, 51, 0.1);
+  width: 200px;
+  height: 200px;
+  top: 270px;
+  left: 460px;
+  gap: 0px;
+ 
+  /* border-radius: 50%; */
+  border-radius: 70% 20% / 40% 40%;
+  position: absolute;
+  z-index: 0;
+}
+.corner-circle-left {
+  background-color: rgba(255, 130, 51, 0.1);
+  width: 180px;
+  height: 180px;
+  top: 480px;
+  left: 160px;
+  gap: 0px;
+ 
+  /* border-radius: 50%; */
+ border-radius: 70% 20% / 40% 40%;
+  position: absolute;
+  z-index: 0;
+}
+.research-card-title,
+.alert-title {
+  color: rgba(0, 52, 102, 1);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+}
+.research-card-desc-container {
+  width: 476px;
+  height: 212px;
+  padding: 16px 0px 16px 0px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  background-color: rgba(255, 255, 255);
+}
+.research-card-desc {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  z-index: 1;
+}
+#swal2-html-container {
+  color: rgba(0, 52, 102, 1);
+}
+@media (max-width: 768px) {
+  .research-container-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .research-container-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .corner-circle-left {
+    display: none;
+  }
+  .corner-circle-right {
+    display: none;
+  }
+  .research-container-card {
+    width: 380px;
+   
+  }
+  .research-card-desc {
+    font-size: 15px;
+}
+.research-card-desc-container {
+  width: 366px
+}
+}

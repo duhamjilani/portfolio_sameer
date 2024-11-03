@@ -1,0 +1,89 @@
+.Experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.Experience-container-horizontal-cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Experience-container-horizontal-card {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  border-radius: 8px 0px 0px 0px;
+  background-color: rgba(245, 252, 255, 1);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.Experience-card-title {
+  color: rgba(0, 52, 102, 1);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+}
+
+.arrow-icon {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  color: var(--Inks-Dark-64, rgba(0, 11, 37, 0.64));
+}
+
+.Details-container {
+  background-color: rgb(220, 232, 245);
+  width: 100%;
+  height: 410px;
+  border-radius: 8px 0px 0px 0px;
+  display: none;
+  position: absolute;
+  top: -250px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Details-container.open {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.Details-container-arrow-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+.Experience-card-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Experience-card-list li::marker {
+  color: rgba(0, 52, 102, 1);
+  height: 14px;
+  width: 14px;
+}
+.Experience-list-content {
+  color: rgba(0, 11, 37, 0.64);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+}

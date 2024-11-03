@@ -2,3 +2,10 @@
   padding: 50px 160px;
   margin-bottom:30px 
 }
+@media (max-width=1770px) {
+  .section-container {
+    padding: 0px 0px;
+    margin-bottom:0px 
+  }
+  
+}

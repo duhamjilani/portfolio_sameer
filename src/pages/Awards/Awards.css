@@ -7,8 +7,8 @@
 
 .Awards-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
 }
 
 .Awards-card {
@@ -17,14 +17,16 @@
   justify-content: center;
   align-items: center;
   width: 390px;
-  height: 343px;
-  padding: 24px 0px 0px 0px;
+ 
+ 
   gap: 25px;
   border-radius: 8px 0px 0px 0px;
   opacity: 0px;
   background: rgba(245, 252, 255, 1);
   border-radius: 8px;
   text-align: center;
+  padding: 16px;
+  height: auto;
 }
 .Trophy {
   color: rgba(237, 221, 43, 1);
@@ -38,4 +40,40 @@
   letter-spacing: 0.03em;
   text-align: center;
   max-width: fit-content;
+}
+
+@media (max-width: 768px) {
+ .Awards-cards {
+display:flex;
+flex-direction: column;
+align-items: center;
+ }
+ .Awards-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+ 
+  gap: 25px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+  background: rgba(245, 252, 255, 1);
+  border-radius: 8px;
+  text-align: center;
+ 
+}
+ 
+}
+@media (max-width: 850px) {
+  .Awards-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Awards-card {
+    width: 350px;
+ 
+  }
 }
