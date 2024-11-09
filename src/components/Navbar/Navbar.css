@@ -1,4 +1,4 @@
-/* Styling for large screens above 1024px */
+
 .navBar {
   background-color: rgba(245, 252, 255, 1);
   height: 108px;
@@ -43,10 +43,45 @@
   cursor: pointer;
 }
 
+.dropdown-menu {
+  display: none;
+  position: absolute;
+   margin-top:15px; 
+  left: 0px;
+  background-color: rgba(248, 248, 248, 1);
+  border: 1px solid   rgba(248, 248, 248, 1);;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+ 
+  cursor: pointer;
+  color:black;
+  border-radius: 6%;
+}
+.dropdown{
+  cursor: pointer;
+  position: relative;
+}
+.dropdown-item{
+  text-decoration: none;
+  color:black;
+}
+.dropdown-menu li {
+  padding: 10px 10px;
+  cursor: pointer;
+   white-space: nowrap; 
+} 
 
+ .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #ff5733;
+ 
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 @media (max-width: 1300px) and (min-width: 1025px) {
   .navBar {
-    gap: 250px;
+    gap: 100px;
   }
 
   .navBar ul li {
@@ -97,7 +132,21 @@
 
   .download-btn {
     margin-top: 4px;
-    width: auto;
+    width: 10vw;
+  }
+  .dropdown {
+    text-align: center;
+  }
+
+   .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    margin-top: 0;
+  }  
+
+  .dropdown-menu li {
+    padding: 10px;
   }
 }
 
@@ -146,4 +195,11 @@
     margin-top: 4px;
     width: auto;
   }
+  .dropdown-menu{
+
+position: relative;
+
+   
+  }
+ 
 }

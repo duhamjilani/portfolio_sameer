@@ -1,5 +1,5 @@
 .hero_section-container {
-  height: 750px;
+  height: 100%;
   width: 100%;
   background: rgba(245, 252, 255, 1);
 }
@@ -10,6 +10,8 @@
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
+  width: 100%;
+  gap:15px
 }
 
 .hero_section-left_side {
@@ -36,29 +38,36 @@
   line-height: 72px;
   letter-spacing: 0.03em;
 }
-
+.hero_section-right_side{
+  width: 100%;
+}
 .hero_section-right_side-image-container {
-  height: 609px;
-  width: 609px;
+  height: 60vh;
+  width: 80%;
   border-radius: 50%;
   background: linear-gradient(182.68deg, #ff8233 39.73%, rgba(255, 255, 255, 0) 78.4%);
   display: grid;
   place-items: center;
-  position: relative;
+  /* position: relative; */
   top: 200px;
 }
 
 .image-container_inner-circle {
-  height: 98%;
-  width: 98%;
+  height: 90%;
+  width:90%;
   border-radius: 50%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .image-container_inner-circle_img {
-  position: absolute;
-  bottom: 30px;
-  height: 700px;
+  position: relative; 
+  
+  height: 50vh;
+  width: 70%;
 }
 
 @media (max-width: 1721px) and (min-width:1024) {

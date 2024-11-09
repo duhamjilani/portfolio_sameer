@@ -18,5 +18,27 @@
   background-color: rgba(57, 127, 194, 1);
   transition: background-color 0.3s;
 }
+.tab-btns{
+ 
+ background-color: #fff ;
+ border:none;
+ border-bottom: 3px solid rgba(128, 128, 128, 0.274);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color:rgba(128, 128, 128, 0.808);
+  
+}
+.tab-btns:hover,.tab-btns.selected{
+  border-bottom: 3px solid rgba(57, 127, 194, 1);
+  color:#003366;
+}
 
 

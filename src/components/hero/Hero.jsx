@@ -14,8 +14,8 @@ const Hero = () => {
     <section className="hero_section-container section-container">
       <div className="hero_section-center">
         <div className="hero_section-left_side font-Poppins">
-          <div className="hero_section-doctor-title">Doctor</div>
-          <div className="hero_section-doctor-name">Sameer Al-Dahidi</div>
+         
+          <div className="hero_section-doctor-name"> Dr.Sameer Al-Dahidi</div>
           <MainContent>
             Dr. Al-Dahidi is an Associate Professor at the Department of
             Mechanical and Maintenance Engineering, School of Applied Technical

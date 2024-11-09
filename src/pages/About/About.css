@@ -1,10 +1,103 @@
+.About-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 10px;
+}
+.About_ImageSlider-container {
+  width: 100%;
+  background: rgba(245, 252, 255, 1);
+  display: flex;
+  align-items: center;
+
+  height: 70vh;
+}
+.About_ImageSlider-container-inner {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+.About_ImageSlider-container-right_side {
+  width: 50%;
+}
+.AboutImageSlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 80%;
+}
+.AboutSlide {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+  height: 40vh;
+  width: 100%;
+  border: 2px solid #fd6f00;
+}
+.slide-hidden {
+  display: none;
+}
+.About_ImageSlider-container-left_side {
+  height: 100%;
+  width: 50%;
+  margin: 40px;
+}
+.About_ImageSlider-container-doctor-name {
+  color: #fd6f00;
+  font-weight: 600;
+  font-size: 25px;
+}
+.indicatorsAbout {
+  display: flex;
+  position: absolute;
+  bottom: 250px;
+}
+.About_ImageSlider-container-text {
+  font-size: 20px;
+  max-width: 900px;
+}
+.indicatorAbout {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+.indicatorAbout-inactive {
+  background-color: #4746466e;
+}
+.arrowAbout {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  color: white;
+  filter: drop-shadow(0px 0px 5px #555);
+}
+.arrowAbout:hover {
+  cursor: pointer;
+}
+.arrowAbout-left {
+  top: 50%;
+  right: 47%;
+}
+.arrowAbout-right {
+  top: 50%;
+  right: 7%;
+}
 
 .personalInfo-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 215px;
+  height: 15vh;
   gap: 30px;
 }
 .personalInfo-cards {
@@ -43,41 +136,81 @@
 }
 .Education-container {
   width: 100%;
-  height: 710px;
+  height: 25vh;
   background-color: rgba(245, 252, 255, 1);
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.Education-text-container {
+.timelineAbout {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
+  gap: 5px;
 }
-.Education-text-container-title {
-  color: rgba(52, 64, 84, 1);
 
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.015em;
+.timelineItem {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-.Education-text-container-desc {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: -0.015em;
-  color: rgba(0, 11, 37, 0.64);
-  max-width: 400px;
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.lineTimeAbout {
+  width: 60px;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.circle:hover .tooltip {
+  opacity: 1;
+}
+
+.tooltip .date {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #ccc;
+}
+
 .Language-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
+  background-color: rgba(245, 252, 255, 1);
+  width: 100%;
+  height: 70vh;
 }
 .Language-container-parts {
   display: grid;
@@ -89,9 +222,9 @@
   background: linear-gradient(0deg, #fd6f00, #fd6f00);
   width: 600px;
   height: 20.3px;
-  gap: 0px;
+  
   border-radius: 50px;
-  opacity: 0px;
+ 
 }
 .language-measure.good {
   background: linear-gradient(90deg, #fd6f00 60.13%, #a1bdd0 73.19%);
@@ -117,7 +250,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 215px;
+  height: 50vh;
   gap: 30px;
 }
 .computerSkills-cards {
@@ -133,25 +266,24 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .computerSkills-card-Circle {
-  width: 83.11px;
-  height: 83.11px;
+  width: 6vw;
+  height: 9vh;
   background-color: rgba(196, 196, 196, 0.4);
   border-radius: 50%;
   border: 5px solid rgba(59, 89, 153, 1);
   display: flex;
   flex-direction: column;
-
+text-align: center;
   align-items: center;
 }
-.computerSkills-card-Circle.latex{
-  
-  border-left: 5px solid white; 
-  
- 
-
+.computerSkills-card-Circle.latex {
+  border-left: 5px solid white;
 }
 .computerSkills-text {
   color: rgba(84, 84, 84, 1);
@@ -175,27 +307,183 @@
   width: 40px;
   height: 40px;
 }
-@media (max-width: 850px) {
-  .personalInfo-cards{
-    display: flex;
-    flex-direction: column;
+.ProfessionalWebPages-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  gap:20px;
+  gap: 40px;
+  width: 100%;
+  height: 40vh;
+}
+.ProfessionalWebPages-container-cards{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ProfessionalWebPages-container-card{
+  border: 2px solid #fd6f00;
+  padding: 25px;
+  border-radius: 50%;
+  height: 10vh;
+  width: 5vw;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+}
+.ProfessionalWebPages-container-card a{
+  text-decoration:underline;
+  color:#333;
+  font-weight: 600;
+}
+.ProfessionalWebPages-container-card-icon{
+  font-size: 30px;
+  color:#333;
+}
+@media (max-width: 1100px) {
+  .arrowAbout-left {
+    top: 50%;
+    right: 45%;
   }
+  .arrowAbout-right {
+    top: 50%;
+    right: 5%;
+  }
+  .About_ImageSlider-container-text {
+    font-size: 15px;
+    max-width: 900px;
+  }
+  .About_ImageSlider-container-doctor-name {
+    color: #fd6f00;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .Language-container-parts {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 300px) and (max-width: 900px) {
  
-  .Language-container-parts{
+  .arrowAbout-left {
+    top: 50%;
+    right: 43%;
+  }
+  .arrowAbout-right {
+    top: 50%;
+    right: 0%;
+  }
+  .About_ImageSlider-container-text {
+    font-size: 7px;
+  }
+  .About_ImageSlider-container-doctor-name {
+    color: #fd6f00;
+    font-weight: 600;
+    font-size: 10px;
+  }
+  .personalInfo-container {
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+  }
+  .personalInfo-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+  .personalInfo-card {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
   }
-  .computerSkills-cards{
+  .personalInfo-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+  .personalInfo-icon-style {
+    color: rgba(0, 52, 102, 1);
+    height: 30px;
+    width: 20px;
+  }
+  .personalInfo-text-style {
+    font-size: 8px;
+  }
+  .language-measure {
+    width: 300px;
+    height: 20.3px;
+  }
+  .Language-name{
+    font-size: 15px;
+  }
+  .Language-container-parts {
     display: flex;
     flex-direction: column;
-
-
   }
-
   
+  .indicatorsAbout {
+    bottom: 440px;
+  }
+  .Education-container {
+    height: 15vh;
+  }
+  .computerSkills-cards {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
+  
+  .ProfessionalWebPages-container-cards{
+ display: flex;
+flex-direction: column;
+gap: 10px;
+ 
+  }
+  .ProfessionalWebPages-container-card{
+    padding: 10px;
+    border-radius: 50%;
+    height: 10vh;
+    width: 20vw;
+  }
+  .ProfessionalWebPages-container-card-icon{
+    font-size: 15px;
+  }
+
+  .computerSkills-card-Circle {
+    width: 20vw;
+    height: 9vh;
+   
+  }
+  .computerSkills-card-Circle.latex {
+    border-left: 5px solid white;
+  }
+  .computerSkills-text {
+    
+    font-size: 15px;
+   
+  }
+  .computerSkills-card-Circle-img {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .latex-icon {
+    color: rgba(0, 128, 128, 1);
+    text-align: center;
+    width: 50px;
+    height: 60px;
+  }
+  .computerSkills-card-Circle-img.office {
+    width: 30px;
+    height: 30px;
+  }
+
+
 }

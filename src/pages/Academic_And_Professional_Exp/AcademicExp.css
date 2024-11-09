@@ -4,6 +4,59 @@
   gap: 40px;
   margin-top: 10px;
 }
+.expImageSlider{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh; 
+  width: 100%;
+}
+.slide{
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+  height: 100%;
+  width:100%
+}
+.slide-hidden{
+  display:none;
+}
+.arrow{
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+ color:white;
+ filter:drop-shadow(0px 0px 5px #555)
+}
+.arrow:hover{
+  cursor: pointer;
+}
+.arrow-left{
+  left:1rem
+}
+.arrow-right{
+  right:1rem
+}
+
+.indicators{
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+.indicator{
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin : 0 0.2rem;
+  cursor: pointer;
+}
+.indicator-inactive{
+  background-color: #4746466e;
+}
+
 
 .Experience-container-horizontal-cards {
   display: flex;
@@ -28,7 +81,7 @@
 
 .Experience-card-title {
   color: rgba(0, 52, 102, 1);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0.03em;
@@ -72,6 +125,13 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  
+ 
+}
+.Experience-card-list{
+  overflow-y: scroll;
+  max-height: 800px;
+ 
 }
 
 .Experience-card-list li::marker {
@@ -86,4 +146,27 @@
   line-height: 24px;
   letter-spacing: -0.015em;
   text-align: left;
+}
+@media(max-width:810px) {
+ 
+  .Experience-card-title{
+    font-size: 15px;
+    font-weight: 600;
+   
+  }
+  .expSecondSection{
+    margin: 50px;
+
+  }
+  .Experience-card-title{
+    font-size: 10px;
+    font-weight: 600;
+   
+  }
+  .Experience-list-content{
+    font-size: 10px;
+  }
+  .section-container{
+    padding: 0px 0px;
+  }
 }

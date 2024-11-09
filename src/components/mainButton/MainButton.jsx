@@ -1,9 +1,9 @@
 import React from "react";
 import "./mainButton.css";
 
-const MainButton = ({ children, functionality }) => {
+const MainButton = ({ children, functionality ,IsTab}) => {
   return (
-    <button className="main-button" onClick={functionality}>
+    <button className={IsTab?'tab-btns':"main-button"} onClick={functionality} >
       {children}
     </button>
   );

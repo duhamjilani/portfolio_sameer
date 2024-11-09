@@ -20,7 +20,7 @@ const Home = () => {
       <Hero />
      {/* START MY PROJECTS SECTION */}
 
-{/* 
+
 <div className="My_projects_container section-container">
   <Title MainTitle="My Projects" />
   <div className="My_projects_text">
@@ -46,13 +46,13 @@ const Home = () => {
     />
   </div>
 </div>
-*/}
+
 
 {/* END OF MY PROJECTS SECTION */}
 
 {/* START MY EXPERIENCE SECTION */}
 
-{/* 
+
 <div className="MyExp_container section-container">
   <div className="Main-upper-text">
     <Title MainTitle="My Work Experience" />
@@ -76,13 +76,13 @@ const Home = () => {
     </div>
   </div>
 </div>
-*/}
+
 
 {/* END OF MY EXPERIENCE SECTION */}
 
 {/* START RESEARCH SECTION */}
 
-{/* 
+
 <div className="Research-container section-container">
   <div className="Main-upper-text">
     <Title MainTitle="Research" />
@@ -103,13 +103,13 @@ const Home = () => {
     <ResearchCards />
   </div>
 </div>
-*/}
+
 
 {/* END OF RESEARCH SECTION */}
 
 {/* START AWARDS SECTION */}
 
-{/* 
+
 <div className="Awards-container section-container">
   <div className="Main-upper-text">
     <Title MainTitle="Awards" />
@@ -131,13 +131,13 @@ const Home = () => {
     <AwardsCards />
   </div>
 </div>
-*/}
+
 
 {/* END OF AWARDS SECTION */}
 
 {/* START TRAINING SECTION */}
 
-{/* 
+
 <div className="Training_container section-container">
   <div className="Main-upper-text">
     <Title MainTitle="Training" />
@@ -166,7 +166,7 @@ const Home = () => {
     <div className="Training-container-box top-right">Text</div>
   </div>
 </div>
-*/}
+
 
 {/* END TRAINING SECTION */}
 

@@ -12,12 +12,15 @@ const Training = () => {
         <div className="TrainingAndMembership-card">
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
-            <div className="card-title">Training</div>
+            <div className="card-title">Professional Training</div>
+            <div className="card-date">1/1/2024</div>
             <div className="card-text ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellendus suscipit fugit voluptatum odio explicabo maiores
-              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
-              obcaecati repellat eaque sint nihil!
+            	Offer a one-hour seminar as part of the International FDP
+             “Empowering Innovations: Sixdays International 
+             FDP on AI Technologies” on 13rd July 2024 with a
+              talk entitled “MATLAB for AI” 
+            (ONLINE – Certificate is available).
+           
             </div>
           </div>
         </div>
@@ -27,6 +30,7 @@ const Training = () => {
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
             <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
             <div className="card-text font-Poppins">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Repellendus suscipit fugit voluptatum odio explicabo maiores
@@ -42,6 +46,7 @@ const Training = () => {
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
             <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
             <div className="card-text font-Poppins">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Repellendus suscipit fugit voluptatum odio explicabo maiores
@@ -59,6 +64,57 @@ const Training = () => {
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
             <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
+            <div className="card-text font-Poppins">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellendus suscipit fugit voluptatum odio explicabo maiores
+              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
+              obcaecati repellat eaque sint nihil!
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className="TrainingAndMembership-card">
+          <img src={trainingPic} className="trainingPic" alt="pic" />
+          <div className="card-content">
+            <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
+            <div className="card-text font-Poppins">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellendus suscipit fugit voluptatum odio explicabo maiores
+              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
+              obcaecati repellat eaque sint nihil!
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div className="TrainingAndMembership-card">
+          <img src={trainingPic} className="trainingPic" alt="pic" />
+          <div className="card-content">
+            <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
+            <div className="card-text font-Poppins">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellendus suscipit fugit voluptatum odio explicabo maiores
+              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
+              obcaecati repellat eaque sint nihil!
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div className="TrainingAndMembership-card">
+          <img src={trainingPic} className="trainingPic" alt="pic" />
+          <div className="card-content">
+            <div className="card-title">Training</div>
+            <div className="card-date">1/1/2024</div>
             <div className="card-text font-Poppins">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Repellendus suscipit fugit voluptatum odio explicabo maiores

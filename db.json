@@ -1,0 +1,36 @@
+{
+    "images":[
+        
+        
+          {
+
+          
+            "id": 1,
+            "image": "sameer_website/src/assets/pic1.jpeg",
+            "description": "doctor images",
+            "altText": "doctor image"
+           
+          },
+          {
+            "id": 2,
+            "image": "sameer_website/src/assets/pic2.jpeg",
+            "description": "doctor images",
+            "altText": "doctor image"
+           
+          },
+          {
+            "id": 3,
+            "image": "sameer_website/src/assets/pic3.jpeg",
+            "description": "doctor images",
+            "altText": "doctor image"
+           
+          }
+         
+    ],
+    "research":[
+        {
+            
+        }
+
+    ]
+}

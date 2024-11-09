@@ -16,9 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 390px;
- 
- 
+  width: 50%;
   gap: 25px;
   border-radius: 8px 0px 0px 0px;
   opacity: 0px;
