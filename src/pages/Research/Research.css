@@ -58,6 +58,14 @@
   display:flex;
  
 }
+@media (min-width: 1025px)and (max-width:1525px) {
+  .research-container-cards {
+  
+    grid-template-columns: repeat(2, 1fr);
+   
+  }
+
+}
 
 @media (max-width: 768px) {
   .research-container-cards {

@@ -2,13 +2,18 @@ import React from "react";
 import "./IndustrialExp.css";
 import { Title } from "../../components/index";
 import ExpTimeLine from "../../components/ExpTimeline/ExpTimeline";
-
+import IndImage from '../../assets/indImage.jpeg'
 const IndustrialExp = () => {
   return (
     <>
    
     <div className="IndustrialExp-container font-Poppins section-container">
-      <Title MainTitle="Journey Of Experience" />
+    <Title MainTitle="Journey Of Industrial Experience" />
+      <div className="banner-container">
+<img src={IndImage} alt="img" className="banner-Image"/>
+
+      </div>
+     
 
       <div className="IndustrialExp-container-center">
         <div className="IndustrialExp-container-center-expTitleDate">

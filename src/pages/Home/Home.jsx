@@ -56,7 +56,7 @@ const Home = () => {
 <div className="MyExp_container section-container">
   <div className="Main-upper-text">
     <Title MainTitle="My Work Experience" />
-    <Link to="/experience" className="seeMore ">
+    <Link to="/AcademicExp" className="seeMore ">
       See More <FaArrowRightLong />
     </Link>
   </div>

@@ -72,6 +72,7 @@ const AcademicExp = () => {
   };
   return (
     <div className="Experience-container section-container">
+        <Title MainTitle=" Academic And Professional Experience" />
       <div className="expImageSlider">
         <BsArrowLeftCircleFill
           className="arrow arrow-left "
@@ -108,7 +109,7 @@ const AcademicExp = () => {
         </span>
       </div>
       <div className="Experience-container expSecondSection">
-        <Title MainTitle="Experience" />
+      
         <div className="Experience-container-horizontal-cards font-Poppins">
           <div className="Experience-container-horizontal-card">
             <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />

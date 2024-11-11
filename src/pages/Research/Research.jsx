@@ -24,6 +24,7 @@ const Research = () => {
               backgroundPosition: "center"
             }}>
             <div className="research-card-title">	N. Nader, W. Al-Kouz, and S. Al-Dahidi</div>
+            <div className="card-date">1/1/2024</div>
             <div className="research-card-desc-container">
               <div className="research-card-desc">
               Assessment of Existing Photovoltaic System with 
