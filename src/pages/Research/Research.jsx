@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import "./Research.css";
 import { MainButton, Title } from "../../components";
 import researchCard from "../../assets/Card6.png";
+import researchPic from '../../assets/researchPic.jpeg'
 
 const Research = () => {
   const [selectedTab, setSelectedTab] = useState("JOURNAL PUBLICATIONS");
@@ -161,6 +162,10 @@ const Research = () => {
   return (
     <div className="research-container section-container">
       <Title MainTitle="Research" />
+      <div className="banner-container">
+<img src={researchPic} alt="img" className="banner-Image"/>
+
+      </div>
       <div className="btns-container">
         <MainButton functionality={() => handleTabClick("JOURNAL PUBLICATIONS")} IsTab={true} isActive={selectedTab === "JOURNAL PUBLICATIONS"}>
           JOURNAL

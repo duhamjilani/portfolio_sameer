@@ -3,11 +3,15 @@ import React from "react";
 import "./Training.css";
 import { Title } from "../../components";
 import trainingPic from "../../assets/training-pic.png";
-
+import trainingPic2 from '../../assets/trainingPic.jpeg'
 const Training = () => {
   return (
     <div className="TrainingAndMembership-container section-container font-Poppins">
       <Title MainTitle="Training And Memberships" />
+      <div className="banner-container">
+<img src={trainingPic2} alt="img" className="banner-Image"/>
+
+      </div>
       <div className="TrainingAndMembership-cards">
         <div className="TrainingAndMembership-card">
           <img src={trainingPic} className="trainingPic" alt="pic" />

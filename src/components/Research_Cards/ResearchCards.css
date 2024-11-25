@@ -5,7 +5,13 @@
     justify-content: center;
     height: 50vh;
     width: 100%;
-    gap:20px
+    gap:20px;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in;
+}
+.research-container-cardHome:hover{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .research-card-desc-containerHome{

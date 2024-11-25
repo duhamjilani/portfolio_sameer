@@ -22,6 +22,7 @@ import trainingPic from "../../assets/training-pic.png";
 import pic3 from "../../assets/pic3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import ExpTimeLine from "../../components/ExpTimeline/ExpTimeline";
+import { MDBCol, MDBContainer, MDBRow, MDBIcon } from "mdb-react-ui-kit";
 
 const images1 = [
   {
@@ -191,31 +192,93 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="Education-container section-container ">
+      <div className="bg-custom-color ">
         <Title MainTitle="Education" />
 
-        <div className="timelineAbout">
-          {[...Array(3)].map((_, index) => (
-            <div key={index} className="timelineItem">
-              <div
-                className="circle"
-                style={{
-                  backgroundColor:
-                    index % 2 === 0 ? "#FF5733" : "rgba(29, 41, 57, 1)",
-                }}
-              >
-                <div className="tooltip">
-                  {index === 0 ? "BSc" : index === 1 ? "MSc" : "PhD"}
-                  <span className="date">
-                    {index === 0 ? "2010" : index === 1 ? "2015" : "2020"}
-                  </span>
-                </div>
-              </div>
-
-              {index < 3 - 1 && <div className="lineTimeAbout"></div>}
-            </div>
-          ))}
-        </div>
+        <MDBContainer className="py-5">
+          <MDBRow>
+            <MDBCol md="6" offsetMd="3">
+              <ul className="timeline-3">
+                <li>
+                  <MDBIcon
+                    fas
+                    icon="graduation-cap"
+                    size="2x"
+                    style={{ color: "rgba(0, 52, 102, 1)" }}
+                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
+                  />
+                  <h6>Ph.D. in Energy and Nuclear Science and Technology</h6>
+                  <div className="card-date">January 2013 – March 2016</div>
+                  <p className="mt-2">
+                    1st (Italy), 7th (Europe), 18th (world) in the subject of
+                    Engineering and Technology, and 123rd (world), entering the
+                    world’s top 9% of excellent universities. Thesis
+                    “Development of Data-Driven Methods for Prognostics and
+                    Health Management under Variable Operational Conditions in
+                    Industrial Equipment”. Marie Curie Ph.D. Fellowship within
+                    the European Project “Innovation through Human Factors in
+                    risk analysis and management” (InnHF). Ph.D. with Honors
+                    (the highest possible grade).
+                  </p>
+                </li>
+                <li>
+                  <MDBIcon
+                    fas
+                    icon="graduation-cap"
+                    size="2x"
+                    style={{ color: "rgba(0, 52, 102, 1)" }}
+                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
+                  />
+                  <h6>M.Sc. in Nuclear Energy, Operations</h6>
+                  <div className="card-date">
+                    September 2010 – September 2012
+                  </div>
+                  <p className="mt-2">
+                    École Centrale Paris and Université Paris-Sud XI, France GPA
+                    of 16/20 (Very Good – Rank 1 out of 12). Master Scholarship
+                    from French Government, 2010-2012.
+                  </p>
+                </li>
+                <li>
+                  <MDBIcon
+                    fas
+                    icon="graduation-cap"
+                    size="2x"
+                    style={{ color: "rgba(0, 52, 102, 1)" }}
+                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
+                  />
+                  <h6>B.Sc. in Electrical and Computer Engineering</h6>
+                  <div className="card-date">September 2004 – June 2008</div>
+                  <p className="mt-2">
+                    The Hashemite University, Jordan GPA of 3.92/4.0 (Excellent
+                    – Rank 1 out of 121). Rank 2nd out of 535 graduates from all
+                    Jordanian universities in the University Efficiency
+                    Examination, held by the Ministry of Higher Education and
+                    Scientific Research, in the Electrical Engineering
+                    specialization, Jordan.
+                  </p>
+                </li>
+                <li>
+                  <MDBIcon
+                    fas
+                    icon="graduation-cap"
+                    size="2x"
+                    style={{ color: "rgba(0, 52, 102, 1)" }}
+                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
+                  />
+                  <h6>
+                    General Secondary Education Certificate (Scientific Stream)
+                  </h6>
+                  <div className="card-date">September 2003 – August 2004</div>
+                  <p className="mt-2">
+                    Alshamila Secondary School, Jordan GPA of 92.6/100
+                    (Excellent).
+                  </p>
+                </li>
+              </ul>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
 
       <div className="computerSkills-container section-container ">
@@ -236,7 +299,7 @@ const About = () => {
             <div className="computerSkills-card-Circle">
               <img
                 src={windows}
-                alt="matlab"
+                alt="windows"
                 className="computerSkills-card-Circle-img"
               />
             </div>

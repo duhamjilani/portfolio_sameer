@@ -60,7 +60,7 @@
   cursor: pointer;
   position: relative;
 }
-.dropdown-item{
+.dropdown-item1{
   text-decoration: none;
   color:black;
 }
@@ -70,7 +70,7 @@
    white-space: nowrap; 
 } 
 
- .dropdown-item:hover {
+ .dropdown-item1:hover {
   background-color: #f1f1f1;
   color: #ff5733;
  

@@ -27,7 +27,7 @@
   width: 100%;
   height: 70vh;
   background-color: rgba(245, 252, 255, 1);
-
+gap:10px
   
 }
 .work_title_container {
@@ -37,7 +37,7 @@
   align-items: center;
   height:100% ;
   gap: 48px;
- width: 100px;
+ /* width: 100px; */
 }
 
 
@@ -53,13 +53,16 @@
   grid-column-start: 3;
   grid-column-end: 4;
   justify-self: flex-end;
+ 
+ 
 }
+
+
 .MyExp_small_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height:100%;
- 
   width: 100%;
 }
 .exp_title_container {
@@ -212,7 +215,8 @@
   
 }
 .MyExp_small_container {
-  gap:10px
+  gap:10px;
+  
 }
 .seeMore {
   font-size: 15px;

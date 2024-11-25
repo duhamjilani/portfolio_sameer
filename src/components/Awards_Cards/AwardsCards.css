@@ -12,11 +12,27 @@ opacity: 0px;
 background: rgba(245, 252, 255, 1);
 border-radius: 8px;
 text-align: center;
+transform: translateY(20px);
+transition: all 0.5s ease-in;
 }
+
+.Awards-card:hover{
+    opacity: 1;
+    transform: translateY(0);
+  }
 .Trophy{
-    color:rgba(237, 221, 43, 1);
+  
     font-size: 70px;
+    animation: colorChange 2s infinite;
 }
+@keyframes colorChange {
+    0%, 100% {
+      color: rgba(237, 221, 43, 1); 
+    }
+    50% {
+      color: orange; 
+    }
+  }
 .Awards-text{
     color: rgba(0, 0, 0, 1);
 font-size: 15px;

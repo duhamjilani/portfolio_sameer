@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="footer font-Heebo">
       <div className="upper_part">
-        <h4 className="font-Roboto">Get in Touch</h4>
+        <h5 className="font-Roboto">Get in Touch</h5>
         <div className="social_media">
           <div className="icon_link">
             <FaLinkedin />
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           <div className="icon_link">
             <FaPhone />
-            <h4>+962 77 6 93 98 91</h4>
+            <div className="phoneNumber">+962 77 6 93 98 91</div>
           </div>
         </div>
       </div>

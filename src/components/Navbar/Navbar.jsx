@@ -55,12 +55,12 @@ const Navbar = () => {
               {isDropdownOpen && (
                 <ul className="dropdown-menu">
                   <li onClick={() => setIsDropdownOpen(false)}>
-                    <Link to="/academicExp" className="dropdown-item">
+                    <Link to="/academicExp" className="dropdown-item1">
                       Academic And Professional
                     </Link>
                   </li>
                   <li onClick={() => setIsDropdownOpen(false)}>
-                    <Link to="/industrialExp" className="dropdown-item">
+                    <Link to="/industrialExp" className="dropdown-item1">
                       Industrial
                     </Link>
                   </li>

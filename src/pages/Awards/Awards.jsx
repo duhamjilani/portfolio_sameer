@@ -2,10 +2,15 @@ import React from "react";
 import "./Awards.css";
 import { FaTrophy } from "react-icons/fa";
 import { Title } from "../../components";
+import awardspic from '../../assets/awardsPic.jpeg'
 const Awards = () => {
   return (
     <div className="AwardsAndHonors-container section-container font-Poppins">
       <Title MainTitle="Honors And Awards" />
+      <div className="banner-container">
+<img src={awardspic} alt="img" className="banner-Image"/>
+
+      </div>
       <div className="Awards-cards">
         <div className="Awards-card">
           <FaTrophy className="Trophy" />

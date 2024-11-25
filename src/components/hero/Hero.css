@@ -48,8 +48,15 @@
   background: linear-gradient(182.68deg, #ff8233 39.73%, rgba(255, 255, 255, 0) 78.4%);
   display: grid;
   place-items: center;
-  /* position: relative; */
+ 
   top: 200px;
+  opacity: 0; 
+  transform: translateX(100px); 
+  transition: all 0.8s ease-in-out;
+}
+.hero_section-right_side-image-container.animate {
+  opacity: 1;
+  transform: translateX(0); 
 }
 
 .image-container_inner-circle {
@@ -92,21 +99,24 @@ gap:0px;
   
   .hero_section-center {
     flex-direction: column;
-    height: auto;
+    /* height: auto; */
+   
+  }
+  .hero_section-doctor-title {
+    font-size: 15px;
+  }
+  
+  .hero_section-doctor-name {
+    font-size: 20px;
   }
 
   .hero_section-left_side {
     max-width: 100%;
     text-align: center;
   }
+
 }
 
 @media (max-width: 768px) {
-  .hero_section-doctor-title {
-    font-size: 24px;
-  }
   
-  .hero_section-doctor-name {
-    font-size: 36px;
-  }
 }

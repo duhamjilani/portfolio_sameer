@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 const Counter = ({ endNum, CounterTitle, color }) => {
   const [hasStarted, setHasStarted] = useState(false);
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5,
   });
 
