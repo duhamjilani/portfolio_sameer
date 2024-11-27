@@ -33,13 +33,11 @@ const Training = () => {
         <div className="TrainingAndMembership-card">
           <img src={trainingPic} className="trainingPic" alt="pic" />
           <div className="card-content">
-            <div className="card-title">Training</div>
+            <div className="card-title">AI </div>
             <div className="card-date">1/1/2024</div>
             <div className="card-text font-Poppins">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellendus suscipit fugit voluptatum odio explicabo maiores
-              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
-              obcaecati repellat eaque sint nihil!
+            (Python basics, Data Science, Machine Learning, 
+            ) 
             </div>
           </div>
         </div>
@@ -52,10 +50,14 @@ const Training = () => {
             <div className="card-title">Training</div>
             <div className="card-date">1/1/2024</div>
             <div className="card-text font-Poppins">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellendus suscipit fugit voluptatum odio explicabo maiores
-              dignissimos quos qui quasi autem ipsum vero id, aliquid quia
-              obcaecati repellat eaque sint nihil!
+            Systems (AT-SGIRES project funded by the European Union 
+            through the ERASMUS+ Programme) Training Course
+             (Challenges for Grids integration from RES 
+             and teaching and learning methods knowledge transfer) 
+             organized by the Hamburg University for Technology in the
+              framework of EU-funded project AT-SGIRES in Hamburg, Germany, 
+              September 16-20, 2019
+             (Certificate is available).
             </div>
           </div>
         </div>

@@ -26,3 +26,19 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .lineTime {
+    width: 1px;
+    height: 50px;
+  
+    border: 2px dashed rgba(52, 64, 84, 1);
+  }
+  .dashed_circle{
+    width: 20px;
+    height: 20px;
+  }
+  .circle{
+    width: 20px;
+    height: 20px;
+  }
+}

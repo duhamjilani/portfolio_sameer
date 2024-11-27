@@ -1,12 +1,10 @@
 import { React, useState, useEffect } from "react";
 import "./AcademicExp.css";
 import { Title, WorkTitle } from "../../components";
-
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import axios from "axios";
 import pic1 from "../../assets/pic1.jpeg";
 import pic2 from "../../assets/pic2.jpeg";
-
 import pic3 from "../../assets/pic3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
@@ -33,8 +31,6 @@ const images1 = [
 
 const AcademicExp = () => {
   const [showExpDetails, setShowExpDetails] = useState(false);
-  const [pic, setPic] = useState([]);
-  const [altText, setAltText] = useState("");
   const [Item, setItem] = useState([]);
   const [slide, setSlide] = useState(0);
 
@@ -44,7 +40,6 @@ const AcademicExp = () => {
       .then((response) => {
         console.log(response.data);
         setItem(response.data);
-        console.log(Item);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -61,24 +56,25 @@ const AcademicExp = () => {
 
     return () => clearInterval(interval);
   }, []);
+
   const nextSlide = () => {
-    setSlide(slide === Item.length - 1 ? 0 : slide + 1);
+    setSlide(slide === images1.length - 1 ? 0 : slide + 1);
   };
   const prevSlide = () => {
-    setSlide(slide === Item.length - 1 ? 0 : slide - 1);
+    setSlide(slide === 0 ? images1.length - 1 : slide - 1);
   };
   const toggleDetails = () => {
     setShowExpDetails(!showExpDetails);
   };
+
   return (
     <div className="Experience-container section-container">
-        <Title MainTitle=" Academic And Professional Experience" />
+      <Title MainTitle=" Academic And Professional Experience" />
       <div className="expImageSlider">
         <BsArrowLeftCircleFill
           className="arrow arrow-left "
           onClick={prevSlide}
         />
-
         {images1.map((data, idx) => {
           return (
             <img
@@ -89,7 +85,6 @@ const AcademicExp = () => {
             />
           );
         })}
-
         <BsArrowRightCircleFill
           className="arrow arrow-right "
           onClick={nextSlide}
@@ -109,7 +104,6 @@ const AcademicExp = () => {
         </span>
       </div>
       <div className="Experience-container expSecondSection">
-      
         <div className="Experience-container-horizontal-cards font-Poppins">
           <div className="Experience-container-horizontal-card">
             <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
@@ -123,6 +117,14 @@ const AcademicExp = () => {
           </div>
           <div className="Experience-container-horizontal-card">
             <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
+            <div className="Experience-card-title">Teaching</div>
+          </div>
+          <div className="Experience-container-horizontal-card">
+            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
+            <div className="Experience-card-title">Students Advising</div>
+          </div>
+          <div className="Experience-container-horizontal-card">
+            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
             <div className="Experience-card-title">Examination Boards</div>
             {showExpDetails && (
               <div
@@ -133,60 +135,95 @@ const AcademicExp = () => {
                     className="arrow-icon"
                     onClick={toggleDetails}
                   />
-                  <div className="Experience-card-title">
-                    {" "}
-                    Department Committees
-                  </div>
                 </div>
                 <div className="Experience-card-list">
                   <ul>
                     <li>
-                      <div className="Experience-card-title">
-                        Committee Member{" "}
-                      </div>
-                      <div className="card-date">
-                        May 2024 – June 2024 (1 month)
-                      </div>
-                      <div className="Experience-list-content">
-                        Evaluation of PhD Scholarship Applications at the
-                        Mechanical and Maintenance Engineering Department. The
-                        objective is to assess and review applications to select
-                        the best candidates for a PhD scholarship opportunity
+                      <div className="Experience-card-title">Department Committees</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          <li>
+                            <div className="Experience-card-title">
+                              Committee Member
+                            </div>
+                            <div className="card-date">
+                              May 2024 – June 2024 (1 month)
+                            </div>
+                            <div className="Experience-list-content">
+                              Evaluation of PhD Scholarship Applications at the
+                              Mechanical and Maintenance Engineering Department.
+                              The objective is to assess and review applications to select
+                              the best candidates for a PhD scholarship opportunity
+                            </div>
+                          </li>
+                          <li>
+                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-list-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Duis lacus nunc, posuere in justo vulputate, bibendum
+                              sodales
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </li>
-                    <li>
-                      <div className="Experience-card-title">Experience</div>
+                    <li className="div4">
+                      <div className="Experience-card-title">School Committees</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          <li>
+                            <div className="Experience-card-title">
+                              Committee Member
+                            </div>
+                            <div className="card-date">
+                              May 2024 – June 2024 (1 month)
+                            </div>
+                            <div className="Experience-list-content">
+                              Evaluation of PhD Scholarship Applications at the
+                              Mechanical and Maintenance Engineering Department.
+                              The objective is to assess and review applications to select
+                              the best candidates for a PhD scholarship opportunity
+                            </div>
+                          </li>
+                          <li>
+                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-list-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Duis lacus nunc, posuere in justo vulputate, bibendum
+                              sodales
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
 
-                      <div className="Experience-list-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis lacus nunc, posuere in justo vulputate, bibendum
-                        sodales
-                      </div>
-                    </li>
-                    <li>
-                      <div className="Experience-card-title">Experience</div>
-                      <div className="Experience-list-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis lacus nunc, posuere in justo vulputate, bibendum
-                        sodales
-                      </div>
-                    </li>
-                    <li>
-                      <div className="Experience-card-title">Experience</div>
-                      <div className="card-date">1/1/2024</div>
-                      <div className="Experience-list-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis lacus nunc, posuere in justo vulputate, bibendum
-                        sodales
-                      </div>
-                    </li>
-                    <li>
-                      <div className="Experience-card-title">Experience</div>
-                      <div className="card-date">1/1/2024</div>
-                      <div className="Experience-list-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis lacus nunc, posuere in justo vulputate, bibendum
-                        sodales
+                    <li className="div4">
+                      <div className="Experience-card-title">university Committees</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          <li>
+                            <div className="Experience-card-title">
+                              Committee Member
+                            </div>
+                            <div className="card-date">
+                              May 2024 – June 2024 (1 month)
+                            </div>
+                            <div className="Experience-list-content">
+                              Evaluation of PhD Scholarship Applications at the
+                              Mechanical and Maintenance Engineering Department.
+                              The objective is to assess and review applications to select
+                              the best candidates for a PhD scholarship opportunity
+                            </div>
+                          </li>
+                          <li>
+                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-list-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Duis lacus nunc, posuere in justo vulputate, bibendum
+                              sodales
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </li>
                   </ul>

@@ -21,7 +21,7 @@ import trainingPic from "../../assets/training-pic.png";
 
 import pic3 from "../../assets/pic3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import ExpTimeLine from "../../components/ExpTimeline/ExpTimeline";
+
 import { MDBCol, MDBContainer, MDBRow, MDBIcon } from "mdb-react-ui-kit";
 
 const images1 = [
@@ -72,10 +72,10 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
   const nextSlide = () => {
-    setSlide(slide === Item.length - 1 ? 0 : slide + 1);
+    setSlide(slide === images1.length - 1 ? 0 : slide + 1);
   };
   const prevSlide = () => {
-    setSlide(slide === Item.length - 1 ? 0 : slide - 1);
+    setSlide(slide === 0 ? images1.length - 1 : slide - 1);
   };
   return (
     <div className="About-container">

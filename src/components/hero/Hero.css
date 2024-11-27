@@ -57,6 +57,7 @@
 .hero_section-right_side-image-container.animate {
   opacity: 1;
   transform: translateX(0); 
+  margin: 60px;
 }
 
 .image-container_inner-circle {
@@ -93,13 +94,14 @@ gap:0px;
   }
 }
 @media (max-width: 850px) {
-  .hero_section-right_side-image-container, .image-container_inner-circle, .image-container_inner-circle_img {
-   
+  .hero_section-right_side-image-container.animate {
+    margin: 35px;
   }
+
   
   .hero_section-center {
     flex-direction: column;
-    /* height: auto; */
+   
    
   }
   .hero_section-doctor-title {
