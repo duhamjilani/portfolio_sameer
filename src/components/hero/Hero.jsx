@@ -1,4 +1,4 @@
-import {React ,useState}from "react";
+import { React, useEffect, useState } from "react";
 import "./Hero.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 import MainButton from "../mainButton/MainButton";
@@ -6,7 +6,9 @@ import "../../constants/constants.css";
 import doctorPicture from "../../assets/1f03970ed1fadcf1638d0b429a02cefe.png";
 import { MainContent } from "../index";
 import { Link, useLocation } from "react-router-dom";
-import { useInView } from "react-intersection-observer"; 
+import { useInView } from "react-intersection-observer";
+import axios from "axios";
+import { api } from "../../constants/apiLink";
 
 const Hero = () => {
   const [hasStarted, setHasStarted] = useState(false);
@@ -14,31 +16,43 @@ const Hero = () => {
     triggerOnce: true,
     threshold: 0.5,
   });
+  const [heroText, setHeroText] = useState("");
 
   if (inView && !hasStarted) {
-    setHasStarted(true); 
+    setHasStarted(true);
   }
- 
+
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+
+  const fetchHeroSection = async () => {
+    try {
+      const data = await axios.post(
+        `${api}content/get-content`,
+        { page: "LandingPage", section: "Hero" },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setHeroText(data.data.data.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchHeroSection();
+  });
+
   return (
     <section className="hero_section-container section-container">
       <div className="hero_section-center">
         <div className="hero_section-left_side font-Poppins">
-         
           <div className="hero_section-doctor-name"> Dr.Sameer Al-Dahidi</div>
-          <MainContent>
-            Dr. Al-Dahidi is an Associate Professor at the Department of
-            Mechanical and Maintenance Engineering, School of Applied Technical
-            Sciences, German Jordanian University. He also serves as Program
-            Coordinator and Quality Assurance Manager for the EDU-SYRIA
-            scholarship project. He holds a B.Sc. in Electrical and Computer
-            Engineering from The Hashemite University, an M.Sc. in Nuclear
-            Energy from Ecole Centrale Paris and Université Paris-Sud 11, and a
-            Ph.D. from Politecnico di Milano. His work focuses on AI, machine
-            learning, and optimization for industrial challenges, with a strong
-            interest in predictive maintenance and renewable energy systems.
-          </MainContent>
+          <MainContent>{heroText}</MainContent>
           {!isAboutPage && (
             <Link to="/about">
               <MainButton>
@@ -48,7 +62,7 @@ const Hero = () => {
           )}
         </div>
         <div className="hero_section-right_side">
-        <div
+          <div
             className={`hero_section-right_side-image-container ${
               hasStarted ? "animate" : ""
             }`}

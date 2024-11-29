@@ -23,6 +23,7 @@ import pic3 from "../../assets/pic3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import { MDBCol, MDBContainer, MDBRow, MDBIcon } from "mdb-react-ui-kit";
+import { api } from "../../constants/apiLink";
 
 const images1 = [
   {
@@ -49,19 +50,27 @@ const About = () => {
   const [Item, setItem] = useState([]);
   const [slide, setSlide] = useState(0);
 
+  const [aboutText, setAboutText] = useState("");
   const fetchData = () => {
     axios
-      .get("http://localhost:4003/images")
+      .post(`${api}content/get-content`, {
+        page: "About",
+        section: "AboutMe",
+      })
       .then((response) => {
-        console.log(response.data);
-        setItem(response.data);
-        console.log(Item);
+        const homeData = response.data.data.content;
+        setAboutText(homeData);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        alert("Something went wrong");
+        // alert("Something went wrong while fetching data.");
       });
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prevSlide) =>
@@ -85,19 +94,7 @@ const About = () => {
             <div className="About_ImageSlider-container-doctor-name">
               Dr.Sameer Al-Dahidi ,PHD,MSC,BSC,CMR
             </div>
-            <div className="About_ImageSlider-container-text">
-              Dr. Al-Dahidi is an Associate Professor at the Department of
-              Mechanical and Maintenance Engineering, School of Applied
-              Technical Sciences, German Jordanian University. He also serves as
-              Program Coordinator and Quality Assurance Manager for the
-              EDU-SYRIA scholarship project. He holds a B.Sc. in Electrical and
-              Computer Engineering from The Hashemite University, an M.Sc. in
-              Nuclear Energy from Ecole Centrale Paris and Université Paris-Sud
-              11, and a Ph.D. from Politecnico di Milano. His work focuses on
-              AI, machine learning, and optimization for industrial challenges,
-              with a strong interest in predictive maintenance and renewable
-              energy systems.
-            </div>
+            <div className="About_ImageSlider-container-text">{aboutText}</div>
           </div>
 
           <div className="About_ImageSlider-container-right_side">

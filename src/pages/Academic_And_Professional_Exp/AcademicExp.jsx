@@ -34,19 +34,6 @@ const AcademicExp = () => {
   const [Item, setItem] = useState([]);
   const [slide, setSlide] = useState(0);
 
-  const fetchData = () => {
-    axios
-      .get("http://localhost:4003/images")
-      .then((response) => {
-        console.log(response.data);
-        setItem(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-        alert("Something went wrong");
-      });
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prevSlide) =>
@@ -139,7 +126,9 @@ const AcademicExp = () => {
                 <div className="Experience-card-list">
                   <ul>
                     <li>
-                      <div className="Experience-card-title">Department Committees</div>
+                      <div className="Experience-card-title">
+                        Department Committees
+                      </div>
                       <div className="Experience-card-list-content">
                         <ul>
                           <li>
@@ -152,23 +141,28 @@ const AcademicExp = () => {
                             <div className="Experience-list-content">
                               Evaluation of PhD Scholarship Applications at the
                               Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications to select
-                              the best candidates for a PhD scholarship opportunity
+                              The objective is to assess and review applications
+                              to select the best candidates for a PhD
+                              scholarship opportunity
                             </div>
                           </li>
                           <li>
-                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-card-title">
+                              Experience
+                            </div>
                             <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Duis lacus nunc, posuere in justo vulputate, bibendum
-                              sodales
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis lacus nunc, posuere in justo vulputate,
+                              bibendum sodales
                             </div>
                           </li>
                         </ul>
                       </div>
                     </li>
                     <li className="div4">
-                      <div className="Experience-card-title">School Committees</div>
+                      <div className="Experience-card-title">
+                        School Committees
+                      </div>
                       <div className="Experience-card-list-content">
                         <ul>
                           <li>
@@ -181,16 +175,19 @@ const AcademicExp = () => {
                             <div className="Experience-list-content">
                               Evaluation of PhD Scholarship Applications at the
                               Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications to select
-                              the best candidates for a PhD scholarship opportunity
+                              The objective is to assess and review applications
+                              to select the best candidates for a PhD
+                              scholarship opportunity
                             </div>
                           </li>
                           <li>
-                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-card-title">
+                              Experience
+                            </div>
                             <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Duis lacus nunc, posuere in justo vulputate, bibendum
-                              sodales
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis lacus nunc, posuere in justo vulputate,
+                              bibendum sodales
                             </div>
                           </li>
                         </ul>
@@ -198,7 +195,9 @@ const AcademicExp = () => {
                     </li>
 
                     <li className="div4">
-                      <div className="Experience-card-title">university Committees</div>
+                      <div className="Experience-card-title">
+                        university Committees
+                      </div>
                       <div className="Experience-card-list-content">
                         <ul>
                           <li>
@@ -211,16 +210,19 @@ const AcademicExp = () => {
                             <div className="Experience-list-content">
                               Evaluation of PhD Scholarship Applications at the
                               Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications to select
-                              the best candidates for a PhD scholarship opportunity
+                              The objective is to assess and review applications
+                              to select the best candidates for a PhD
+                              scholarship opportunity
                             </div>
                           </li>
                           <li>
-                            <div className="Experience-card-title">Experience</div>
+                            <div className="Experience-card-title">
+                              Experience
+                            </div>
                             <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Duis lacus nunc, posuere in justo vulputate, bibendum
-                              sodales
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis lacus nunc, posuere in justo vulputate,
+                              bibendum sodales
                             </div>
                           </li>
                         </ul>

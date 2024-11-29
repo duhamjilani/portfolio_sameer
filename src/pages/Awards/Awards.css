@@ -1,8 +1,8 @@
-.AwardsAndHonors-container{
-    display: flex;
-    flex-direction: column;
-    gap:40px;
-    margin-top: 10px;
+.AwardsAndHonors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 10px;
 }
 
 .Awards-cards {
@@ -26,6 +26,10 @@
   padding: 16px;
   height: auto;
 }
+.AwardsTItle {
+  font-weight: 600;
+  font-size: larger;
+}
 .Trophy {
   color: rgba(237, 221, 43, 1);
   font-size: 70px;
@@ -41,27 +45,25 @@
 }
 
 @media (max-width: 768px) {
- .Awards-cards {
-display:flex;
-flex-direction: column;
-align-items: center;
- }
- .Awards-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 380px;
- 
-  gap: 25px;
-  border-radius: 8px 0px 0px 0px;
-  opacity: 0px;
-  background: rgba(245, 252, 255, 1);
-  border-radius: 8px;
-  text-align: center;
- 
-}
- 
+  .Awards-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Awards-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+
+    gap: 25px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    background: rgba(245, 252, 255, 1);
+    border-radius: 8px;
+    text-align: center;
+  }
 }
 @media (max-width: 850px) {
   .Awards-cards {
@@ -72,6 +74,5 @@ align-items: center;
 
   .Awards-card {
     width: 350px;
- 
   }
 }

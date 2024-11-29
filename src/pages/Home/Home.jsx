@@ -1,4 +1,4 @@
-import {React,useEffect} from "react";
+import { React, useEffect, useState } from "react";
 import {
   Hero,
   MainContent,
@@ -13,39 +13,182 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import ExpTitle from "../../components/ExpTitle/ExpTitle";
 import ExpTimeline from "../../components/ExpTimeline/ExpTimeline";
 import "./home.css";
-import { useInView } from "react-intersection-observer"; 
+import { useInView } from "react-intersection-observer";
+import axios from "axios";
+import { api } from "../../constants/apiLink";
 
 const Home = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false, 
-    threshold: 0.2, 
+    triggerOnce: false,
+    threshold: 0.2,
   });
- 
+  const [achievementText, setAchievementText] = useState("");
+  const [counter1, setCounter1] = useState("");
+  const [counter2, setCounter2] = useState("");
+
+  const fetchHeroSection = async () => {
+    try {
+      const data = await axios.post(
+        `${api}content/get-content`,
+        { page: "LandingPage", section: "Achievement" },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setAchievementText(data.data.data.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchHeroSection();
+  });
+
+  const fetchCounters = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "AchievementCounter1",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setCounter1(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "AchievementCounter2",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setCounter2(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+  };
+
+  useEffect(() => {
+    fetchCounters();
+  }, []);
+
+  const [researchText, setResearchText] = useState("");
+
+  const fetchResearchData = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "Research",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchText(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+  };
+
+  useEffect(() => {
+    fetchResearchData();
+  }, []);
+
+  const [awardsText, setAwardsText] = useState("");
+
+  const fetchAwardsText = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "Awards",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setAwardsText(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+  };
+
+  useEffect(() => {
+    fetchAwardsText();
+  }, []);
+
+  const [trainingText, setTrainingText] = useState("");
+
+  const fetchTrainingText = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "Training",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setTrainingText(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+  };
+
+  useEffect(() => {
+    fetchTrainingText();
+  }, []);
+
+  const [visibleAwardsCards, setVisibleAwardsCards] = useState([]);
+
+  const fetchVisibleAwardsCards = () => {
+    axios
+      .post(`${api}info/get-visible-infos-by-type`, {
+        type: "Award",
+      })
+      .then((response) => {
+        const homeData = response.data.data;
+        setVisibleAwardsCards(homeData);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        // alert("Something went wrong while fetching data.");
+      });
+  };
+
+  useEffect(() => {
+    fetchVisibleAwardsCards();
+  }, []);
+
   return (
     <div className="font-Poppins">
       <Hero />
 
       {/* START MY PROJECTS SECTION */}
       <div className="My_projects_container section-container">
-        <Title MainTitle="My Projects" />
+        <Title MainTitle="My Achievements" />
         <div className="My_projects_text">
-          <MainContent>
-            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-            nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
-            tempus pharetraLorem ipsum dolor sit amet consectetur. Tristique
-            amet sed massa nibh lectus netus in. Aliquet donec morbi convallis
-            pretium. Turpis tempus pharetra
-          </MainContent>
+          <MainContent>{achievementText}</MainContent>
         </div>
         <div className="My_projects-counters">
           <Counter
             CounterTitle="Years Experience"
-            endNum="11"
+            endNum={counter1}
             color={"rgba(252, 128, 31, 1)"}
           />
           <Counter
             CounterTitle="Member Ships"
-            endNum="6"
+            endNum={counter2}
             color={"rgba(51, 103, 153, 1)"}
           />
         </div>
@@ -62,7 +205,10 @@ const Home = () => {
         </div>
         <div className="MyExp_small_container">
           <div className="work_title_container">
-            <WorkTitle WorkTitle="Associate Professor" Date="February 2021 – Present" />
+            <WorkTitle
+              WorkTitle="Associate Professor"
+              Date="February 2021 – Present"
+            />
             <WorkTitle WorkTitle="Lorem Ipsum" Date="4-3-2001" />
             <WorkTitle WorkTitle="Lorem Ipsum" Date="4-3-2001" />
           </div>
@@ -70,7 +216,10 @@ const Home = () => {
             <ExpTimeline numOfCircles={3} />
           </div>
           <div className="exp_title_container">
-            <ExpTitle ExpTitle="Lorem Ipsum" Desc="Mechanical and Maintenance Engineering Department, School of Applied Technical Sciences, German Jordanian University, Amman, Jordan." />
+            <ExpTitle
+              ExpTitle="Lorem Ipsum"
+              Desc="Mechanical and Maintenance Engineering Department, School of Applied Technical Sciences, German Jordanian University, Amman, Jordan."
+            />
             <ExpTitle ExpTitle="Lorem Ipsum" Desc="Description goes here." />
             <ExpTitle ExpTitle="Lorem Ipsum" Desc="Description goes here." />
           </div>
@@ -86,13 +235,7 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-        <MainContent>
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetraLorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-          Turpis tempus pharetra
-        </MainContent>
+        <MainContent>{researchText}</MainContent>
         <div className="Research-container-cards">
           <ResearchCards />
           <ResearchCards />
@@ -105,22 +248,22 @@ const Home = () => {
       <div className="Awards-container section-container">
         <div className="Main-upper-text">
           <Title MainTitle="Awards" />
-          <Link to="/awards" className="seeMore" >
+          <Link to="/awards" className="seeMore">
             See More <FaArrowRightLong />
           </Link>
         </div>
-        <MainContent>
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetraLorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-          Turpis tempus pharetra
-        </MainContent>
+        <MainContent>{awardsText}</MainContent>
         <div className="Awards-container-cards">
-          <AwardsCards />
-          <AwardsCards />
-          <AwardsCards />
-          <AwardsCards />
+          {visibleAwardsCards.map((item) => {
+            return (
+              <AwardsCards
+                title={item.title}
+                desc={item.desc}
+                date={item.date}
+                key={item._id}
+              />
+            );
+          })}
         </div>
       </div>
       {/* END AWARDS SECTION */}
@@ -133,13 +276,7 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-        <MainContent>
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-          pharetraLorem ipsum dolor sit amet consectetur. Tristique amet sed
-          massa nibh lectus netus in. Aliquet donec morbi convallis pretium.
-          Turpis tempus pharetra
-        </MainContent>
+        <MainContent>{trainingText}</MainContent>
         <div className="Training-container-outer-circle">
           <div className="Training-container-inner-circle"></div>
           <div className="Training-container-box top">Text</div>

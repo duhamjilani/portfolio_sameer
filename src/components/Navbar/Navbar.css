@@ -78,8 +78,8 @@
  
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown-menu {
+  display: block !important;
 }
 @media (max-width: 1300px) and (min-width: 1025px) {
   .navBar {

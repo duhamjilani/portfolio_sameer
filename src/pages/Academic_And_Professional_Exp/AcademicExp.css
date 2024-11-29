@@ -4,47 +4,46 @@
   gap: 100px;
   margin-top: 10px;
 }
-.expImageSlider{
-  display:flex;
+.expImageSlider {
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 75vh; 
+  height: 75vh;
   width: 100%;
 }
-.slide{
+.slide {
   border-radius: 0.5rem;
   box-shadow: 0px 0px 7px #666;
   height: 100%;
-  width:100%;
+  width: 100%;
   object-fit: cover;
-  
 }
-.slide-hidden{
-  display:none;
+.slide-hidden {
+  display: none;
 }
-.arrow{
+.arrow {
   position: absolute;
   height: 2rem;
   width: 2rem;
- color:white;
- filter:drop-shadow(0px 0px 5px #555)
+  color: white;
+  filter: drop-shadow(0px 0px 5px #555);
 }
-.arrow:hover{
+.arrow:hover {
   cursor: pointer;
 }
-.arrow-left{
-  left:1rem
+.arrow-left {
+  left: 1rem;
 }
-.arrow-right{
-  right:1rem
+.arrow-right {
+  right: 1rem;
 }
 
-.indicators{
+.indicators {
   display: flex;
   position: absolute;
   bottom: 1rem;
 }
-.indicator{
+.indicator {
   background-color: white;
   height: 0.5rem;
   width: 0.5rem;
@@ -52,13 +51,12 @@
   border: none;
   outline: none;
   box-shadow: 0px 0px 5px #555;
-  margin : 0 0.2rem;
+  margin: 0 0.2rem;
   cursor: pointer;
 }
-.indicator-inactive{
+.indicator-inactive {
   background-color: #4746466e;
 }
-
 
 .Experience-container-horizontal-cards {
   display: flex;
@@ -109,7 +107,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
 }
 
 .Details-container.open {
@@ -128,13 +125,10 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  
- 
 }
-.Experience-card-list{
+.Experience-card-list {
   overflow-y: scroll;
   max-height: 800px;
- 
 }
 
 .Experience-card-list li::marker {
@@ -150,34 +144,30 @@
   letter-spacing: -0.015em;
   text-align: left;
 }
-.div5{
+.div5 {
   overflow-y: scroll;
   min-height: 100vh;
   background-color: rgb(220, 232, 245);
 }
-@media(max-width:810px) {
- 
-  .Experience-card-title{
+@media (max-width: 810px) {
+  .Experience-card-title {
     font-size: 15px;
     font-weight: 600;
-   
   }
-  .expSecondSection{
+  .expSecondSection {
     margin: 50px;
-
   }
-  .Experience-card-title{
+  .Experience-card-title {
     font-size: 10px;
     font-weight: 600;
-   
   }
-  .Experience-list-content{
+  .Experience-list-content {
     font-size: 10px;
   }
-  .section-container{
+  .section-container {
     padding: 0px 0px;
   }
-  .card-date{
+  .card-date {
     font-size: 10px;
   }
 }
