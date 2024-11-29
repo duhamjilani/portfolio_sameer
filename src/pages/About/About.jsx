@@ -10,7 +10,7 @@ import { SiLatex } from "react-icons/si";
 import windows from "../../assets/windows.png";
 import microsoft from "../../assets/microsoft.png";
 import { SiResearchgate } from "react-icons/si";
-import { FaGoogleScholar } from "react-icons/fa6";
+import { FaGoogleScholar,FaGraduationCap } from "react-icons/fa6";
 import { FaUniversity } from "react-icons/fa";
 import { Title } from "../../components/index";
 
@@ -197,13 +197,16 @@ const About = () => {
             <MDBCol md="6" offsetMd="3">
               <ul className="timeline-3">
                 <li>
-                  <MDBIcon
+                  {/* <MDBIcon
                     fas
                     icon="graduation-cap"
                     size="2x"
                     style={{ color: "rgba(0, 52, 102, 1)" }}
                     className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
-                  />
+                  /> */}
+                 <FaGraduationCap style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}  className="animate__animated animate__fadeIn animate__infinite animate__delay-2s" />
+
+                   
                   <h6>Ph.D. in Energy and Nuclear Science and Technology</h6>
                   <div className="card-date">January 2013 – March 2016</div>
                   <p className="mt-2">
@@ -219,13 +222,8 @@ const About = () => {
                   </p>
                 </li>
                 <li>
-                  <MDBIcon
-                    fas
-                    icon="graduation-cap"
-                    size="2x"
-                    style={{ color: "rgba(0, 52, 102, 1)" }}
-                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
-                  />
+                <FaGraduationCap style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}  className="animate__animated animate__fadeIn animate__infinite animate__delay-2s" />
+
                   <h6>M.Sc. in Nuclear Energy, Operations</h6>
                   <div className="card-date">
                     September 2010 – September 2012
@@ -237,13 +235,8 @@ const About = () => {
                   </p>
                 </li>
                 <li>
-                  <MDBIcon
-                    fas
-                    icon="graduation-cap"
-                    size="2x"
-                    style={{ color: "rgba(0, 52, 102, 1)" }}
-                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
-                  />
+                <FaGraduationCap style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}  className="animate__animated animate__fadeIn animate__infinite animate__delay-2s" />
+
                   <h6>B.Sc. in Electrical and Computer Engineering</h6>
                   <div className="card-date">September 2004 – June 2008</div>
                   <p className="mt-2">
@@ -256,13 +249,8 @@ const About = () => {
                   </p>
                 </li>
                 <li>
-                  <MDBIcon
-                    fas
-                    icon="graduation-cap"
-                    size="2x"
-                    style={{ color: "rgba(0, 52, 102, 1)" }}
-                    className="animate__animated animate__fadeIn animate__infinite animate__delay-2s"
-                  />
+                <FaGraduationCap style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}  className="animate__animated animate__fadeIn animate__infinite animate__delay-2s" />
+
                   <h6>
                     General Secondary Education Certificate (Scientific Stream)
                   </h6>
