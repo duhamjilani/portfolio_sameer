@@ -7,6 +7,7 @@ import pic1 from "../../assets/pic1.jpeg";
 import pic2 from "../../assets/pic2.jpeg";
 import pic3 from "../../assets/pic3.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { api } from "../../constants/apiLink";
 
 const images1 = [
   {
@@ -30,9 +31,13 @@ const images1 = [
 ];
 
 const AcademicExp = () => {
-  const [showExpDetails, setShowExpDetails] = useState(false);
-  const [Item, setItem] = useState([]);
+  const [fullData, setFullData] = useState([]);
   const [slide, setSlide] = useState(0);
+  const [showCommittess, setShowCommittess] = useState(false);
+  const [showUniversity, setShowUniversity] = useState(false);
+  const [showTeaching, setShowTeaching] = useState(false);
+  const [showStudnetAdvising, setShowStudnetAdvising] = useState(false);
+  const [showExaminationBoards, setShowExaminationBoards] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,9 +55,23 @@ const AcademicExp = () => {
   const prevSlide = () => {
     setSlide(slide === 0 ? images1.length - 1 : slide - 1);
   };
-  const toggleDetails = () => {
-    setShowExpDetails(!showExpDetails);
+
+  const fetchAllData = async () => {
+    try {
+      const data = await axios.post(`${api}info/get-infos-by-type`, {
+        type: "Experience",
+      });
+
+      setFullData(data.data.data);
+      console.log(data.data.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  useEffect(() => {
+    fetchAllData();
+  }, []);
 
   return (
     <div className="Experience-container section-container">
@@ -92,70 +111,46 @@ const AcademicExp = () => {
       </div>
       <div className="Experience-container expSecondSection">
         <div className="Experience-container-horizontal-cards font-Poppins">
-          <div className="Experience-container-horizontal-card">
-            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
-            <div className="Experience-card-title">COMMITTEES</div>
-          </div>
-          <div className="Experience-container-horizontal-card">
-            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
-            <div className="Experience-card-title">
-              University Administrative Positions
+          <div className="oneSectionContainer">
+            <div
+              className="Experience-container-horizontal-card"
+              onClick={() => setShowCommittess(!showCommittess)}
+            >
+              <IoIosArrowDown
+                className={showCommittess ? "arrow-open" : "arrow-icon"}
+              />
+              <div className="Experience-card-title">COMMITTEES</div>
             </div>
-          </div>
-          <div className="Experience-container-horizontal-card">
-            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
-            <div className="Experience-card-title">Teaching</div>
-          </div>
-          <div className="Experience-container-horizontal-card">
-            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
-            <div className="Experience-card-title">Students Advising</div>
-          </div>
-          <div className="Experience-container-horizontal-card">
-            <IoIosArrowDown className="arrow-icon" onClick={toggleDetails} />
-            <div className="Experience-card-title">Examination Boards</div>
-            {showExpDetails && (
-              <div
-                className={`Details-container ${showExpDetails ? "open" : ""}`}
-              >
-                <div className="Details-container-arrow-title">
-                  <IoIosArrowUp
-                    className="arrow-icon"
-                    onClick={toggleDetails}
-                  />
-                </div>
+            {showCommittess && (
+              <div className={`Details-container`}>
                 <div className="Experience-card-list">
                   <ul>
                     <li>
                       <div className="Experience-card-title">
                         Department Committees
                       </div>
+
                       <div className="Experience-card-list-content">
                         <ul>
-                          <li>
-                            <div className="Experience-card-title">
-                              Committee Member
-                            </div>
-                            <div className="card-date">
-                              May 2024 – June 2024 (1 month)
-                            </div>
-                            <div className="Experience-list-content">
-                              Evaluation of PhD Scholarship Applications at the
-                              Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications
-                              to select the best candidates for a PhD
-                              scholarship opportunity
-                            </div>
-                          </li>
-                          <li>
-                            <div className="Experience-card-title">
-                              Experience
-                            </div>
-                            <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Duis lacus nunc, posuere in justo vulputate,
-                              bibendum sodales
-                            </div>
-                          </li>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Committees" &&
+                                item.subCategory === "Department"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
                         </ul>
                       </div>
                     </li>
@@ -165,66 +160,447 @@ const AcademicExp = () => {
                       </div>
                       <div className="Experience-card-list-content">
                         <ul>
-                          <li>
-                            <div className="Experience-card-title">
-                              Committee Member
-                            </div>
-                            <div className="card-date">
-                              May 2024 – June 2024 (1 month)
-                            </div>
-                            <div className="Experience-list-content">
-                              Evaluation of PhD Scholarship Applications at the
-                              Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications
-                              to select the best candidates for a PhD
-                              scholarship opportunity
-                            </div>
-                          </li>
-                          <li>
-                            <div className="Experience-card-title">
-                              Experience
-                            </div>
-                            <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Duis lacus nunc, posuere in justo vulputate,
-                              bibendum sodales
-                            </div>
-                          </li>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Committees" &&
+                                item.subCategory === "School"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
                         </ul>
                       </div>
                     </li>
-
                     <li className="div4">
                       <div className="Experience-card-title">
-                        university Committees
+                        University Committees
                       </div>
                       <div className="Experience-card-list-content">
                         <ul>
-                          <li>
-                            <div className="Experience-card-title">
-                              Committee Member
-                            </div>
-                            <div className="card-date">
-                              May 2024 – June 2024 (1 month)
-                            </div>
-                            <div className="Experience-list-content">
-                              Evaluation of PhD Scholarship Applications at the
-                              Mechanical and Maintenance Engineering Department.
-                              The objective is to assess and review applications
-                              to select the best candidates for a PhD
-                              scholarship opportunity
-                            </div>
-                          </li>
-                          <li>
-                            <div className="Experience-card-title">
-                              Experience
-                            </div>
-                            <div className="Experience-list-content">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Duis lacus nunc, posuere in justo vulputate,
-                              bibendum sodales
-                            </div>
-                          </li>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Committees" &&
+                                item.subCategory === "University"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">
+                        International Committees
+                      </div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Committees" &&
+                                item.subCategory === "International"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="oneSectionContainer">
+            <div
+              className="Experience-container-horizontal-card"
+              onClick={() => setShowUniversity(!showUniversity)}
+            >
+              <IoIosArrowDown
+                className={showUniversity ? "arrow-open" : "arrow-icon"}
+              />
+              <div className="Experience-card-title">
+                University Administrative Positions
+              </div>
+            </div>
+            {showUniversity && (
+              <div className={`Details-container`}>
+                <div className="Experience-card-list">
+                  <ul>
+                    <li>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category ===
+                                "University Administrative Position"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="oneSectionContainer">
+            <div
+              className="Experience-container-horizontal-card"
+              onClick={() => setShowTeaching(!showTeaching)}
+            >
+              <IoIosArrowDown
+                className={showTeaching ? "arrow-open" : "arrow-icon"}
+              />
+              <div className="Experience-card-title">Teaching</div>
+            </div>
+            {showTeaching && (
+              <div className={`Details-container`}>
+                <div className="Experience-card-list">
+                  <ul>
+                    <li>
+                      <div className="Experience-card-title">PHD</div>
+
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Teaching" &&
+                                item.subCategory === "PHD"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Master</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Teaching" &&
+                                item.subCategory === "Master"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Bachelor</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Teaching" &&
+                                item.subCategory === "Bachelor"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Industrial</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Teaching" &&
+                                item.subCategory === "Industrial"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="oneSectionContainer">
+            <div
+              className="Experience-container-horizontal-card"
+              onClick={() => setShowStudnetAdvising(!showStudnetAdvising)}
+            >
+              <IoIosArrowDown
+                className={showStudnetAdvising ? "arrow-open" : "arrow-icon"}
+              />
+              <div className="Experience-card-title">Students Advising</div>
+            </div>
+            {showStudnetAdvising && (
+              <div className={`Details-container`}>
+                <div className="Experience-card-list">
+                  <ul>
+                    <li>
+                      <div className="Experience-card-title">PHD</div>
+
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Student Advising" &&
+                                item.subCategory === "PHD"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Master</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Student Advising" &&
+                                item.subCategory === "Master"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Bachelor</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Student Advising" &&
+                                item.subCategory === "Bachelor"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="oneSectionContainer">
+            <div
+              className="Experience-container-horizontal-card"
+              onClick={() => setShowExaminationBoards(!showExaminationBoards)}
+            >
+              <IoIosArrowDown
+                className={showExaminationBoards ? "arrow-open" : "arrow-icon"}
+              />
+              <div className="Experience-card-title">Examination Boards</div>
+            </div>
+            {showExaminationBoards && (
+              <div className={`Details-container`}>
+                <div className="Experience-card-list">
+                  <ul>
+                    <li>
+                      <div className="Experience-card-title">PHD</div>
+
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Examination Boards" &&
+                                item.subCategory === "PHD"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Master</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Examination Boards" &&
+                                item.subCategory === "Master"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </li>
+                    <li className="div4">
+                      <div className="Experience-card-title">Bachelor</div>
+                      <div className="Experience-card-list-content">
+                        <ul>
+                          {fullData
+                            .filter(
+                              (item) =>
+                                item.category === "Examination Boards" &&
+                                item.subCategory === "Bachelor"
+                            )
+                            .map((item) => {
+                              return (
+                                <li>
+                                  <div className="Experience-card-title">
+                                    {item.title}
+                                  </div>
+                                  <div className="card-date">{item.date}</div>
+                                  <div className="Experience-list-content">
+                                    {item.description}
+                                  </div>
+                                </li>
+                              );
+                            })}
                         </ul>
                       </div>
                     </li>

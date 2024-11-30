@@ -1,26 +1,24 @@
-.research-container-cardHome{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width: 100%;
-    gap:20px;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in;
+.research-container-cardHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  width: 100%;
+  gap: 20px;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in;
 }
-.research-container-cardHome:hover{
+.research-container-cardHome:hover {
   opacity: 1;
   transform: translateY(0);
 }
 
-.research-card-desc-containerHome{
-    width:90%;
+.research-card-desc-containerHome {
+  width: 90%;
   height: 50%;
   padding: 16px 0px 16px 0px;
   gap: 10px;
   border-radius: 4px 0px 0px 0px;
   background-color: rgba(255, 255, 255);
-   
-   
 }

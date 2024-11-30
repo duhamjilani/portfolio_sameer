@@ -11,6 +11,7 @@
   height: 75vh;
   width: 100%;
 }
+
 .slide {
   border-radius: 0.5rem;
   box-shadow: 0px 0px 7px #666;
@@ -77,6 +78,7 @@
   align-items: center;
   gap: 30px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .Experience-card-title {
@@ -95,26 +97,27 @@
   color: var(--Inks-Dark-64, rgba(0, 11, 37, 0.64));
 }
 
+.arrow-open {
+  transform: rotate(180deg);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  color: var(--Inks-Dark-64, rgba(0, 11, 37, 0.64));
+}
+
+.oneSectionContainer {
+  width: 100%;
+}
+
 .Details-container {
   background-color: rgb(220, 232, 245);
   width: 100%;
-  height: 410px;
-  border-radius: 8px 0px 0px 0px;
-  display: none;
-  position: absolute;
-  top: -550px;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.Details-container.open {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: flex-start;
-}
 .Details-container-arrow-title {
   display: flex;
   align-items: center;
@@ -127,8 +130,10 @@
   gap: 30px;
 }
 .Experience-card-list {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 800px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .Experience-card-list li::marker {
@@ -143,6 +148,7 @@
   line-height: 24px;
   letter-spacing: -0.015em;
   text-align: left;
+  white-space: pre-wrap;
 }
 .div5 {
   overflow-y: scroll;

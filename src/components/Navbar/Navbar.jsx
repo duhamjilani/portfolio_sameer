@@ -1,4 +1,4 @@
-import { React, useState,useRef, useEffect } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import MainButton from "../mainButton/MainButton";
@@ -50,7 +50,11 @@ const Navbar = () => {
                 About Me
               </Link>
             </li>
-            <li className="Link_nav dropdown" onClick={toggleDropdown} ref={dropdownRef}>
+            <li
+              className="Link_nav dropdown"
+              onClick={toggleDropdown}
+              ref={dropdownRef}
+            >
               Experience ▼
               {isDropdownOpen && (
                 <ul className="dropdown-menu">

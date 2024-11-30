@@ -60,7 +60,6 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
 
     axios
@@ -74,7 +73,6 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
   };
 
@@ -96,7 +94,6 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
   };
 
@@ -118,7 +115,6 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
   };
 
@@ -140,7 +136,6 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
   };
 
@@ -162,12 +157,52 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        // alert("Something went wrong while fetching data.");
       });
   };
 
   useEffect(() => {
     fetchVisibleAwardsCards();
+  }, []);
+
+  const [visibleResearchCards, setVisibleResearchCards] = useState([]);
+
+  const fetchVisibleResearchCards = () => {
+    axios
+      .post(`${api}info/get-visible-infos-by-type`, {
+        type: "Research",
+      })
+      .then((response) => {
+        const homeData = response.data.data;
+        setVisibleResearchCards(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchVisibleResearchCards();
+  }, []);
+
+  const [visibleTrainingCards, setVisibleTrainingCards] = useState([]);
+
+  const fetchVisibleTrainingCards = () => {
+    axios
+      .post(`${api}info/get-visible-infos-by-type`, {
+        type: "Training",
+      })
+      .then((response) => {
+        const homeData = response.data.data;
+        console.log(homeData);
+        setVisibleTrainingCards(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchVisibleTrainingCards();
   }, []);
 
   return (
@@ -203,25 +238,89 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-        <div className="MyExp_small_container">
-          <div className="work_title_container">
-            <WorkTitle
-              WorkTitle="Associate Professor"
-              Date="February 2021 – Present"
-            />
-            <WorkTitle WorkTitle="Lorem Ipsum" Date="4-3-2001" />
-            <WorkTitle WorkTitle="Lorem Ipsum" Date="4-3-2001" />
+        <div className="IndustrialExp-container-center">
+          <div className="IndustrialExp-container-center-expTitleDate">
+            <div className="IndustrialExp-container-center-expTitleDate-div">
+              <div className="IndustrialExp-container-center-expTitle">
+                RAM Expert
+              </div>
+              <div className="IndustrialExp-container-center-expDate">
+                November 2023 – April 2024 (6 months)
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-expTitleDate-div">
+              <div className="IndustrialExp-container-center-expTitle">
+                Master Student Intern (M1 and M2 Years){" "}
+              </div>
+              <div className="IndustrialExp-container-center-expDate">
+                April 2011/2012 – August 2011/2012 (9 months)
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-expTitleDate-div">
+              <div className="IndustrialExp-container-center-expTitle">
+                Junior Electrical & Instruments (E&I) Engineer
+              </div>
+              <div className="IndustrialExp-container-center-expDate">
+                January 2009 – May 2010 (1 year and 4 months)
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-expTitleDate-div">
+              <div className="IndustrialExp-container-center-expTitle">
+                Graduate Electrical & Instruments (E&I) Engineer
+              </div>
+              <div className="IndustrialExp-container-center-expDate">
+                September 2008 – December 2008 (4 months)
+              </div>
+            </div>
           </div>
-          <div className="ExpTimeline">
-            <ExpTimeline numOfCircles={3} />
+          <div className="timeLineContainer">
+            <ExpTimeline numOfCircles={4} />
           </div>
-          <div className="exp_title_container">
-            <ExpTitle
-              ExpTitle="Lorem Ipsum"
-              Desc="Mechanical and Maintenance Engineering Department, School of Applied Technical Sciences, German Jordanian University, Amman, Jordan."
-            />
-            <ExpTitle ExpTitle="Lorem Ipsum" Desc="Description goes here." />
-            <ExpTitle ExpTitle="Lorem Ipsum" Desc="Description goes here." />
+          <div className="IndustrialExp-container-center-LocationDesc">
+            <div className="IndustrialExp-container-center-LocationDesc-div">
+              <div className="IndustrialExp-container-center-LocationTitle">
+                Frieburg Company, UAE
+              </div>
+              <div className="IndustrialExp-container-center-Desc">
+                Project: Etihad Rail Stage 4 Project (Project Value: X Million
+                AED).
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-LocationDesc-div">
+              <div className="IndustrialExp-container-center-LocationTitle">
+                AREVA NP, Paris La Defense, France
+              </div>
+              <div className="IndustrialExp-container-center-Desc">
+                Project 1 (M1 year): Development of a New 3D Core Monitoring
+                System “MAGELAN”. Project 2 (M2 year): Design Performance
+                Improvement Management of Engineering and Projects Organization
+                Design Center
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-LocationDesc-div">
+              <div className="IndustrialExp-container-center-LocationTitle">
+                Consolidated Contractors International Company (CCIC), Abu
+                Dhabi, UAE
+              </div>
+              <div className="IndustrialExp-container-center-Desc">
+                Project: Expansion of Abu Dhabi Polymers Company (Borouge)
+                (Project Value: 1.4 Billion USD)
+              </div>
+            </div>
+
+            <div className="IndustrialExp-container-center-LocationDesc-div">
+              <div className="IndustrialExp-container-center-LocationTitle">
+                Kharafi National Limited Company, Kuwait, Kuwait
+              </div>
+              <div className="IndustrialExp-container-center-Desc">
+                Project: Expansion of Mina Al-Ahmadi Refinery (MAA).
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -237,9 +336,15 @@ const Home = () => {
         </div>
         <MainContent>{researchText}</MainContent>
         <div className="Research-container-cards">
-          <ResearchCards />
-          <ResearchCards />
-          <ResearchCards />
+          {visibleResearchCards.map((item) => {
+            return (
+              <ResearchCards
+                title={item.title}
+                description={item.description}
+                key={item._id}
+              />
+            );
+          })}
         </div>
       </div>
       {/* END RESEARCH SECTION */}
@@ -279,16 +384,13 @@ const Home = () => {
         <MainContent>{trainingText}</MainContent>
         <div className="Training-container-outer-circle">
           <div className="Training-container-inner-circle"></div>
-          <div className="Training-container-box top">Text</div>
-          <div className="Training-container-box top-left">Text</div>
-          <div className="Training-container-box left">Text</div>
-          <div className="Training-container-box left2">Text</div>
-          <div className="Training-container-box bottom-left">Text</div>
-          <div className="Training-container-box bottom">Text</div>
-          <div className="Training-container-box bottom-right">Text</div>
-          <div className="Training-container-box right">Text</div>
-          <div className="Training-container-box right2">Text</div>
-          <div className="Training-container-box top-right">Text</div>
+          {visibleTrainingCards.map((item) => {
+            return (
+              <div className="Training-container-box" key={item._id}>
+                {item.title}
+              </div>
+            );
+          })}
         </div>
       </div>
       {/* END TRAINING SECTION */}

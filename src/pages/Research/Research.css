@@ -14,13 +14,11 @@
 }
 .research-container-card {
   width: 500px;
-  height: 399px;
+  min-height: 399px;
   padding: 26px 18px;
   gap: 16px;
   border-radius: 12px 0px 0px 0px;
-  opacity: 1; 
- 
- 
+  opacity: 1;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -29,23 +27,24 @@
   color: rgba(0, 52, 102, 1);
   transform: translateY(20px);
   transition: all 0.5s ease-in;
+  align-self: flex-start;
 }
-.research-container-card:hover{
+.research-container-card:hover {
   opacity: 1;
   transform: translateY(0);
 }
 
-.research-card-title
- {
+.research-card-title {
   color: rgba(0, 52, 102, 1);
   font-size: 20px;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0.03em;
+  text-align: center;
 }
 .research-card-desc-container {
   width: 476px;
-  height: 212px;
+  min-height: 212px;
   padding: 16px 0px 16px 0px;
   gap: 10px;
   border-radius: 4px 0px 0px 0px;
@@ -58,18 +57,15 @@
   letter-spacing: 0.03em;
   text-align: center;
   z-index: 1;
+  padding: 0 10px;
 }
-.btns-container{
-  display:flex;
- 
+.btns-container {
+  display: flex;
 }
-@media (min-width: 1025px)and (max-width:1525px) {
+@media (min-width: 1025px) and (max-width: 1525px) {
   .research-container-cards {
-  
     grid-template-columns: repeat(2, 1fr);
-   
   }
-
 }
 
 @media (max-width: 768px) {
@@ -93,17 +89,16 @@
   }
   .research-container-card {
     width: 380px;
-   
   }
   .research-card-desc {
     font-size: 15px;
-}
-.research-card-desc-container {
-  width: 366px
-}
-.btns-container{
-  display:flex;
-  flex-direction: column;
-  gap:10px;
-}
+  }
+  .research-card-desc-container {
+    width: 366px;
+  }
+  .btns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
