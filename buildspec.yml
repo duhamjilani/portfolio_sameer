@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build   # For React
+      - cd backend      # Assuming the backend is in a separate folder
+      - npm install
+      - npm run build   # For Node.js
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - docker build -t portfolio .
+      - docker build -t backend-app .
+      - docker tag react-app:latest 515117215596.dkr.ecr.eu-north-1.amazonaws.com/portfolio:latest
+      - docker tag backend-app:latest 515117215596.dkr.ecr.eu-north-1.amazonaws.com/backend-app:latest
+      - docker push 515117215596.dkr.ecr.eu-north-1.amazonaws.com/portfolio:latest
+      - docker push 515117215596.dkr.ecr.eu-north-1.amazonaws.com/backend-app:latest
