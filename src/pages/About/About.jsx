@@ -16,10 +16,16 @@ import { Title } from "../../components/index";
 
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import axios from "axios";
-import pic1 from "../../assets/pic1.jpeg";
-import trainingPic from "../../assets/training-pic.png";
 
-import pic3 from "../../assets/pic3.jpeg";
+import exp1 from "../../assets/exp1.jpeg";
+import exp2 from "../../assets/exp2.jpeg";
+import exp3 from "../../assets/exp3.jpeg";
+import exp4 from "../../assets/exp4.jpeg";
+import trainingPic2 from "../../assets/trainingPic.jpeg";
+import awardspic from "../../assets/awardsPic.jpeg";
+import pic1 from '../../assets/about1.jpeg'
+
+
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import { MDBCol, MDBContainer, MDBRow, MDBIcon } from "mdb-react-ui-kit";
@@ -28,19 +34,43 @@ import { api } from "../../constants/apiLink";
 const images1 = [
   {
     id: 1,
-    image: pic1,
+    image: exp1,
     altText: "Doctor image 1",
     description: "Doctor image 1",
   },
   {
     id: 2,
-    image: trainingPic,
+    image: exp2,
     altText: "Doctor image 2",
     description: "Doctor image 2",
   },
   {
     id: 3,
-    image: pic3,
+    image: exp3,
+    altText: "Doctor image 3",
+    description: "Doctor image 3",
+  },
+  {
+    id: 4,
+    image: exp4,
+    altText: "Doctor image 3",
+    description: "Doctor image 3",
+  },
+  {
+    id: 5,
+    image: trainingPic2,
+    altText: "Doctor image 3",
+    description: "Doctor image 3",
+  },
+  {
+    id: 6,
+    image: awardspic,
+    altText: "Doctor image 3",
+    description: "Doctor image 3",
+  },
+  {
+    id: 7,
+    image: pic1,
     altText: "Doctor image 3",
     description: "Doctor image 3",
   },

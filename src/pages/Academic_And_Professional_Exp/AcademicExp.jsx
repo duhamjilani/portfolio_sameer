@@ -3,28 +3,35 @@ import "./AcademicExp.css";
 import { Title, WorkTitle } from "../../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import axios from "axios";
-import pic1 from "../../assets/pic1.jpeg";
-import pic2 from "../../assets/pic2.jpeg";
-import pic3 from "../../assets/pic3.jpeg";
+import exp1 from "../../assets/exp1.jpeg";
+import exp2 from "../../assets/exp2.jpeg";
+import exp3 from "../../assets/exp3.jpeg";
+import exp4 from "../../assets/exp4.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { api } from "../../constants/apiLink";
 
 const images1 = [
   {
     id: 1,
-    image: pic1,
+    image: exp1,
     altText: "Doctor image 1",
     description: "Doctor image 1",
   },
   {
     id: 2,
-    image: pic2,
+    image: exp2,
     altText: "Doctor image 2",
     description: "Doctor image 2",
   },
   {
     id: 3,
-    image: pic3,
+    image: exp3,
+    altText: "Doctor image 3",
+    description: "Doctor image 3",
+  },
+  {
+    id: 4,
+    image: exp4,
     altText: "Doctor image 3",
     description: "Doctor image 3",
   },

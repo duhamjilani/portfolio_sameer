@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="footer font-Heebo">
       <div className="upper_part">
-        <h5 className="font-Roboto">Get in Touch</h5>
+        <h6 className="font-Roboto">Get in Touch</h6>
         <div className="social_media">
           <div className="icon_link">
             <FaLinkedin />

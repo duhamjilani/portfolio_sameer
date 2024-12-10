@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7702125.css",
-    "main.js": "/static/js/main.e6c9de88.js",
+    "main.css": "/static/css/main.3b59c0cb.css",
+    "main.js": "/static/js/main.0e0d25e3.js",
     "static/media/training-pic.png": "/static/media/training-pic.a9b459c2b5ed391e86b9.png",
-    "static/media/pic2.jpeg": "/static/media/pic2.5307b097567a87b66887.jpeg",
+    "static/media/about1.jpeg": "/static/media/about1.5307b097567a87b66887.jpeg",
+    "static/media/exp1.jpeg": "/static/media/exp1.ac6227647cee33f75d4d.jpeg",
     "static/media/indImage.jpeg": "/static/media/indImage.ac6227647cee33f75d4d.jpeg",
     "static/media/Matlab_Logo.png": "/static/media/Matlab_Logo.7d0ce9c0ba3cf7c1f52b.png",
     "static/media/trainingPic.jpeg": "/static/media/trainingPic.db398a22e1d17223f80f.jpeg",
     "static/media/png": "/static/media/1f03970ed1fadcf1638d0b429a02cefe.8d4f8347e2028ff8af46.png",
+    "static/media/exp2.jpeg": "/static/media/exp2.75886391ebf43da2e2c9.jpeg",
+    "static/media/exp4.jpeg": "/static/media/exp4.56a6c2312c96810061d4.jpeg",
     "static/media/researchPic.jpeg": "/static/media/researchPic.6d7d99fd1ae424052189.jpeg",
     "static/media/awardsPic.jpeg": "/static/media/awardsPic.df7f76a033ea60af1b99.jpeg",
-    "static/media/pic3.jpeg": "/static/media/pic3.d94eb78f364eb133544f.jpeg",
-    "static/media/pic1.jpeg": "/static/media/pic1.9d5cfbd4709c841217f8.jpeg",
+    "static/media/exp3.jpeg": "/static/media/exp3.1055f69e90c7e4f428c7.jpeg",
     "static/media/Card6.png": "/static/media/Card6.c4f4f3c55c678ab9a702.png",
     "index.html": "/index.html",
-    "main.b7702125.css.map": "/static/css/main.b7702125.css.map",
-    "main.e6c9de88.js.map": "/static/js/main.e6c9de88.js.map"
+    "main.3b59c0cb.css.map": "/static/css/main.3b59c0cb.css.map",
+    "main.0e0d25e3.js.map": "/static/js/main.0e0d25e3.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7702125.css",
-    "static/js/main.e6c9de88.js"
+    "static/css/main.3b59c0cb.css",
+    "static/js/main.0e0d25e3.js"
   ]
 }

@@ -42,7 +42,7 @@
 .indicators {
   display: flex;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0rem;
 }
 .indicator {
   background-color: white;
