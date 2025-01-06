@@ -25,7 +25,6 @@
 .IndustrialExp-container-center-expTitleDate {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   gap: 60px;
   width: 100%;
@@ -39,7 +38,7 @@
 }
 .IndustrialExp-container-center-expTitle {
   color: rgba(52, 64, 84, 1);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   text-align: center;
 }
@@ -50,10 +49,11 @@
 .IndustrialExp-container-center-LocationDesc {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
-  text-align: left;
+ 
   padding-left: 20px;
+  text-align: justify;
 }
 .IndustrialExp-container-center-LocationDesc-div {
   display: flex;
@@ -61,13 +61,13 @@
   align-items: flex-start;
   justify-content: center;
   gap: 20px;
-
   padding-left: 20px;
   max-width: 700px;
+ 
 }
 .IndustrialExp-container-center-LocationTitle {
   color: rgba(52, 64, 84, 1);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
 
   text-align: center;

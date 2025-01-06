@@ -2,16 +2,17 @@
   height: 100%;
   width: 100%;
   background: rgba(245, 252, 255, 1);
+  
 }
 
 .hero_section-center {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   height: 100%;
   overflow: hidden;
   width: 100%;
-  gap:15px
+  gap:30px
 }
 
 .hero_section-left_side {
@@ -26,33 +27,28 @@
 .hero_section-doctor-title {
   color: rgba(0, 0, 0, 1);
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38.4px;
-  letter-spacing: 0.03em;
+  font-size: 25px;
+ 
 }
 
 .hero_section-doctor-name {
   color: rgba(253, 111, 0, 1);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 72px;
-  letter-spacing: 0.03em;
+ 
 }
 .hero_section-right_side{
   width: 100%;
 }
 .hero_section-right_side-image-container {
   height: 60vh;
-  width: 80%;
+ max-width: 60vh;
   border-radius: 50%;
   background: linear-gradient(182.68deg, #ff8233 39.73%, rgba(255, 255, 255, 0) 78.4%);
   display: grid;
   place-items: center;
- 
   top: 200px;
-  opacity: 0; 
-  transform: translateX(100px); 
-  transition: all 0.8s ease-in-out;
 }
 .hero_section-right_side-image-container.animate {
   opacity: 1;
@@ -77,13 +73,43 @@
   height: 50vh;
   width: 70%;
 }
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid rgba(0, 52, 102, 1);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 1.2rem;
+}
 
 @media (max-width: 1721px) and (min-width:1024) {
   .hero_section-doctor-title{
     font-weight: 700;
     font-size: 30px;
-    line-height: 38.4px;
-    letter-spacing: 0.03em;
+   
   }
   .hero_section-container{
     height: 0px;
@@ -94,7 +120,11 @@ gap:0px;
   }
 }
 @media (max-width: 850px) {
-  .hero_section-right_side-image-container.animate {
+  .hero_section-right_side{
+    display: flex;
+    justify-content: center;
+  }
+  .hero_section-right_side-image-container {
     margin: 35px;
   }
 
@@ -115,6 +145,7 @@ gap:0px;
   .hero_section-left_side {
     max-width: 100%;
     text-align: center;
+    margin-top: 80px;
   }
 
 }

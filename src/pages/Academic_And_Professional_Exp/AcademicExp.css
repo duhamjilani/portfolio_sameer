@@ -145,9 +145,8 @@
   color: rgba(0, 11, 37, 0.64);
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.015em;
-  text-align: left;
+  text-align: justify;
+ 
   white-space: pre-wrap;
 }
 .div5 {
@@ -173,7 +172,5 @@
   .section-container {
     padding: 0px 0px;
   }
-  .card-date {
-    font-size: 10px;
-  }
+ 
 }

@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b59c0cb.css",
-    "main.js": "/static/js/main.26588864.js",
+    "main.css": "/static/css/main.4370a54e.css",
+    "main.js": "/static/js/main.f5a5b4c1.js",
     "static/media/training-pic.png": "/static/media/training-pic.a9b459c2b5ed391e86b9.png",
-    "static/media/about1.jpeg": "/static/media/about1.5307b097567a87b66887.jpeg",
     "static/media/exp1.jpeg": "/static/media/exp1.ac6227647cee33f75d4d.jpeg",
     "static/media/indImage.jpeg": "/static/media/indImage.ac6227647cee33f75d4d.jpeg",
     "static/media/Matlab_Logo.png": "/static/media/Matlab_Logo.7d0ce9c0ba3cf7c1f52b.png",
@@ -13,14 +12,17 @@
     "static/media/exp4.jpeg": "/static/media/exp4.56a6c2312c96810061d4.jpeg",
     "static/media/researchPic.jpeg": "/static/media/researchPic.6d7d99fd1ae424052189.jpeg",
     "static/media/awardsPic.jpeg": "/static/media/awardsPic.df7f76a033ea60af1b99.jpeg",
+    "static/media/milanouni.svg": "/static/media/milanouni.e7ed2dbc32a70bc2b70bf01c1fc28b8c.svg",
     "static/media/exp3.jpeg": "/static/media/exp3.1055f69e90c7e4f428c7.jpeg",
+    "static/media/hu.png": "/static/media/hu.5a78239af7ee57bbb6f1.png",
+    "static/media/analysis.png": "/static/media/analysis.13188aa8d077f43b2ce0.png",
     "static/media/Card6.png": "/static/media/Card6.c4f4f3c55c678ab9a702.png",
     "index.html": "/index.html",
-    "main.3b59c0cb.css.map": "/static/css/main.3b59c0cb.css.map",
-    "main.26588864.js.map": "/static/js/main.26588864.js.map"
+    "main.4370a54e.css.map": "/static/css/main.4370a54e.css.map",
+    "main.f5a5b4c1.js.map": "/static/js/main.f5a5b4c1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b59c0cb.css",
-    "static/js/main.26588864.js"
+    "static/css/main.4370a54e.css",
+    "static/js/main.f5a5b4c1.js"
   ]
 }

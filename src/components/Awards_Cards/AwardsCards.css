@@ -1,46 +1,41 @@
-.Awards-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-height: 343px;
-padding: 24px 0px 0px 0px;
-gap: 25px;
-border-radius: 8px 0px 0px 0px;
-
-background: rgba(245, 252, 255, 1);
-border-radius: 8px;
-text-align: center;
-transform: translateY(20px);
-transition: all 0.5s ease-in;
+.Awards-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 343px;
+  padding: 24px 0px 0px 0px;
+  gap: 25px;
+  border-radius: 8px 0px 0px 0px;
+  background: rgba(245, 252, 255, 1);
+  border-radius: 8px;
+  text-align: center;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in;
 }
 
-.Awards-card:hover{
-    opacity: 1;
-    transform: translateY(0);
-  }
-.Trophy{
-  
-    font-size: 70px;
-    animation: colorChange 2s infinite;
+.Awards-card:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+.Trophy {
+  font-size: 70px;
+  animation: colorChange 2s infinite;
 }
 @keyframes colorChange {
-    0%, 100% {
-      color: rgba(237, 221, 43, 1); 
-    }
-    50% {
-      color: orange; 
-    }
+  0%,
+  100% {
+    color: rgba(237, 221, 43, 1);
   }
-.Awards-text{
-    color: rgba(0, 0, 0, 1);
-font-size: 15px;
-font-weight: 400;
-
-letter-spacing: 0.03em;
-text-align: center;
-max-width: fit-content;
-
-
+  50% {
+    color: orange;
+  }
+}
+.Awards-text {
+  color: rgba(0, 0, 0, 1);
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  max-width: fit-content;
 }

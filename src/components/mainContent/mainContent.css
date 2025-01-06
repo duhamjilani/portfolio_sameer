@@ -1,23 +1,20 @@
 .mainContent-container {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 36px;
-  letter-spacing: 0.03em;
   white-space: pre-wrap;
+  text-align: justify;
 }
 @media (max-width: 768px) {
   .mainContent-container {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 36px;
-    letter-spacing: 0.03em;
+   
   }
 }
 @media (max-width: 1024px) and (min-width: 769px) {
   .mainContent-container {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 36px;
-    letter-spacing: 0.03em;
+   
   }
 }

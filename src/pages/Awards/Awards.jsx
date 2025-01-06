@@ -5,8 +5,10 @@ import { Title } from "../../components";
 import awardspic from "../../assets/awardsPic.jpeg";
 import axios from "axios";
 import { api } from "../../constants/apiLink";
+import { Helmet } from 'react-helmet-async';
 const Awards = () => {
   const [awards, setAwards] = useState([]);
+   const [ImageSrc, setImageSrc] = useState("");
 
   const handleFetchAwards = async () => {
     try {
@@ -24,11 +26,41 @@ const Awards = () => {
     handleFetchAwards();
   }, []);
 
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await axios.get(`${api}images/getImages/awards`);
+        console.log(response);
+        if (response.data.images) {
+          setImageSrc(`${response.data.images[0].path}`);
+        }
+      } catch (error) {
+        console.error("Error fetching the latest image:", error);
+      }
+    };
+
+    fetchImage();
+  }, []);
+
+
   return (
     <div className="AwardsAndHonors-container section-container font-Poppins">
+      <Helmet>
+  <title>Awards - Dr. Sameer Al-Dahidi</title>
+  <meta
+    name="description"
+    content="Discover the awards and honors achieved by Dr. Sameer Al-Dahidi for outstanding contributions in academia and industry."
+  />
+  <meta
+    name="keywords"
+    content="awards, honors, achievements, Dr. Sameer Al-Dahidi, academic awards, professional recognition"
+  />
+  <link rel="canonical" href="https://sameer-aldahidi.com/awards" />
+</Helmet>
+
       <Title MainTitle="Honors And Awards" />
       <div className="banner-container">
-        <img src={awardspic} alt="img" className="banner-Image" />
+        <img src={ImageSrc} alt="img" className="banner-Image" />
       </div>
       <div className="Awards-cards">
         {awards.map((award) => {

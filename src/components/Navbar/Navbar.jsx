@@ -1,28 +1,59 @@
-import { React, useState, useRef, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import MainButton from "../mainButton/MainButton";
+import { api } from "../../constants/apiLink";
+
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [cvPath, setCvPath] = useState(""); // State to store the latest CV path
+
   const dropdownRef = useRef(null);
+
+  // Toggle menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
   const openCV = () => {
-    window.open(
-      `${process.env.PUBLIC_URL}/Al-Dahidi Sameer’s CV.pdf`,
-      "_blank"
-    );
+    if (cvPath) {
+     
+      window.open(cvPath, "_blank");
+    }
   };
+
+  // Toggle dropdown menu visibility
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+ 
+  useEffect(() => {
+    const fetchLatestCV = async () => {
+      try {
+        const response = await fetch(`${api}cv/latest`);
+        const data = await response.json();
+        if (data.path) {
+        
+          setCvPath(`${data.path}`);
+         
+        }
+      } catch (error) {
+        console.error("Error fetching the latest CV:", error);
+      }
+    };
+
+    fetchLatestCV();
+  }, []); // Only run once when the component is mounted
+
+  // Handle clicking outside dropdown to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (!dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -32,6 +63,7 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <div>
       <nav className="navBar font-Poppins">

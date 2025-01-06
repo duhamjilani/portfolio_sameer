@@ -7,10 +7,9 @@
   justify-content: center;
   align-items: center;
 }
-.My_projects-counters {
+.countersContainer {
   display: flex;
   gap: 32px;
-
   align-items: center;
   justify-content: center;
   width: 100%;

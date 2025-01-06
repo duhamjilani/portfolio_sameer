@@ -8,12 +8,9 @@
 }
 .ExpTitle_title {
   color: rgba(52, 64, 84, 1);
-
- 
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.015em;
+ 
   
   
 }
@@ -23,8 +20,6 @@
 
   font-size: 20px;
   font-weight: 400;
-  line-height: 30px;
-  letter-spacing: -0.015em;
   max-width: 500px;
 }
 @media (max-width: 1024px) {

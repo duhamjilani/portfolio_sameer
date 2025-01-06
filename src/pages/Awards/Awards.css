@@ -28,7 +28,7 @@
 }
 .AwardsTItle {
   font-weight: 600;
-  font-size: larger;
+  font-size:medium;
 }
 .Trophy {
   color: rgba(237, 221, 43, 1);
@@ -36,10 +36,10 @@
 }
 .Awards-text {
   color: rgba(0, 0, 0, 1);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
 
-  letter-spacing: 0.03em;
+  
   text-align: center;
   max-width: fit-content;
 }

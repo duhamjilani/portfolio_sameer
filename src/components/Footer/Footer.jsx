@@ -4,11 +4,13 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaYahoo } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="footer font-Heebo">
       <div className="upper_part">
-        <h6 className="font-Roboto">Get in Touch</h6>
+        <p className="font-Roboto">Get in Touch</p>
         <div className="social_media">
           <div className="icon_link">
             <FaLinkedin />
@@ -22,7 +24,7 @@ const Footer = () => {
               sameer.aldahidi@gju.edu.jo
             </a>
           </div>
-          <div className="icon_link">
+          {/* <div className="icon_link">
             <MdEmail />
             <a href="mailto:sameer.aldahidi@polimi.it">
               sameer.aldahidi@polimi.it
@@ -31,17 +33,17 @@ const Footer = () => {
           <div className="icon_link">
             <FaYahoo />
             <a href="mailto:sameer.dahidi@yahoo.com">sameer.dahidi@yahoo.com</a>
-          </div>
+          </div> */}
           <div className="icon_link">
-            <FaPhone />
+          <FaWhatsapp />
             <div className="phoneNumber">+962 77 6 93 98 91</div>
           </div>
         </div>
       </div>
-      <hr className="line" />
+      {/* <hr className="line" />
       <div className="footer_text ">
         <p>Copyright ©2024 Nexa Web & App Freelancers All rights reserved </p>
-      </div>
+      </div> */}
     </footer>
   );
 };

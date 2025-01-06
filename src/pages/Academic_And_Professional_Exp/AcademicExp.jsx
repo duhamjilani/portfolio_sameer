@@ -9,33 +9,7 @@ import exp3 from "../../assets/exp3.jpeg";
 import exp4 from "../../assets/exp4.jpeg";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { api } from "../../constants/apiLink";
-
-const images1 = [
-  {
-    id: 1,
-    image: exp1,
-    altText: "Doctor image 1",
-    description: "Doctor image 1",
-  },
-  {
-    id: 2,
-    image: exp2,
-    altText: "Doctor image 2",
-    description: "Doctor image 2",
-  },
-  {
-    id: 3,
-    image: exp3,
-    altText: "Doctor image 3",
-    description: "Doctor image 3",
-  },
-  {
-    id: 4,
-    image: exp4,
-    altText: "Doctor image 3",
-    description: "Doctor image 3",
-  },
-];
+import { Helmet } from "react-helmet-async";
 
 const AcademicExp = () => {
   const [fullData, setFullData] = useState([]);
@@ -45,22 +19,39 @@ const AcademicExp = () => {
   const [showTeaching, setShowTeaching] = useState(false);
   const [showStudnetAdvising, setShowStudnetAdvising] = useState(false);
   const [showExaminationBoards, setShowExaminationBoards] = useState(false);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await axios.get(`${api}images/getImages/academic`);
+        console.log(response);
+        if (response.data.images) {
+          setImages(response.data.images);
+        }
+      } catch (error) {
+        console.error("Error fetching the latest image:", error);
+      }
+    };
+
+    fetchImage();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prevSlide) =>
-        prevSlide === images1.length - 1 ? 0 : prevSlide + 1
+        prevSlide === images.length - 1 ? 0 : prevSlide + 1
       );
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   const nextSlide = () => {
-    setSlide(slide === images1.length - 1 ? 0 : slide + 1);
+    setSlide(slide === images.length - 1 ? 0 : slide + 1);
   };
   const prevSlide = () => {
-    setSlide(slide === 0 ? images1.length - 1 : slide - 1);
+    setSlide(slide === 0 ? images.length - 1 : slide - 1);
   };
 
   const fetchAllData = async () => {
@@ -79,19 +70,39 @@ const AcademicExp = () => {
   useEffect(() => {
     fetchAllData();
   }, []);
+  const closeAll = () => {
+    setShowCommittess(false);
+    setShowExaminationBoards(false);
+    setShowStudnetAdvising(false);
+    setShowTeaching(false);
+    setShowUniversity(false);
+  };
 
   return (
     <div className="Experience-container section-container">
+      <Helmet>
+        <title>Academic & Professional Experience - Dr. Sameer Al-Dahidi</title>
+        <meta
+          name="description"
+          content="Learn about the academic and professional journey of Dr. Sameer Al-Dahidi, including teaching, research, and leadership roles."
+        />
+        <meta
+          name="keywords"
+          content="academic experience, professional experience, teaching, research, Dr. Sameer Al-Dahidi, professor , Sameer Al-Dahidi , Dr. Sameer Dahidi"
+        />
+        <link rel="canonical" href="https://sameer-aldahidi.com/academicExp" />
+      </Helmet>
+
       <Title MainTitle=" Academic And Professional Experience" />
       <div className="expImageSlider">
         <BsArrowLeftCircleFill
           className="arrow arrow-left "
           onClick={prevSlide}
         />
-        {images1.map((data, idx) => {
+        {images.map((data, idx) => {
           return (
             <img
-              src={data.image}
+              src={data.path}
               alt={data.altText}
               key={idx}
               className={slide === idx ? "slide" : "slide slide-hidden"}
@@ -103,7 +114,7 @@ const AcademicExp = () => {
           onClick={nextSlide}
         />
         <span className="indicators">
-          {images1.map((_, idx) => {
+          {images.map((_, idx) => {
             return (
               <button
                 key={idx}
@@ -121,7 +132,10 @@ const AcademicExp = () => {
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"
-              onClick={() => setShowCommittess(!showCommittess)}
+              onClick={() => {
+                closeAll();
+                setShowCommittess(!showCommittess);
+              }}
             >
               <IoIosArrowDown
                 className={showCommittess ? "arrow-open" : "arrow-icon"}
@@ -253,7 +267,10 @@ const AcademicExp = () => {
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"
-              onClick={() => setShowUniversity(!showUniversity)}
+              onClick={() => {
+                closeAll();
+                setShowUniversity(!showUniversity);
+              }}
             >
               <IoIosArrowDown
                 className={showUniversity ? "arrow-open" : "arrow-icon"}
@@ -299,7 +316,10 @@ const AcademicExp = () => {
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"
-              onClick={() => setShowTeaching(!showTeaching)}
+              onClick={() => {
+                closeAll();
+                setShowTeaching(!showTeaching);
+              }}
             >
               <IoIosArrowDown
                 className={showTeaching ? "arrow-open" : "arrow-icon"}
@@ -423,7 +443,10 @@ const AcademicExp = () => {
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"
-              onClick={() => setShowStudnetAdvising(!showStudnetAdvising)}
+              onClick={() => {
+                closeAll();
+                setShowStudnetAdvising(!showStudnetAdvising);
+              }}
             >
               <IoIosArrowDown
                 className={showStudnetAdvising ? "arrow-open" : "arrow-icon"}
@@ -521,7 +544,10 @@ const AcademicExp = () => {
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"
-              onClick={() => setShowExaminationBoards(!showExaminationBoards)}
+              onClick={() => {
+                closeAll();
+                setShowExaminationBoards(!showExaminationBoards);
+              }}
             >
               <IoIosArrowDown
                 className={showExaminationBoards ? "arrow-open" : "arrow-icon"}

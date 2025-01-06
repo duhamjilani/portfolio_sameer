@@ -9,7 +9,6 @@
   background: rgba(245, 252, 255, 1);
   display: flex;
   align-items: center;
-
   height: 70vh;
 }
 .About_ImageSlider-container-inner {
@@ -45,7 +44,9 @@
   height: 100%;
   width: 50%;
   margin: 40px;
+  
 }
+
 .About_ImageSlider-container-doctor-name {
   color: #fd6f00;
   font-weight: 600;
@@ -59,6 +60,7 @@
 .About_ImageSlider-container-text {
   font-size: 20px;
   max-width: 900px;
+  text-align: justify;
 }
 .indicatorAbout {
   background-color: white;
@@ -172,8 +174,28 @@ ul.timeline-3 > li:before {
   z-index: 400;
 }
 
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px; 
+}
+
+.education-logo {
+  width: 7vw; 
+  height: auto;
+  margin-right: 15px; 
+}
+
+.education-content {
+  flex: 1; 
+}
 .bg-custom-color {
   background-color: rgba(245, 252, 255, 1);
+
+}
+.par{
+  text-align: justify;
 }
 .timelineAbout {
   display: flex;
@@ -197,41 +219,12 @@ ul.timeline-3 > li:before {
   justify-content: center;
   position: relative;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  animation: customAni 2s ease 0s infinite normal none;
+  /* transition: transform 0.3s ease;
+  animation: customAni 2s ease 0s infinite normal none; */
 }
 
-@keyframes customAni {
-  0%,
-  100% {
-    transform: translateX(0%);
-    transform-origin: 50% 50%;
-  }
 
-  15% {
-    transform: translateX(-30px) rotate(6deg);
-  }
 
-  30% {
-    transform: translateX(15px) rotate(-6deg);
-  }
-
-  45% {
-    transform: translateX(-15px) rotate(3.6deg);
-  }
-
-  60% {
-    transform: translateX(9px) rotate(-2.4deg);
-  }
-
-  75% {
-    transform: translateX(-6px) rotate(1.2deg);
-  }
-}
-
-.circle:hover {
-  transform: scale(1.1);
-}
 
 .lineTimeAbout {
   width: 60px;
@@ -276,7 +269,7 @@ ul.timeline-3 > li:before {
   text-align: end;
 }
 .Language-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 28.13px;
   letter-spacing: 0.05em;
@@ -306,19 +299,8 @@ ul.timeline-3 > li:before {
   width: 100%;
   justify-content: center;
   align-items: center;
-  opacity: 0;
  
-  animation: fadeInSlideUp 2s infinite;
-}
-@keyframes fadeInSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+ 
 }
 
 .computerSkills-card-Circle {
@@ -337,7 +319,7 @@ ul.timeline-3 > li:before {
 }
 .computerSkills-text {
   color: rgba(84, 84, 84, 1);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 18px;
 }
@@ -371,7 +353,14 @@ ul.timeline-3 > li:before {
   align-items: center;
   justify-content: space-evenly;
 }
-.ProfessionalWebPages-container-card {
+.ProfessionalWebPages-container-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+  height:12vh;
+}
+.ProfessionalWebPages-container-CircleCard {
   border: 2px solid #fd6f00;
   padding: 25px;
   border-radius: 50%;
@@ -382,16 +371,16 @@ ul.timeline-3 > li:before {
   justify-content: center;
   text-align: center;
 }
-.ProfessionalWebPages-container-card a {
+.ProfessionalWebPages-container-CircleCard a {
   text-decoration: underline;
   color: #333;
   font-weight: 600;
 }
-.ProfessionalWebPages-container-card:hover{
+.ProfessionalWebPages-container-CircleCard:hover{
   background-color: rgb(230, 185, 127);
   transition: background-color 0.3s;
 }
-.ProfessionalWebPages-container-card-icon {
+.ProfessionalWebPages-container-CircleCard-icon {
   font-size: 30px;
   color: #333;
 }
@@ -404,9 +393,7 @@ ul.timeline-3 > li:before {
     top: 50%;
     right: 5%;
   }
-  /* .indicatorsAbout{
-    bottom: 10px;
-  } */
+  
   .About_ImageSlider-container-text {
     font-size: 15px;
     max-width: 900px;
@@ -503,6 +490,12 @@ ul.timeline-3 > li:before {
   .Education-container {
     height: 15vh;
   }
+  .education-content h6{
+    font-size: 12px;
+  }
+  .par{
+    font-size: 10px;
+  }
   .computerSkills-container{
     height: 70vh;
   }
@@ -512,20 +505,24 @@ ul.timeline-3 > li:before {
     gap: 15px;
   }
   .ProfessionalWebPages-container{
-    height: 60vh;
+    height: 100vh;
+    gap:30px;
   }
   .ProfessionalWebPages-container-cards {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
-  .ProfessionalWebPages-container-card {
+  .ProfessionalWebPages-container-card p{
+    font-size: 10px;
+  }
+  .ProfessionalWebPages-container-CircleCard {
     padding: 10px;
     border-radius: 50%;
-    height: 10vh;
-    width: 20vw;
+    height: 5vh;
+    width: 9vw;
   }
-  .ProfessionalWebPages-container-card-icon {
+  .ProfessionalWebPages-container-CircleCard-icon {
     font-size: 15px;
   }
 

@@ -1,15 +1,48 @@
-import React from "react";
+import {React,useState,useEffect}from "react";
 import "./IndustrialExp.css";
 import { Title } from "../../components/index";
 import ExpTimeLine from "../../components/ExpTimeline/ExpTimeline";
 import IndImage from "../../assets/indImage.jpeg";
+import axios from 'axios'
+import { api } from "../../constants/apiLink";
+import { Helmet } from 'react-helmet-async';
+
 const IndustrialExp = () => {
+  const [ImageSrc, setImageSrc] = useState("");
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await axios.get(`${api}images/getImages/industrial`);
+        console.log(response);
+        if (response.data.images) {
+          setImageSrc(`${response.data.images[0].path}`);
+        }
+      } catch (error) {
+        console.error("Error fetching the latest image:", error);
+      }
+    };
+
+    fetchImage();
+  }, []);
   return (
     <>
       <div className="IndustrialExp-container font-Poppins section-container">
+      <Helmet>
+  <title>Industrial Experience - Dr. Sameer Al-Dahidi</title>
+  <meta
+    name="description"
+    content="Explore the industrial experience of Dr. Sameer Al-Dahidi, including impactful projects and collaborations with industry leaders."
+  />
+  <meta
+    name="keywords"
+    content="industrial experience, industry projects, engineering, professional experience, Dr. Sameer Al-Dahidi"
+  />
+  <link rel="canonical" href="https://sameer-aldahidi.com/industrialExp" />
+</Helmet>
+
         <Title MainTitle="Journey Of Industrial Experience" />
         <div className="banner-container">
-          <img src={IndImage} alt="img" className="banner-Image" />
+          <img src={ImageSrc} alt="img" className="banner-Image" />
         </div>
 
         <div className="IndustrialExp-container-center">

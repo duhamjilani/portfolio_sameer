@@ -16,12 +16,9 @@ import "./home.css";
 import { useInView } from "react-intersection-observer";
 import axios from "axios";
 import { api } from "../../constants/apiLink";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
   const [achievementText, setAchievementText] = useState("");
   const [counter1, setCounter1] = useState("");
   const [counter2, setCounter2] = useState("");
@@ -207,6 +204,18 @@ const Home = () => {
 
   return (
     <div className="font-Poppins">
+      <Helmet>
+        <title>Dr. Sameer Al-Dahidi - Official Portfolio</title>
+        <meta
+          name="description"
+          content="Welcome to Dr. Sameer Al-Dahidi's official portfolio. Explore research, achievements, and contributions in engineering and academia."
+        />
+        <meta
+          name="keywords"
+          content="Dr. Sameer Al-Dahidi,  Sameer Al-Dahidi , Dr. Sameer Dahidi, portfolio, engineering, research, academic contributions"
+        />
+        <link rel="canonical" href="https://sameer-aldahidi.com/" />
+      </Helmet>
       <Hero />
 
       {/* START MY PROJECTS SECTION */}
@@ -215,7 +224,7 @@ const Home = () => {
         <div className="My_projects_text">
           <MainContent>{achievementText}</MainContent>
         </div>
-        <div className="My_projects-counters">
+        <div className="countersContainer">
           <Counter
             CounterTitle="Years Experience"
             endNum={counter1}
