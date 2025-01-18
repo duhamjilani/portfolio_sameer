@@ -49,7 +49,7 @@ const Training = () => {
       .then((response) => {
         const SupervisedCoSupervisedTheses = response.data.data.content;
         setCounter2(SupervisedCoSupervisedTheses);
-        console.log(counter2)
+       
        
       })
       .catch((error) => {
@@ -82,7 +82,7 @@ const Training = () => {
   }, []);
 
   return (
-    <div className="TrainingAndMembership-container section-container font-Poppins">
+    <div className="TrainingAndMembership-container section-container ">
       <Helmet>
   <title>Training & Certifications - Dr. Sameer Al-Dahidi</title>
   <meta

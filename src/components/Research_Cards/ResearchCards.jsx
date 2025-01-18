@@ -10,7 +10,7 @@ const ResearchCards = ({ title, description }) => {
   };
   return (
     <div
-      className="research-container-cardHome font-Poppins"
+      className="research-container-cardHome "
       style={{
         backgroundImage: `url(${researchCard})`,
         backgroundSize: "cover",

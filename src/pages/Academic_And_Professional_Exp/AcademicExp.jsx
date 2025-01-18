@@ -128,7 +128,7 @@ const AcademicExp = () => {
         </span>
       </div>
       <div className="Experience-container expSecondSection">
-        <div className="Experience-container-horizontal-cards font-Poppins">
+        <div className="Experience-container-horizontal-cards ">
           <div className="oneSectionContainer">
             <div
               className="Experience-container-horizontal-card"

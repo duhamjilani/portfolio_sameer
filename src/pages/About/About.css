@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   height: 50vh;
-  width: 80%;
+  width: 90%;
 }
 .AboutSlide {
   border-radius: 0.5rem;
@@ -44,7 +44,6 @@
   height: 100%;
   width: 50%;
   margin: 40px;
-  
 }
 
 .About_ImageSlider-container-doctor-name {
@@ -92,7 +91,7 @@
 }
 .arrowAbout-right {
   top: 50%;
-  right: 7%;
+  right: 3%;
 }
 
 .personalInfo-container {
@@ -121,7 +120,7 @@
   padding: 8px 0px 0px 0px;
   gap: 10px;
   border-radius: 8px 0px 0px 0px;
- 
+
   background-color: rgba(245, 252, 255, 1);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -174,27 +173,25 @@ ul.timeline-3 > li:before {
   z-index: 400;
 }
 
-
 .education-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .education-logo {
-  width: 7vw; 
+  width: 7vw;
   height: auto;
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .education-content {
-  flex: 1; 
+  flex: 1;
 }
 .bg-custom-color {
   background-color: rgba(245, 252, 255, 1);
-
 }
-.par{
+.par {
   text-align: justify;
 }
 .timelineAbout {
@@ -223,9 +220,6 @@ ul.timeline-3 > li:before {
   animation: customAni 2s ease 0s infinite normal none; */
 }
 
-
-
-
 .lineTimeAbout {
   width: 60px;
   height: 2px;
@@ -253,8 +247,6 @@ ul.timeline-3 > li:before {
   width: 600px;
   height: 20.3px;
   border-radius: 50px;
- 
- 
 }
 .language-measure.good {
   background: linear-gradient(90deg, #fd6f00 60.13%, #a1bdd0 73.19%);
@@ -299,8 +291,6 @@ ul.timeline-3 > li:before {
   width: 100%;
   justify-content: center;
   align-items: center;
- 
- 
 }
 
 .computerSkills-card-Circle {
@@ -343,47 +333,82 @@ ul.timeline-3 > li:before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
   width: 100%;
-  height: 40vh;
+  height: 50vh;
+
+  padding: 30px 0;
 }
-.ProfessionalWebPages-container-cards {
+
+.ProfessionalWebPages-slider {
   width: 100%;
+  height: 30vh;
+  border: 2px solid #fd6f00;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-}
-.ProfessionalWebPages-container-card{
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap:10px;
-  height:12vh;
+  gap: 10px;
 }
-.ProfessionalWebPages-container-CircleCard {
-  border: 2px solid #fd6f00;
-  padding: 25px;
-  border-radius: 50%;
-  height: 10vh;
-  width: 5vw;
+
+.ProfessionalWebPages-cards1 {
   display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
   align-items: center;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.ProfessionalWebPages-container-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 4vw;
+  height: 4vw;
+  display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
-.ProfessionalWebPages-container-CircleCard a {
-  text-decoration: underline;
-  color: #333;
-  font-weight: 600;
+
+.ProfessionalWebPages-container-card:hover {
+  transform: scale(1.05);
 }
-.ProfessionalWebPages-container-CircleCard:hover{
-  background-color: rgb(230, 185, 127);
-  transition: background-color 0.3s;
+
+.logoImage {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
-.ProfessionalWebPages-container-CircleCard-icon {
-  font-size: 30px;
-  color: #333;
+
+.ProfessionalWebPages-container-card:hover .logoImage {
+  transform: scale(1.1);
 }
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 5vw;
+}
+
+.slider-arrow {
+  font-size: 2rem;
+  color: #fd6f00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slider-arrow:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 1100px) {
   .arrowAbout-left {
     top: 50%;
@@ -393,7 +418,7 @@ ul.timeline-3 > li:before {
     top: 50%;
     right: 5%;
   }
-  
+
   .About_ImageSlider-container-text {
     font-size: 15px;
     max-width: 900px;
@@ -409,21 +434,21 @@ ul.timeline-3 > li:before {
   }
 }
 @media (min-width: 300px) and (max-width: 900px) {
-  .About_ImageSlider-container{
+  .About_ImageSlider-container {
     height: 100vh;
     margin-bottom: 20px;
-   
   }
-  .AboutImageSlider{
+  .AboutImageSlider {
     width: 100%;
   }
-  .About_ImageSlider-container-inner{
+  .About_ImageSlider-container-inner {
     flex-direction: column;
-    gap:0px;
+    gap: 0px;
     margin-top: 180px;
-
   }
-  .indicatorsAbout{display: none;}
+  .indicatorsAbout {
+    display: none;
+  }
   .arrowAbout-left {
     top: 100%;
     right: 80%;
@@ -490,13 +515,13 @@ ul.timeline-3 > li:before {
   .Education-container {
     height: 15vh;
   }
-  .education-content h6{
+  .education-content h6 {
     font-size: 12px;
   }
-  .par{
+  .par {
     font-size: 10px;
   }
-  .computerSkills-container{
+  .computerSkills-container {
     height: 70vh;
   }
   .computerSkills-cards {
@@ -504,26 +529,15 @@ ul.timeline-3 > li:before {
     flex-direction: column;
     gap: 15px;
   }
-  .ProfessionalWebPages-container{
+  .ProfessionalWebPages-container {
     height: 100vh;
-    gap:30px;
+    gap: 30px;
   }
-  .ProfessionalWebPages-container-cards {
-    display: flex;
+  .ProfessionalWebPages-cards1 {
     flex-direction: column;
-    gap: 5px;
   }
-  .ProfessionalWebPages-container-card p{
-    font-size: 10px;
-  }
-  .ProfessionalWebPages-container-CircleCard {
-    padding: 10px;
-    border-radius: 50%;
-    height: 5vh;
-    width: 9vw;
-  }
-  .ProfessionalWebPages-container-CircleCard-icon {
-    font-size: 15px;
+  .ProfessionalWebPages-slider {
+    height: 100%;
   }
 
   .computerSkills-card-Circle {
@@ -551,5 +565,9 @@ ul.timeline-3 > li:before {
   .computerSkills-card-Circle-img.office {
     width: 30px;
     height: 30px;
+  }
+  .ProfessionalWebPages-container-card{
+height: 10vw;
+width: 10vw;
   }
 }

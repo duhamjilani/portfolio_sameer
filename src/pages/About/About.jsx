@@ -29,7 +29,15 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import { MDBCol, MDBContainer, MDBRow, MDBIcon } from "mdb-react-ui-kit";
 import { api } from "../../constants/apiLink";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import researchGate from "../../assets/researchGate.png";
+import GJU from "../../assets/GJU.png";
+import google from "../../assets/google.png";
+import linkedin from "../../assets/linkedin.png";
+import orcid from "../../assets/orcid.png";
+import energyGroup from "../../assets/energyGroup.png";
+import scopus from "../../assets/scopus.jpg";
+import webOfScience from "../../assets/web-of-science.png";
 
 const About = () => {
   const [Item, setItem] = useState([]);
@@ -39,6 +47,7 @@ const About = () => {
   const [loading, setLoading] = useState(true);
 
   const [aboutText, setAboutText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
   const fetchData = () => {
     axios
       .post(`${api}content/get-content`, {
@@ -91,14 +100,82 @@ const About = () => {
   const prevSlide = () => {
     setSlide(slide === 0 ? images.length - 1 : slide - 1);
   };
+
+  const cards2 = [
+    {
+      link: "https://www.researchgate.net/profile/Sameer-Al-Dahidi",
+      img: researchGate,
+    },
+    {
+      link: "https://www.gju.edu.jo/content/dr-sameer-al-dahidi-8520",
+      img: GJU,
+    },
+    {
+      link: "https://www.linkedin.com/in/sameer-al-dahidi-b2031b120/",
+      img: linkedin,
+    },
+    {
+      link: "https://scholar.google.com/citations?user=TdFloggAAAAJ&hl=en%20",
+      img: google,
+    },
+    {
+      link: "https://www.scopus.com/authid/detail.uri?authorId=56271830200",
+      img: scopus,
+    },
+    {
+      link: "https://www.webofscience.com/wos/author/record/AFM-7470-2022",
+      img: webOfScience,
+    },
+    { link: "https://orcid.org/0000-0002-7745-7784", img: orcid },
+    {
+      link: "https://research.ju.edu.jo/research/groups/ERT/Home.aspx",
+      img: energyGroup,
+    },
+  ];
+  const nextSlide1 = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Reset to 0 when reaching the end
+    );
+  };
+  
+  // Function to go to the previous 3 cards
+  const prevSlide1 = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 3 >= 0 ? prevIndex - 3 : cards2.length - 3 // Wrap around to the last 3 cards
+    );
+  };
+  
+  // Slice the visible cards
+  const visibleCards = cards2.slice(currentIndex, currentIndex + 3);
+  
+  // Interval effect to automatically cycle through cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Same logic for auto-slide
+      );
+    }, 3000); // Set your desired interval time (2 seconds here)
+  
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, [cards2]);
+
+  // Get the visible cards
+  
+
   return (
     <div className="About-container">
       <Helmet>
-  <title>About Dr. Sameer Al-Dahidi</title>
-  <meta name="description" content="Learn more about Dr. Sameer Al-Dahidi's academic background, professional experience, and achievements and skills." />
-  <meta name="keywords" content="Dr. Sameer Al-Dahidi, about, academic background, professional experience, achievements ,skills" />
-  <link rel="canonical" href="https://sameer-aldahidi.com/about" />
-</Helmet>
+        <title>About Dr. Sameer Al-Dahidi</title>
+        <meta
+          name="description"
+          content="Learn more about Dr. Sameer Al-Dahidi's academic background, professional experience, and achievements and skills."
+        />
+        <meta
+          name="keywords"
+          content="Dr. Sameer Al-Dahidi, about, academic background, professional experience, achievements ,skills"
+        />
+        <link rel="canonical" href="https://sameer-aldahidi.com/about" />
+      </Helmet>
       <div className="About_ImageSlider-container  font-Poppins">
         <div className="About_ImageSlider-container-inner">
           <div className="About_ImageSlider-container-left_side">
@@ -159,7 +236,7 @@ const About = () => {
             <div className="personalInfo-icon-box">
               <FaBirthdayCake className="personalInfo-icon-style" />
             </div>
-            <div className="personalInfo-text-style font-Poppins">
+            <div className="personalInfo-text-style ">
               Nov 12th, 1986, Kuwait
             </div>
           </div>
@@ -168,16 +245,14 @@ const About = () => {
             <div className="personalInfo-icon-box">
               <FaIdCard className="personalInfo-icon-style" />
             </div>
-            <div className="personalInfo-text-style font-Poppins">
-              Jordanian
-            </div>
+            <div className="personalInfo-text-style ">Jordanian</div>
           </div>
 
           <div className="personalInfo-card">
             <div className="personalInfo-icon-box">
               <MdFamilyRestroom className="personalInfo-icon-style" />
             </div>
-            <div className="personalInfo-text-style font-Poppins">
+            <div className="personalInfo-text-style ">
               Married(two children)
             </div>
           </div>
@@ -186,97 +261,19 @@ const About = () => {
             <div className="personalInfo-icon-box">
               <LuPhone className="personalInfo-icon-style" />
             </div>
-            <div className="personalInfo-text-style font-Poppins">
-              +962 77 6 93 98 91
-            </div>
+            <div className="personalInfo-text-style ">+962 77 6 93 98 91</div>
           </div>
           <div className="personalInfo-card">
             <div className="personalInfo-icon-box">
               <MdOutlineMail className="personalInfo-icon-style" />
             </div>
-            <div className="personalInfo-text-style font-Poppins">
+            <div className="personalInfo-text-style ">
               sameer.aldahidi@gju.edu.jo
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="bg-custom-color ">
-        <Title MainTitle="Education" />
 
-
-        <MDBContainer className="py-5">
-          <MDBRow>
-            <MDBCol md="6" offsetMd="3">
-              <ul className="timeline-3">
-                <li>
-                  <FaGraduationCap
-                    style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}
-                  />
-
-                  <h6>Ph.D. in Energy and Nuclear Science and Technology</h6>
-                  <div className="card-date">January 2013 – March 2016</div>
-                  <p className="mt-2 par">
-                    1st (Italy), 7th (Europe), 18th (world) in the subject of
-                    Engineering and Technology, and 123rd (world), entering the
-                    world’s top 9% of excellent universities. Thesis
-                    “Development of Data-Driven Methods for Prognostics and
-                    Health Management under Variable Operational Conditions in
-                    Industrial Equipment”. Marie Curie Ph.D. Fellowship within
-                    the European Project “Innovation through Human Factors in
-                    risk analysis and management” (InnHF). Ph.D. with Honors
-                    (the highest possible grade).
-                  </p>
-                </li>
-                <li>
-                  <FaGraduationCap
-                    style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}
-                  />
-
-                  <h6>M.Sc. in Nuclear Energy, Operations</h6>
-                  <div className="card-date">
-                    September 2010 – September 2012
-                  </div>
-                  <p className="mt-2 par">
-                    École Centrale Paris and Université Paris-Sud XI, France GPA
-                    of 16/20 (Very Good – Rank 1 out of 12). Master Scholarship
-                    from French Government, 2010-2012.
-                  </p>
-                </li>
-                <li>
-                  <FaGraduationCap
-                    style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}
-                  />
-
-                  <h6>B.Sc. in Electrical and Computer Engineering</h6>
-                  <div className="card-date">September 2004 – June 2008</div>
-                  <p className="mt-2 par">
-                    The Hashemite University, Jordan GPA of 3.92/4.0 (Excellent
-                    – Rank 1 out of 121). Rank 2nd out of 535 graduates from all
-                    Jordanian universities in the University Efficiency
-                    Examination, held by the Ministry of Higher Education and
-                    Scientific Research, in the Electrical Engineering
-                    specialization, Jordan.
-                  </p>
-                </li>
-                <li>
-                  <FaGraduationCap
-                    style={{ color: "rgba(0, 52, 102, 1)", fontSize: "40px" }}
-                  />
-
-                  <h6>
-                    General Secondary Education Certificate (Scientific Stream)
-                  </h6>
-                  <div className="card-date">September 2003 – August 2004</div>
-                  <p className="mt-2 par">
-                    Alshamila Secondary School, Jordan GPA of 92.6/100
-                    (Excellent).
-                  </p>
-                </li>
-              </ul>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </div> */}
       <div className="bg-custom-color">
         <Title MainTitle="Education" />
 
@@ -367,7 +364,7 @@ const About = () => {
                 className="computerSkills-card-Circle-img"
               />
             </div>
-            <div className="computerSkills-text font-Poppins">Matlab</div>
+            <div className="computerSkills-text ">Matlab</div>
           </div>
 
           <div className="computerSkills-card">
@@ -378,7 +375,7 @@ const About = () => {
                 className="computerSkills-card-Circle-img"
               />
             </div>
-            <div className="computerSkills-text font-Poppins">Windows</div>
+            <div className="computerSkills-text ">Windows</div>
           </div>
 
           <div className="computerSkills-card">
@@ -389,20 +386,20 @@ const About = () => {
                 className="computerSkills-card-Circle-img office"
               />
             </div>
-            <div className="computerSkills-text font-Poppins">Ms office</div>
+            <div className="computerSkills-text ">Ms office</div>
           </div>
           <div className="computerSkills-card">
             <div className="computerSkills-card-Circle latex">
               <SiLatex className="latex-icon" />
             </div>
-            <div className="computerSkills-text font-Poppins">Latex</div>
+            <div className="computerSkills-text ">Latex</div>
           </div>
         </div>
       </div>
       <div className="Language-container section-container">
         <Title MainTitle="Language" />
         <div className="Language-container-parts">
-          <div className="Language-container-part1 font-Poppins">
+          <div className="Language-container-part1 ">
             <div className="Language-name">Arabic</div>
             <div className="language-measurement-container">
               <div className="language-rate">Native</div>
@@ -410,7 +407,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="Language-container-part1 font-Poppins">
+          <div className="Language-container-part1 ">
             <div className="Language-name">English</div>
             <div className="language-measurement-container">
               <div className="language-rate">Fluent</div>
@@ -418,14 +415,14 @@ const About = () => {
             </div>
           </div>
 
-          <div className="Language-container-part1 font-Poppins">
+          <div className="Language-container-part1 ">
             <div className="Language-name">French</div>
             <div className="language-measurement-container">
               <div className="language-rate">Good</div>
               <div className="language-measure good"></div>
             </div>
           </div>
-          <div className="Language-container-part1 font-Poppins">
+          <div className="Language-container-part1 ">
             <div className="Language-name">Italian</div>
             <div className="language-measurement-container">
               <div className="language-rate">Good</div>
@@ -434,79 +431,33 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="ProfessionalWebPages-container section-container">
+      <div className="ProfessionalWebPages-container ">
         <Title MainTitle="Professional Webpages" />
-        <div className="ProfessionalWebPages-container-cards font-Poppins">
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://www.researchgate.net/profile/Sameer-Al-Dahidi">
-                <SiResearchgate className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>ResearchGate</p>
+
+        <div className="ProfessionalWebPages-slider">
+          <div className="arrows">
+            <BsArrowLeftCircleFill
+              className="slider-arrow slider-arrow-left"
+              onClick={prevSlide1}
+            />
+            <BsArrowRightCircleFill
+              className="slider-arrow slider-arrow-right"
+              onClick={nextSlide1}
+            />
           </div>
 
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://www.gju.edu.jo/content/dr-sameer-al-dahidi-8520">
-                <FaUniversity className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>German Jordanian University (GJU)</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://www.linkedin.com/in/sameer-al-dahidi-b2031b120/">
-                <CiLinkedin className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>LinkedIn</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://scholar.google.com/citations?user=TdFloggAAAAJ&hl=en%20">
-                <FaGoogleScholar className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>Google Scholar</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://www.scopus.com/authid/detail.uri?authorId=56271830200">
-                <SiScopus className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>Scopus</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://www.webofscience.com/wos/author/record/AFM-7470-2022">
-                <SiClarivate className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>Web of Science</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://orcid.org/0000-0002-7745-7784">
-                <FaOrcid className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>ORCID</p>
-          </div>
-
-          <div className="ProfessionalWebPages-container-card">
-            <div className="ProfessionalWebPages-container-CircleCard">
-              <a href="https://research.ju.edu.jo/research/groups/ERT/Home.aspx">
-                <FaUniversity className="ProfessionalWebPages-container-CircleCard-icon" />
-              </a>
-            </div>
-            <p>Energy Research Group at JU</p>
+          <div className="ProfessionalWebPages-cards1">
+            {visibleCards.map((card12, idx) => (
+              <div className="ProfessionalWebPages-container-card" key={idx}>
+                <a href={card12.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={card12.img}
+                    alt={`Card12 ${idx}`}
+                    className="logoImage"
+                  />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>

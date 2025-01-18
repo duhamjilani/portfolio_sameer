@@ -150,7 +150,6 @@ const Home = () => {
       .then((response) => {
         const homeData = response.data.data;
         setVisibleAwardsCards(homeData);
-        console.log(response);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -203,7 +202,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-Poppins">
+    <div>
       <Helmet>
         <title>Dr. Sameer Al-Dahidi - Official Portfolio</title>
         <meta
@@ -220,7 +219,7 @@ const Home = () => {
 
       {/* START MY PROJECTS SECTION */}
       <div className="My_projects_container section-container">
-        <Title MainTitle="My Achievements" />
+        <Title MainTitle="Summary Of My Achievements" />
         <div className="My_projects_text">
           <MainContent>{achievementText}</MainContent>
         </div>
@@ -247,92 +246,68 @@ const Home = () => {
             See More <FaArrowRightLong />
           </Link>
         </div>
-        <div className="IndustrialExp-container-center">
-          <div className="IndustrialExp-container-center-expTitleDate">
-            <div className="IndustrialExp-container-center-expTitleDate-div">
-              <div className="IndustrialExp-container-center-expTitle">
+        <div className="IndustrialExp-container  section-container">
+            <div className="IndustrialExp-row">
+              <div className="IndustrialExp-item IndustrialExp-title">
                 RAM Expert
               </div>
-              <div className="IndustrialExp-container-center-expDate">
-                November 2023 – April 2024 (6 months)
+              <div className="IndustrialExp-item IndustrialExp-company">
+                Frieburg Company
+              </div>
+              <div className="IndustrialExp-item">
+                UAE
+              </div>
+              <div className="IndustrialExp-item IndustrialExp-period">
+                November 2023 – April 2024
               </div>
             </div>
 
-            <div className="IndustrialExp-container-center-expTitleDate-div">
-              <div className="IndustrialExp-container-center-expTitle">
-                Master Student Intern (M1 and M2 Years){" "}
+            <div className="IndustrialExp-row">
+              <div className="IndustrialExp-item IndustrialExp-title">
+                Master Student Intern
               </div>
-              <div className="IndustrialExp-container-center-expDate">
-                April 2011/2012 – August 2011/2012 (9 months)
+              <div className="IndustrialExp-item IndustrialExp-company">
+                AREVA NP
+              </div>
+              <div className="IndustrialExp-item">
+              Paris La Defense, France
+              </div>
+              <div className="IndustrialExp-item IndustrialExp-period">
+                April 2011 – August 2011
               </div>
             </div>
 
-            <div className="IndustrialExp-container-center-expTitleDate-div">
-              <div className="IndustrialExp-container-center-expTitle">
+            <div className="IndustrialExp-row">
+              <div className="IndustrialExp-item IndustrialExp-title">
                 Junior Electrical & Instruments (E&I) Engineer
               </div>
-              <div className="IndustrialExp-container-center-expDate">
-                January 2009 – May 2010 (1 year and 4 months)
+              <div className="IndustrialExp-item IndustrialExp-company">
+                Consolidated Contractors International Company
+              </div>
+              <div className="IndustrialExp-item">
+                 Abu Dhabi 
+              </div>
+              <div className="IndustrialExp-item IndustrialExp-period">
+                January 2009 – May 2010
               </div>
             </div>
 
-            <div className="IndustrialExp-container-center-expTitleDate-div">
-              <div className="IndustrialExp-container-center-expTitle">
+            <div className="IndustrialExp-row">
+              <div className="IndustrialExp-item IndustrialExp-title">
                 Graduate Electrical & Instruments (E&I) Engineer
               </div>
-              <div className="IndustrialExp-container-center-expDate">
-                September 2008 – December 2008 (4 months)
+              <div className="IndustrialExp-item IndustrialExp-company">
+                Kharafi National Limited Company
+              </div>
+              <div className="IndustrialExp-item">
+              Kuwait
+              </div>
+              <div className="IndustrialExp-item IndustrialExp-period">
+                September 2008 – December 2008
               </div>
             </div>
           </div>
-          <div className="timeLineContainer">
-            <ExpTimeline numOfCircles={4} />
-          </div>
-          <div className="IndustrialExp-container-center-LocationDesc">
-            <div className="IndustrialExp-container-center-LocationDesc-div">
-              <div className="IndustrialExp-container-center-LocationTitle">
-                Frieburg Company, UAE
-              </div>
-              <div className="IndustrialExp-container-center-Desc">
-                Project: Etihad Rail Stage 4 Project (Project Value: X Million
-                AED).
-              </div>
-            </div>
-
-            <div className="IndustrialExp-container-center-LocationDesc-div">
-              <div className="IndustrialExp-container-center-LocationTitle">
-                AREVA NP, Paris La Defense, France
-              </div>
-              <div className="IndustrialExp-container-center-Desc">
-                Project 1 (M1 year): Development of a New 3D Core Monitoring
-                System “MAGELAN”. Project 2 (M2 year): Design Performance
-                Improvement Management of Engineering and Projects Organization
-                Design Center
-              </div>
-            </div>
-
-            <div className="IndustrialExp-container-center-LocationDesc-div">
-              <div className="IndustrialExp-container-center-LocationTitle">
-                Consolidated Contractors International Company (CCIC), Abu
-                Dhabi, UAE
-              </div>
-              <div className="IndustrialExp-container-center-Desc">
-                Project: Expansion of Abu Dhabi Polymers Company (Borouge)
-                (Project Value: 1.4 Billion USD)
-              </div>
-            </div>
-
-            <div className="IndustrialExp-container-center-LocationDesc-div">
-              <div className="IndustrialExp-container-center-LocationTitle">
-                Kharafi National Limited Company, Kuwait, Kuwait
-              </div>
-              <div className="IndustrialExp-container-center-Desc">
-                Project: Expansion of Mina Al-Ahmadi Refinery (MAA).
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+       </div>
       {/* END MY EXPERIENCE SECTION */}
 
       {/* START RESEARCH SECTION */}

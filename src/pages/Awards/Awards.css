@@ -22,13 +22,13 @@
  
   background: rgba(245, 252, 255, 1);
   border-radius: 8px;
-  text-align: center;
+  text-align:left;
   padding: 16px;
   height: auto;
 }
 .AwardsTItle {
   font-weight: 600;
-  font-size:medium;
+  font-size:15px;
 }
 .Trophy {
   color: rgba(237, 221, 43, 1);
@@ -38,8 +38,6 @@
   color: rgba(0, 0, 0, 1);
   font-size: 12px;
   font-weight: 400;
-
-  
   text-align: center;
   max-width: fit-content;
 }
