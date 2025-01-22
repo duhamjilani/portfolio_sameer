@@ -22,9 +22,40 @@ const Awards = () => {
       console.log(error);
     }
   };
+  const fetchCounters = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "awards",
+        section: "honorAwardsCounter1",
+      })
+      .then((response) => {
+        const honorAwardsCounter1 = response.data.data.content;
+        setCounter1(honorAwardsCounter1);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "awards",
+        section: "scholarshipsCounter2",
+      })
+      .then((response) => {
+        const scholarshipsCounter2 = response.data.data.content;
+        setCounter2(scholarshipsCounter2);
+       
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  };
 
   useEffect(() => {
     handleFetchAwards();
+    fetchCounters()
   }, []);
 
   useEffect(() => {

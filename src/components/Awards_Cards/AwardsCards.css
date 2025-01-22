@@ -1,10 +1,10 @@
-.Awards-card {
+.Awards-card-Home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 343px;
+  width: 450px;
+  height: 350px;
   padding: 24px 0px 0px 0px;
   gap: 25px;
   border-radius: 8px 0px 0px 0px;

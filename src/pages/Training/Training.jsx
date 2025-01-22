@@ -100,7 +100,7 @@ const Training = () => {
       <div className="banner-container">
         <img src={ImageSrc} alt="img" className="banner-Image" />
       </div>
-      <Title MainTitle="Trainings" />
+      <Title MainTitle="Statistics At A Glance" />
       <div className="countersContainer">
         <Counter
           CounterTitle="Taught Courses at All Levels"
