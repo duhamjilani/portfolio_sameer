@@ -515,7 +515,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home">
       <Helmet>
         <title>Dr. Sameer Al-Dahidi - Official Portfolio</title>
         <meta
