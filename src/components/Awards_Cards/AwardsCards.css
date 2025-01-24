@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30vw;
-  height: 370px;
+  width: 40vw;
+  height: 50vh;
   padding: 24px 0px 0px 0px;
   gap: 25px;
   border-radius: 8px 0px 0px 0px;
@@ -19,6 +19,7 @@
   opacity: 1;
   transform: translateY(0);
 }
+
 .Trophy {
   font-size: 70px;
   animation: colorChange 2s infinite;
@@ -34,8 +35,16 @@
 }
 .Awards-text {
   color: rgba(0, 0, 0, 1);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
   text-align: center;
   max-width: fit-content;
+}
+@media (max-width: 1024px) {
+  .Awards-card-Home{
+    width: 70vw;
+  }
+  .AwardsTItle1{
+    font-size: 12px;
+  }
 }

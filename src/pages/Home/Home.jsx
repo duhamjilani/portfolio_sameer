@@ -1091,7 +1091,7 @@ const Home = () => {
         </div>
 
         <div className="Research-container-cards">
-          {visibleResearchCards.map((item) => {
+          {visibleResearchCards.slice(0,2).map((item) => {
             return (
               <ResearchCards
                 title={item.title}
@@ -1128,7 +1128,7 @@ const Home = () => {
           />
         </div>
         <div className="Awards-container-cards">
-          {visibleAwardsCards.map((item) => {
+          {visibleAwardsCards.slice(0,2).map((item) => {
             return (
               <AwardsCards
                 title={item.title}

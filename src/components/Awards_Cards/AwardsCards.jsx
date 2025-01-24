@@ -7,7 +7,7 @@ const AwardsCards = ({ title, date, desc }) => {
     <div className="Awards-card-Home">
       <FaTrophy className="Trophy" />
       <div className="card-date">{date}</div>
-      <div className="AwardsTItle">{title}</div>
+      <div className="AwardsTItle1">{title}</div>
       <div className="Awards-text ">{desc}</div>
     </div>
   );
