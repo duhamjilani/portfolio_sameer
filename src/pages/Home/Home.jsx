@@ -30,6 +30,17 @@ import Picture9 from "../../assets/Picture9.png";
 import Picture10 from "../../assets/Picture10.png";
 import Picture11 from "../../assets/Picture11.png";
 import Picture12 from "../../assets/Picture12.png";
+import Picture13 from "../../assets/Picture13.png";
+import Picture14 from "../../assets/Picture14.png";
+import Picture15 from "../../assets/Picture15.png";
+import Picture16 from "../../assets/Picture16.png";
+import Picture17 from "../../assets/Picture17.png";
+import Picture18 from "../../assets/Picture18.png";
+import Picture19 from "../../assets/Picture19.png";
+import Picture20 from "../../assets/Picture20.png";
+import Picture21 from "../../assets/Picture21.png";
+import Picture22 from "../../assets/Picture22.png";
+import Picture23 from "../../assets/Picture23.png";
 
 const Home = () => {
   const [achievementText, setAchievementText] = useState("");
@@ -47,8 +58,23 @@ const Home = () => {
   const [INDcounter2, setINDcounter2] = useState("");
   const [INDcounter3, setINDcounter3] = useState("");
 
+  const [TrainingCounter1, setTrainingCounter1] = useState("");
+  const [TrainingCounter2, setTrainingCounter2] = useState("");
+
+  const [ResearchCounter1, setResearchCounter1] = useState("");
+  const [ResearchCounter2, setResearchCounter2] = useState("");
+  const [ResearchCounter3, setResearchCounter3] = useState("");
+  const [ResearchCounter4, setResearchCounter4] = useState("");
+  const [ResearchCounter5, setResearchCounter5] = useState("");
+  const [ResearchCounter6, setResearchCounter6] = useState("");
+  const [ResearchCounter7, setResearchCounter7] = useState("");
+  const [ResearchCounter8, setResearchCounter8] = useState("");
+  const [ResearchCounter9, setResearchCounter9] = useState("");
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
+  const [currentIndex2, setCurrentIndex2] = useState(0);
+  const [currentIndex3, setCurrentIndex3] = useState(0);
   const [TeachingText, setTeachingText] = useState("");
   const [ExpText, setExpText] = useState("");
   const cards2 = [
@@ -88,6 +114,61 @@ const Home = () => {
     },
     {
       img: Picture12,
+    },
+  ];
+
+  const cards4 = [
+    {
+      img: Picture1,
+    },
+    {
+      img: Picture3,
+    },
+    {
+      img: Picture13,
+    },
+    {
+      img: Picture14,
+    },
+    {
+      img: Picture15,
+    },
+    {
+      img: Picture16,
+    },
+    {
+      img: Picture17,
+    },
+    {
+      img: Picture18,
+    },
+    {
+      img: Picture19,
+    },
+    {
+      img: Picture20,
+    },
+    {
+      img: Picture21,
+    },
+  ];
+
+  const cards5 = [
+    {
+      img: Picture1,
+    },
+    {
+      img: Picture3,
+    },
+    {
+      img: Picture4,
+    },
+    {
+      img: Picture22,
+    },
+
+    {
+      img: Picture23,
     },
   ];
 
@@ -145,6 +226,61 @@ const Home = () => {
 
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, [cards3]);
+
+  const nextSlide3 = () => {
+    setCurrentIndex2(
+      (prevIndex) => (prevIndex + 3 < cards4.length ? prevIndex + 3 : 0) // Reset to 0 when reaching the end
+    );
+  };
+
+  // Function to go to the previous 3 cards
+  const prevSlide3 = () => {
+    setCurrentIndex2(
+      (prevIndex) => (prevIndex - 3 >= 0 ? prevIndex - 3 : cards4.length - 3) // Wrap around to the last 3 cards
+    );
+  };
+
+  // Slice the visible cards
+
+  const visibleCards3 = cards4.slice(currentIndex2, currentIndex2 + 3);
+
+  // Interval effect to automatically cycle through cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex2(
+        (prevIndex) => (prevIndex + 3 < cards4.length ? prevIndex + 3 : 0) // Same logic for auto-slide
+      );
+    }, 3000);
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, [cards4]);
+
+  const nextSlide4 = () => {
+    setCurrentIndex3(
+      (prevIndex) => (prevIndex + 3 < cards5.length ? prevIndex + 3 : 0) // Reset to 0 when reaching the end
+    );
+  };
+
+  // Function to go to the previous 3 cards
+  const prevSlide4 = () => {
+    setCurrentIndex3(
+      (prevIndex) => (prevIndex - 3 >= 0 ? prevIndex - 3 : cards2.length - 3) // Wrap around to the last 3 cards
+    );
+  };
+
+  // Slice the visible cards
+  const visibleCards4 = cards5.slice(currentIndex3, currentIndex3 + 3);
+
+  // Interval effect to automatically cycle through cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex3(
+        (prevIndex) => (prevIndex + 3 < cards5.length ? prevIndex + 3 : 0) // Same logic for auto-slide
+      );
+    }, 3000); // Set your desired interval time (2 seconds here)
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, [cards5]);
 
   // Get the visible cards
 
@@ -351,7 +487,7 @@ const Home = () => {
         console.error("Error fetching data: ", error);
       });
 
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "LandingPage",
         section: "AwardsCounter1",
@@ -364,8 +500,7 @@ const Home = () => {
         console.error("Error fetching data: ", error);
       });
 
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "LandingPage",
         section: "AwardsCounter2",
@@ -378,11 +513,148 @@ const Home = () => {
         console.error("Error fetching data: ", error);
       });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "TrainingCounter1",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setTrainingCounter1(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "TrainingCounter2",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setTrainingCounter2(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter1",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter1(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter2",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter2(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter3",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter3(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
 
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter4",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter4(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter5",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter5(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter6",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter6(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter7",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter7(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter8",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter8(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+    axios
+      .post(`${api}content/get-content`, {
+        page: "LandingPage",
+        section: "ResearchCounter9",
+      })
+      .then((response) => {
+        const homeData = response.data.data.content;
+        setResearchCounter9(homeData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
   };
 
   useEffect(() => {
@@ -461,7 +733,7 @@ const Home = () => {
       })
       .then((response) => {
         const homeData = response.data.data;
-        console.log(homeData)
+        console.log(homeData);
         setVisibleAwardsCards(homeData);
       })
       .catch((error) => {
@@ -532,7 +804,7 @@ const Home = () => {
 
       {/* START MY PROJECTS SECTION */}
       <div className="My_projects_container section-container">
-        <Title MainTitle="Summary Of My Achievements" />
+        <Title MainTitle="Summary of my Achievements" />
         <div className="My_projects_text">
           <MainContent>{achievementText}</MainContent>
         </div>
@@ -542,17 +814,17 @@ const Home = () => {
             endNum={counter1}
             color={"rgba(252, 128, 31, 1)"}
           />
-          <Counter
+          {/* <Counter
             CounterTitle="Member Ships"
             endNum={counter2}
             color={"rgba(51, 103, 153, 1)"}
-          />
+          /> */}
         </div>
       </div>
       {/* END MY PROJECTS SECTION */}
       {/* teaching experience +logo images */}
       <div className="My_projects_container section-container">
-        <Title MainTitle="	Summary Of My Teaching Experience" />
+        <Title MainTitle="	Summary of my Teaching Experience" />
         <div className="My_projects_text">
           <MainContent>{TeachingText}</MainContent>
         </div>
@@ -617,7 +889,7 @@ const Home = () => {
       </div>
       {/* START MY EXPERIENCE SECTION */}
       <div className="My_projects_container section-container">
-        <Title MainTitle="Summary Of My Industrial Work Experience" />
+        <Title MainTitle="Summary of my Industrial Work Experience" />
         <div className="My_projects_text">
           <MainContent>{ExpText}</MainContent>
         </div>
@@ -730,18 +1002,101 @@ const Home = () => {
       {/* START RESEARCH SECTION */}
       <div className="Research-container section-container">
         <div className="Main-upper-text">
-          <Title MainTitle="Research" />
+          <Title MainTitle="Summary of my Research Experience" />
           <Link to="/research" className="seeMore">
             See More <FaArrowRightLong />
           </Link>
         </div>
         <MainContent>{researchText}</MainContent>
+        <div className="counters-big-container">
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Citations "
+            endNum={ResearchCounter1}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+          <Counter
+            CounterTitle="H-index  "
+            endNum={ResearchCounter2}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+        </div>
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Journal Publications  "
+            endNum={ResearchCounter3}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+          <Counter
+            CounterTitle="Conference Proceedings  "
+            endNum={ResearchCounter4}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+          <Counter
+            CounterTitle="Book Chapters  "
+            endNum={ResearchCounter5}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+        </div>
+
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Guest Editor SIS"
+            endNum={ResearchCounter6}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+          <Counter
+            CounterTitle="Permanent Editor "
+            endNum={ResearchCounter7}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+          <Counter
+            CounterTitle="TPCs at Conferences  "
+            endNum={ResearchCounter8}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+          <Counter
+            CounterTitle="Journal Reviewer  "
+            endNum={ResearchCounter9}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+        </div>
+          </div>
+
        
+
+        <div className="ProfessionalWebPages-slider">
+          <div className="arrows">
+            <BsArrowLeftCircleFill
+              className="slider-arrow slider-arrow-left"
+              onClick={prevSlide4}
+            />
+            <BsArrowRightCircleFill
+              className="slider-arrow slider-arrow-right"
+              onClick={nextSlide4}
+            />
+          </div>
+
+          <div className="ProfessionalWebPages-cards1">
+            {visibleCards4.map((card12, idx) => (
+              <div className="ProfessionalWebPages-container-card" key={idx}>
+                <img
+                  src={card12.img}
+                  alt={`Card12 ${idx}`}
+                  className="logoImage"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="Research-container-cards">
           {visibleResearchCards.map((item) => {
             return (
               <ResearchCards
                 title={item.title}
+                by={item.by}
+                date={item.date}
                 description={item.description}
                 key={item._id}
               />
@@ -754,7 +1109,7 @@ const Home = () => {
       {/* START AWARDS SECTION */}
       <div className="Awards-container section-container">
         <div className="Main-upper-text">
-          <Title MainTitle=" Summary Of My Awards And Honors" />
+          <Title MainTitle=" Summary of my Awards and Honors" />
           <Link to="/awards" className="seeMore">
             See More <FaArrowRightLong />
           </Link>
@@ -771,14 +1126,12 @@ const Home = () => {
             endNum={AwardCounter2}
             color={"rgba(51, 103, 153, 1)"}
           />
-          
         </div>
         <div className="Awards-container-cards">
           {visibleAwardsCards.map((item) => {
             return (
               <AwardsCards
                 title={item.title}
-               
                 date={item.date}
                 key={item._id}
                 desc={item.description}
@@ -792,12 +1145,25 @@ const Home = () => {
       {/* START TRAINING SECTION */}
       <div className="Training_container section-container">
         <div className="Main-upper-text">
-          <Title MainTitle="Training" />
+          <Title MainTitle="Summary of my Training and Membership Experiences" />
           <Link to="/training" className="seeMore">
             See More <FaArrowRightLong />
           </Link>
         </div>
         <MainContent>{trainingText}</MainContent>
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Trainings and Seminars "
+            endNum={TrainingCounter1}
+            color={"rgba(252, 128, 31, 1)"}
+          />
+          <Counter
+            CounterTitle="Memberships"
+            endNum={TrainingCounter2}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+        </div>
+
         <div className="Training-container-outer-circle">
           <div className="Training-container-inner-circle"></div>
           {visibleTrainingCards.map((item) => {
@@ -807,6 +1173,32 @@ const Home = () => {
               </div>
             );
           })}
+        </div>
+      </div>
+      <div className="last-section ">
+        <div className="ProfessionalWebPages-slider">
+          <div className="arrows">
+            <BsArrowLeftCircleFill
+              className="slider-arrow slider-arrow-left"
+              onClick={prevSlide3}
+            />
+            <BsArrowRightCircleFill
+              className="slider-arrow slider-arrow-right"
+              onClick={nextSlide3}
+            />
+          </div>
+
+          <div className="ProfessionalWebPages-cards1">
+            {visibleCards3.map((card123, idx) => (
+              <div className="ProfessionalWebPages-container-card" key={idx}>
+                <img
+                  src={card123.img}
+                  alt={`Card12 ${idx}`}
+                  className="logoImage"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       {/* END TRAINING SECTION */}

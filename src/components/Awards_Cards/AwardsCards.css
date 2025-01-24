@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 30vw;
   height: 370px;
   padding: 24px 0px 0px 0px;
   gap: 25px;
@@ -15,7 +15,7 @@
   transition: all 0.5s ease-in;
 }
 
-.Awards-card:hover {
+.Awards-card-Home:hover {
   opacity: 1;
   transform: translateY(0);
 }

@@ -31,7 +31,6 @@ const Awards = () => {
       .then((response) => {
         const honorAwardsCounter1 = response.data.data.content;
         setCounter1(honorAwardsCounter1);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -45,8 +44,6 @@ const Awards = () => {
       .then((response) => {
         const scholarshipsCounter2 = response.data.data.content;
         setCounter2(scholarshipsCounter2);
-       
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -55,7 +52,7 @@ const Awards = () => {
 
   useEffect(() => {
     handleFetchAwards();
-    fetchCounters()
+    fetchCounters();
   }, []);
 
   useEffect(() => {
@@ -93,18 +90,22 @@ const Awards = () => {
       <div className="banner-container">
         <img src={ImageSrc} alt="img" className="banner-Image" />
       </div>
-      <Title MainTitle="Statistics At A Glance"/>
+      <Title MainTitle="Statistics At A Glance" />
+      <div className="counters-bg">
       <div className="countersContainer">
         <Counter
           CounterTitle="Awards And Honors "
           endNum={counter1}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
           CounterTitle="Scholarships"
           endNum={counter2}
-          color={"rgba(51, 103, 153, 1)"}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
+      </div>
       </div>
       <div className="Awards-cards">
         {awards.map((award) => {

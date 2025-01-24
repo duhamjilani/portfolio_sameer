@@ -18,31 +18,33 @@ const Research = () => {
   const [counter5, setCounter5] = useState("");
   const [counter6, setCounter6] = useState("");
   const [counter7, setCounter7] = useState("");
+  const [counter8, setCounter8] = useState("");
+  const [counter9, setCounter9] = useState("");
   const fetchCounters = () => {
     // Fetch data for i10IndexCounter1
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "i10IndexCounter1",
+        section: "RCounter1",
       })
       .then((response) => {
-        const i10IndexCounter1 = response.data.data.content;
+        const RCounter1 = response.data.data.content;
        
-        setCounter1(i10IndexCounter1);
+        setCounter1(RCounter1);
       })
       .catch((error) => {
-        console.error("Error fetching i10IndexCounter1: ", error);
+        console.error("Error fetching Counter1: ", error);
       });
 
     // Fetch data for CitationsCounter2
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "CitationsCounter2",
+        section: "RCounter2",
       })
       .then((response) => {
-        const CitationsCounter2 = response.data.data.content;
-        setCounter2(CitationsCounter2);
+        const RCounter2 = response.data.data.content;
+        setCounter2(RCounter2);
       })
       .catch((error) => {
         console.error("Error fetching CitationsCounter2: ", error);
@@ -52,29 +54,29 @@ const Research = () => {
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "hIndexCounter3",
+        section: "RCounter3",
       })
       .then((response) => {
-        const hIndexCounter3 = response.data.data.content;
-        setCounter3(hIndexCounter3);
+        const RCounter3 = response.data.data.content;
+        setCounter3(RCounter3);
       })
       .catch((error) => {
-        console.error("Error fetching hIndexCounter3: ", error);
+        console.error("Error fetching Counter3: ", error);
       });
 
     // Fetch data for PermanentJournalEditorRoleCounter4
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "PermanentJournalEditorRoleCounter4",
+        section: "RCounter4",
       })
       .then((response) => {
-        const PermanentJournalEditorRoleCounter4 = response.data.data.content;
-        setCounter4(PermanentJournalEditorRoleCounter4);
+        const RCounter4 = response.data.data.content;
+        setCounter4(RCounter4);
       })
       .catch((error) => {
         console.error(
-          "Error fetching PermanentJournalEditorRoleCounter4: ",
+          "Error fetching Counter4: ",
           error
         );
       });
@@ -83,15 +85,15 @@ const Research = () => {
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "RefereeingPublicationsCounter5",
+        section: "RCounter5",
       })
       .then((response) => {
-        const GuestEditedSpecialIssuesCounter5 = response.data.data.content;
-        setCounter5(GuestEditedSpecialIssuesCounter5);
+        const RCounter5 = response.data.data.content;
+        setCounter5(RCounter5);
       })
       .catch((error) => {
         console.error(
-          "Error fetching GuestEditedSpecialIssuesCounter5: ",
+          "Error fetching Counter5: ",
           error
         );
       });
@@ -100,11 +102,11 @@ const Research = () => {
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "GuestEditedSpecialIssuesCounter6",
+        section: "RCounter6",
       })
       .then((response) => {
-        const RefereeingPublicationsCounter6 = response.data.data.content;
-        setCounter6(RefereeingPublicationsCounter6);
+        const RCounter6 = response.data.data.content;
+        setCounter6(RCounter6);
       })
       .catch((error) => {
         console.error("Error fetching RefereeingPublicationsCounter6: ", error);
@@ -114,19 +116,61 @@ const Research = () => {
     axios
       .post(`${api}content/get-content`, {
         page: "Research",
-        section: "PublicationsInHighQualityJournalsConferencesCounter7",
+        section: "RCounter7",
       })
       .then((response) => {
-        const PublicationsInHighQualityJournalsConferencesCounter7 =
+        const RCounter7 =
           response.data.data.content;
-        setCounter7(PublicationsInHighQualityJournalsConferencesCounter7);
+        setCounter7(RCounter7);
       })
       .catch((error) => {
         console.error(
-          "Error fetching PublicationsInHighQualityJournalsConferencesCounter7: ",
+          "Error fetching Counter7: ",
           error
         );
       });
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "Research",
+        section: "RCounter8",
+      })
+      .then((response) => {
+        const RCounter8 =
+          response.data.data.content;
+        setCounter8(RCounter8);
+      })
+      .catch((error) => {
+        console.error(
+          "Error fetching Counter7: ",
+          error
+        );
+      });
+
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "Research",
+        section: "RCounter9",
+      })
+      .then((response) => {
+        const RCounter9 =
+          response.data.data.content;
+        setCounter9(RCounter9);
+      })
+      .catch((error) => {
+        console.error(
+          "Error fetching Counter9: ",
+          error
+        );
+      });
+
+
+
   };
 
 
@@ -323,44 +367,70 @@ const Research = () => {
       <div className="banner-container">
         <img src={ImageSrc} alt="img" className="banner-Image" />
       </div>
-      <Title MainTitle="My Research" />
-      <div className="countersContainer researchCounter">
+      <Title MainTitle="Statistics at a Glance" />
+      <div className="counters-bg">
+      <div className="countersContainer ">
         <Counter
-          CounterTitle="i-10 Index (Dec 2024)"
+          CounterTitle="Citations"
           endNum={counter1}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
-          CounterTitle="Citations (Dec 2024)"
+          CounterTitle="H-index "
           endNum={counter2}
-          color={"rgba(51, 103, 153, 1)"}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
+         </div>
+         <div className="countersContainer ">
         <Counter
-          CounterTitle="h-index (Scopus, Dec 2024)"
+          CounterTitle="Journal Publications  "
           endNum={counter3}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
-          CounterTitle="Permanent Journal Editor Role"
+          CounterTitle="Conference Proceedings "
           endNum={counter4}
-          color={"rgba(51, 103, 153, 1)"}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
-          CounterTitle="Guest-Edited Special Issues"
+          CounterTitle="Book Chapters "
           endNum={counter5}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
+        </div>
+        <div className="countersContainer ">
         <Counter
-          CounterTitle="Refereeing Publications"
+          CounterTitle="Guest Editor SIS"
           endNum={counter6}
-          color={"rgba(51, 103, 153, 1)"}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
-          CounterTitle="Publications in High-Quality Journals & Conferences"
+          CounterTitle="Permanent Editor "
           endNum={counter7}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
-      </div>
+         <Counter
+          CounterTitle="TPCs at Conferences "
+          endNum={counter8}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
+        />
+         <Counter
+          CounterTitle="Journal Reviewer"
+          endNum={counter9}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
+        />
+        </div>
+</div>
+     
       <div className="btns-container">
         <MainButton
           functionality={() => handleTabClick("Journal")}

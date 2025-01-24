@@ -101,17 +101,22 @@ const Training = () => {
         <img src={ImageSrc} alt="img" className="banner-Image" />
       </div>
       <Title MainTitle="Statistics At A Glance" />
+      <div className="counters-bg">
+
       <div className="countersContainer">
         <Counter
           CounterTitle="Taught Courses at All Levels"
           endNum={counter1}
           color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
         <Counter
           CounterTitle="Supervised & Co-supervised Theses"
           endNum={counter2}
-          color={"rgba(51, 103, 153, 1)"}
+          color={"rgba(252, 128, 31, 1)"}
+          textColor={"white"}
         />
+      </div>
       </div>
       <div className="TrainingAndMembership-cards">
         {cards.map((item) => {
@@ -120,8 +125,9 @@ const Training = () => {
               <img src={TrainingIcon} className="trainingPic" alt="pic" />
               <div className="card-content">
                 <div className="card-title">{item.title}</div>
-                <div className="card-date">{item.date}</div>
                 <div className="card-text ">{item.description}</div>
+                <div className="card-location ">{item.location}</div>
+                <div className="card-date">{item.date}</div>
               </div>
             </div>
           );

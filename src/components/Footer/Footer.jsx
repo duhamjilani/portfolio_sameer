@@ -2,8 +2,6 @@ import React from "react";
 import "./Footer.css";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaYahoo } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
@@ -11,10 +9,9 @@ const Footer = () => {
     <footer className="footer ">
       <div className="upper_part">
         <p>Get in Touch</p>
-       
       </div>
       <div>
-      <div className="social_media">
+        <div className="social_media">
           <div className="icon_link">
             <FaLinkedin />
             <a href="https://www.linkedin.com/in/sameer-al-dahidi-b2031b120/">

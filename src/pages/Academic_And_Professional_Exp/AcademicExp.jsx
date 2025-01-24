@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import "./AcademicExp.css";
-import { Title, WorkTitle } from "../../components";
+import { Title, WorkTitle, Counter } from "../../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import axios from "axios";
 import exp1 from "../../assets/exp1.jpeg";
@@ -20,6 +20,15 @@ const AcademicExp = () => {
   const [showStudnetAdvising, setShowStudnetAdvising] = useState(false);
   const [showExaminationBoards, setShowExaminationBoards] = useState(false);
   const [images, setImages] = useState([]);
+  const [counter1, setCounter1] = useState("");
+  const [counter2, setCounter2] = useState("");
+  const [counter3, setCounter3] = useState("");
+  const [counter4, setCounter4] = useState("");
+  const [counter5, setCounter5] = useState("");
+  const [counter6, setCounter6] = useState("");
+  const [counter7, setCounter7] = useState("");
+  const [counter8, setCounter8] = useState("");
+  const [counter9, setCounter9] = useState("");
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -67,8 +76,170 @@ const AcademicExp = () => {
     }
   };
 
+  const fetchCounters = () => {
+    axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter1",
+      })
+      .then((response) => {
+        const AcademicCounter1 = response.data.data.content;
+        setCounter1(AcademicCounter1);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter2",
+      })
+      .then((response) => {
+        const AcademicCounter2 = response.data.data.content;
+        setCounter2(AcademicCounter2);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter3",
+      })
+      .then((response) => {
+        const AcademicCounter3 = response.data.data.content;
+        setCounter3(AcademicCounter3);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter4",
+      })
+      .then((response) => {
+        const AcademicCounter4 = response.data.data.content;
+        setCounter4(AcademicCounter4);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter5",
+      })
+      .then((response) => {
+        const AcademicCounter5 = response.data.data.content;
+        setCounter5(AcademicCounter5);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter6",
+      })
+      .then((response) => {
+        const AcademicCounter6 = response.data.data.content;
+        setCounter6(AcademicCounter6);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter7",
+      })
+      .then((response) => {
+        const AcademicCounter7 = response.data.data.content;
+        setCounter7(AcademicCounter7);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter8",
+      })
+      .then((response) => {
+        const AcademicCounter8 = response.data.data.content;
+        setCounter8(AcademicCounter8);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+      axios
+      .post(`${api}content/get-content`, {
+        page: "academic",
+        section: "AcademicCounter9",
+      })
+      .then((response) => {
+        const AcademicCounter9 = response.data.data.content;
+        setCounter9(AcademicCounter9);
+       
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
+
+
+
+
+
+
+
+   
+  };
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     fetchAllData();
+    fetchCounters();
   }, []);
   const closeAll = () => {
     setShowCommittess(false);
@@ -127,6 +298,75 @@ const AcademicExp = () => {
           })}
         </span>
       </div>
+      <Title MainTitle="Statistics At A Glance" />
+      <div className="counters-bg">
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Undergraduate Courses Taught "
+            endNum={counter1}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+          <Counter
+            CounterTitle="Graduate Courses Taught "
+            endNum={counter2}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+
+          <Counter
+            CounterTitle="Teaching Cooperation"
+            endNum={counter3}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+        </div>
+
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Bachelor Students Advising "
+            endNum={counter4}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+          <Counter
+            CounterTitle="Master Students Advising "
+            endNum={counter5}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+
+          <Counter
+            CounterTitle="Doctorate Students Advising"
+            endNum={counter6}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+        </div>
+
+        <div className="countersContainer">
+          <Counter
+            CounterTitle="Committees"
+            endNum={counter7}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+          <Counter
+            CounterTitle="Admin Positions "
+            endNum={counter8}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+
+          <Counter
+            CounterTitle="Examination Boards"
+            endNum={counter9}
+            color={"rgba(252, 128, 31, 1)"}
+            textColor={"white"}
+          />
+        </div>
+      </div>
+
       <div className="Experience-container expSecondSection">
         <div className="Experience-container-horizontal-cards ">
           <div className="oneSectionContainer">
