@@ -338,7 +338,7 @@ const Home = () => {
   };
 
   // Slice the visible cards
-  const visibleCards5 = cards6.slice(currentIndex, currentIndex + 3);
+  const visibleCards5 = cards6.slice(currentIndex4, currentIndex4 + 3);
 
   // Interval effect to automatically cycle through cards
   useEffect(() => {
