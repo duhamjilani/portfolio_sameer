@@ -75,8 +75,11 @@ const Home = () => {
   const [currentIndex1, setCurrentIndex1] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
   const [currentIndex3, setCurrentIndex3] = useState(0);
+  const [currentIndex4, setCurrentIndex4] = useState(0);
   const [TeachingText, setTeachingText] = useState("");
   const [ExpText, setExpText] = useState("");
+  const [membershipsText, setmembershipsText] = useState("");
+
   const cards2 = [
     {
       img: Picture1,
@@ -171,6 +174,45 @@ const Home = () => {
       img: Picture23,
     },
   ];
+
+
+  const cards6 = [
+    {
+      img: Picture13,
+    },
+    {
+      img: Picture14,
+    },
+    {
+      img: Picture15,
+    },
+    {
+      img: Picture16,
+    },
+
+    {
+      img: Picture17,
+    },
+    {
+      img: Picture18,
+    },
+    {
+      img: Picture19,
+    },
+    {
+      img: Picture20,
+    },
+    {
+      img: Picture21,
+    },
+  ];
+
+
+
+
+
+
+
 
   const nextSlide1 = () => {
     setCurrentIndex(
@@ -282,7 +324,34 @@ const Home = () => {
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, [cards5]);
 
-  // Get the visible cards
+  const nextSlide5 = () => {
+    setCurrentIndex4(
+      (prevIndex) => (prevIndex + 3 < cards6.length ? prevIndex + 3 : 0) // Reset to 0 when reaching the end
+    );
+  };
+
+  // Function to go to the previous 3 cards
+  const prevSlide5 = () => {
+    setCurrentIndex4(
+      (prevIndex) => (prevIndex - 3 >= 0 ? prevIndex - 3 : cards6.length - 3) // Wrap around to the last 3 cards
+    );
+  };
+
+  // Slice the visible cards
+  const visibleCards5 = cards6.slice(currentIndex, currentIndex + 3);
+
+  // Interval effect to automatically cycle through cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex4(
+        (prevIndex) => (prevIndex + 3 < cards6.length ? prevIndex + 3 : 0) // Same logic for auto-slide
+      );
+    }, 3000); // Set your desired interval time (2 seconds here)
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, [cards6]);
+
+
 
   const fetchHeroSection = async () => {
     try {
@@ -338,10 +407,38 @@ const Home = () => {
     }
   };
 
+
+  const fetchMemberShipsSection = async () => {
+    try {
+      const data = await axios.post(
+        `${api}content/get-content`,
+        { page: "LandingPage", section:"memberships" },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setmembershipsText(data.data.data.content);
+    
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+
+
+
+
+
   useEffect(() => {
     fetchHeroSection();
     fetchTeachingSection();
     fetchIndExpSection();
+    fetchMemberShipsSection();
   });
 
   const fetchCounters = () => {
@@ -1145,7 +1242,7 @@ const Home = () => {
       {/* START TRAINING SECTION */}
       <div className="Training_container section-container">
         <div className="Main-upper-text">
-          <Title MainTitle="Summary of my Training and Membership Experiences" />
+          <Title MainTitle="Summary of my Training  Experience" />
           <Link to="/training" className="seeMore">
             See More <FaArrowRightLong />
           </Link>
@@ -1157,11 +1254,7 @@ const Home = () => {
             endNum={TrainingCounter1}
             color={"rgba(252, 128, 31, 1)"}
           />
-          <Counter
-            CounterTitle="Memberships"
-            endNum={TrainingCounter2}
-            color={"rgba(51, 103, 153, 1)"}
-          />
+        
         </div>
 
         <div className="Training-container-outer-circle">
@@ -1175,7 +1268,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="last-section ">
+     
         <div className="ProfessionalWebPages-slider">
           <div className="arrows">
             <BsArrowLeftCircleFill
@@ -1200,7 +1293,49 @@ const Home = () => {
             ))}
           </div>
         </div>
+      
+ <div className="last-section ">
+      <div className="My_projects_container section-container">
+        <Title MainTitle="Summary of my Memberships Experiences" />
+        <div className="My_projects_text">
+          <MainContent>{membershipsText}</MainContent>
+        </div>
+        <div className="countersContainer">
+         
+          <Counter
+            CounterTitle="Memberships"
+            endNum={TrainingCounter2}
+            color={"rgba(51, 103, 153, 1)"}
+          />
+        </div>
       </div>
+      <div className="ProfessionalWebPages-slider">
+        <div className="arrows">
+          <BsArrowLeftCircleFill
+            className="slider-arrow slider-arrow-left"
+            onClick={prevSlide5}
+          />
+          <BsArrowRightCircleFill
+            className="slider-arrow slider-arrow-right"
+            onClick={nextSlide5}
+          />
+        </div>
+
+        <div className="ProfessionalWebPages-cards1">
+          {visibleCards5.map((card123, idx) => (
+            <div className="ProfessionalWebPages-container-card" key={idx}>
+              <img
+                src={card123.img}
+                alt={`Card12 ${idx}`}
+                className="logoImage"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      </div>
+
+
       {/* END TRAINING SECTION */}
     </div>
   );

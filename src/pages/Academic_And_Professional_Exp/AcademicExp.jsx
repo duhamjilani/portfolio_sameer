@@ -85,13 +85,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter1 = response.data.data.content;
         setCounter1(AcademicCounter1);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter2",
@@ -99,17 +98,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter2 = response.data.data.content;
         setCounter2(AcademicCounter2);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-
-
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter3",
@@ -117,16 +111,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter3 = response.data.data.content;
         setCounter3(AcademicCounter3);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter4",
@@ -134,16 +124,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter4 = response.data.data.content;
         setCounter4(AcademicCounter4);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter5",
@@ -151,15 +137,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter5 = response.data.data.content;
         setCounter5(AcademicCounter5);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter6",
@@ -167,15 +150,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter6 = response.data.data.content;
         setCounter6(AcademicCounter6);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter7",
@@ -183,14 +163,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter7 = response.data.data.content;
         setCounter7(AcademicCounter7);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter8",
@@ -198,14 +176,12 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter8 = response.data.data.content;
         setCounter8(AcademicCounter8);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
 
-
-      axios
+    axios
       .post(`${api}content/get-content`, {
         page: "academic",
         section: "AcademicCounter9",
@@ -213,29 +189,11 @@ const AcademicExp = () => {
       .then((response) => {
         const AcademicCounter9 = response.data.data.content;
         setCounter9(AcademicCounter9);
-       
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-
-
-
-
-
-
-
-
-   
   };
-
-
-
-
-
-
-
-
 
   useEffect(() => {
     fetchAllData();
@@ -370,517 +328,544 @@ const AcademicExp = () => {
       <div className="Experience-container expSecondSection">
         <div className="Experience-container-horizontal-cards ">
           <div className="oneSectionContainer">
-            <div
-              className="Experience-container-horizontal-card"
-              onClick={() => {
-                closeAll();
-                setShowCommittess(!showCommittess);
-              }}
-            >
-              <IoIosArrowDown
-                className={showCommittess ? "arrow-open" : "arrow-icon"}
-              />
+            {/* Committees Section */}
+            <div className="Experience-container-horizontal-card">
               <div className="Experience-card-title">COMMITTEES</div>
             </div>
-            {showCommittess && (
-              <div className={`Details-container`}>
-                <div className="Experience-card-list">
-                  <ul>
-                    <li>
-                      <div className="Experience-card-title">
-                        Department Committees
-                      </div>
 
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Committees" &&
-                                item.subCategory === "Department"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">
-                        School Committees
-                      </div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Committees" &&
-                                item.subCategory === "School"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">
-                        University Committees
-                      </div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Committees" &&
-                                item.subCategory === "University"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">
-                        International Committees
-                      </div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Committees" &&
-                                item.subCategory === "International"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+            {/* Always visible details */}
+            <div className={`Details-container`}>
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-title">
+                      Department Committees
+                    </div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Committees" &&
+                              item.subCategory === "Department"
+                          )
+                          .map((item) => (
+                            <li key={item.id}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">
+                      School Committees
+                    </div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Committees" &&
+                              item.subCategory === "School"
+                          )
+                          .map((item) => (
+                            <li key={item.id}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">
+                      University Committees
+                    </div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Committees" &&
+                              item.subCategory === "University"
+                          )
+                          .map((item) => (
+                            <li key={item.id}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">
+                      International Committees
+                    </div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Committees" &&
+                              item.subCategory === "International"
+                          )
+                          .map((item) => (
+                            <li key={item.id}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
           </div>
+
           <div className="oneSectionContainer">
-            <div
-              className="Experience-container-horizontal-card"
-              onClick={() => {
-                closeAll();
-                setShowUniversity(!showUniversity);
-              }}
-            >
-              <IoIosArrowDown
-                className={showUniversity ? "arrow-open" : "arrow-icon"}
-              />
+            <div className="Experience-container-horizontal-card">
               <div className="Experience-card-title">
                 University Administrative Positions
               </div>
             </div>
-            {showUniversity && (
-              <div className={`Details-container`}>
-                <div className="Experience-card-list">
-                  <ul>
-                    <li>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category ===
-                                "University Administrative Position"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+            <div className="Details-container">
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category ===
+                              "University Administrative Position"
+                          )
+                          .map((item) => {
+                            return (
+                              <li key={item.title}>
+                                <div className="Experience-card-title">
+                                  {item.title}
+                                </div>
+                                <div className="card-date">{item.date}</div>
+                                <div className="Experience-list-content">
+                                  {item.description}
+                                </div>
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
           </div>
+
           <div className="oneSectionContainer">
-            <div
-              className="Experience-container-horizontal-card"
-              onClick={() => {
-                closeAll();
-                setShowTeaching(!showTeaching);
-              }}
-            >
-              <IoIosArrowDown
-                className={showTeaching ? "arrow-open" : "arrow-icon"}
-              />
+            <div className="Experience-container-horizontal-card">
               <div className="Experience-card-title">Teaching</div>
             </div>
-            {showTeaching && (
-              <div className={`Details-container`}>
-                <div className="Experience-card-list">
-                  <ul>
-                    <li>
-                      <div className="Experience-card-title">PHD</div>
-
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Teaching" &&
-                                item.subCategory === "PHD"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Master</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Teaching" &&
-                                item.subCategory === "Master"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Bachelor</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Teaching" &&
-                                item.subCategory === "Bachelor"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Industrial</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Teaching" &&
-                                item.subCategory === "Industrial"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+            <div className="Details-container">
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-title">PHD</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "PHD"
+                          )
+                          .map((item) => (
+                            <li key={item.title}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Master</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Master"
+                          )
+                          .map((item) => (
+                            <li key={item.title}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Bachelor</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Bachelor"
+                          )
+                          .map((item) => (
+                            <li key={item.title}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Industrial</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Industrial"
+                          )
+                          .map((item) => (
+                            <li key={item.title}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
           </div>
+
           <div className="oneSectionContainer">
-            <div
-              className="Experience-container-horizontal-card"
-              onClick={() => {
-                closeAll();
-                setShowStudnetAdvising(!showStudnetAdvising);
-              }}
-            >
-              <IoIosArrowDown
-                className={showStudnetAdvising ? "arrow-open" : "arrow-icon"}
-              />
+            <div className="Experience-container-horizontal-card">
               <div className="Experience-card-title">Students Advising</div>
             </div>
-            {showStudnetAdvising && (
-              <div className={`Details-container`}>
-                <div className="Experience-card-list">
-                  <ul>
-                    <li>
-                      <div className="Experience-card-title">PHD</div>
-
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Student Advising" &&
-                                item.subCategory === "PHD"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Master</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Student Advising" &&
-                                item.subCategory === "Master"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Bachelor</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Student Advising" &&
-                                item.subCategory === "Bachelor"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+            <div className={`Details-container`}>
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-title">PHD</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "PHD"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Master</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "Master"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Bachelor</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "Bachelor"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
           </div>
           <div className="oneSectionContainer">
-            <div
-              className="Experience-container-horizontal-card"
-              onClick={() => {
-                closeAll();
-                setShowExaminationBoards(!showExaminationBoards);
-              }}
-            >
-              <IoIosArrowDown
-                className={showExaminationBoards ? "arrow-open" : "arrow-icon"}
-              />
-              <div className="Experience-card-title">Examination Boards</div>
+            <div className="Experience-container-horizontal-card">
+              <div className="Experience-card-title">Teaching</div>
             </div>
-            {showExaminationBoards && (
-              <div className={`Details-container`}>
-                <div className="Experience-card-list">
-                  <ul>
-                    <li>
-                      <div className="Experience-card-title">PHD</div>
-
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Examination Boards" &&
-                                item.subCategory === "PHD"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Master</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Examination Boards" &&
-                                item.subCategory === "Master"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="div4">
-                      <div className="Experience-card-title">Bachelor</div>
-                      <div className="Experience-card-list-content">
-                        <ul>
-                          {fullData
-                            .filter(
-                              (item) =>
-                                item.category === "Examination Boards" &&
-                                item.subCategory === "Bachelor"
-                            )
-                            .map((item) => {
-                              return (
-                                <li>
-                                  <div className="Experience-card-title">
-                                    {item.title}
-                                  </div>
-                                  <div className="card-date">{item.date}</div>
-                                  <div className="Experience-list-content">
-                                    {item.description}
-                                  </div>
-                                </li>
-                              );
-                            })}
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+            <div className={`Details-container`}>
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-title">PHD</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "PHD"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Master</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Master"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Bachelor</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Bachelor"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Industrial</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Teaching" &&
+                              item.subCategory === "Industrial"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
+          </div>
+
+          <div className="oneSectionContainer">
+            <div className="Experience-container-horizontal-card">
+              <div className="Experience-card-title">Students Advising</div>
+            </div>
+            <div className={`Details-container`}>
+              <div className="Experience-card-list">
+                <ul>
+                  <li>
+                    <div className="Experience-card-title">PHD</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "PHD"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Master</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "Master"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="div4">
+                    <div className="Experience-card-title">Bachelor</div>
+                    <div className="Experience-card-list-content">
+                      <ul>
+                        {fullData
+                          .filter(
+                            (item) =>
+                              item.category === "Student Advising" &&
+                              item.subCategory === "Bachelor"
+                          )
+                          .map((item, index) => (
+                            <li key={index}>
+                              <div className="Experience-card-title">
+                                {item.title}
+                              </div>
+                              <div className="card-date">{item.date}</div>
+                              <div className="Experience-list-content">
+                                {item.description}
+                              </div>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
