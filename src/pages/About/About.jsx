@@ -127,65 +127,46 @@ const About = () => {
       link: "https://research.ju.edu.jo/research/groups/ERT/Home.aspx",
       img: energyGroup,
     },
-    // Duplicate the cards for seamless looping
-    {
-      link: "https://www.researchgate.net/profile/Sameer-Al-Dahidi",
-      img: researchGate,
-    },
-    {
-      link: "https://www.gju.edu.jo/content/dr-sameer-al-dahidi-8520",
-      img: GJU,
-    },
-    {
-      link: "https://www.linkedin.com/in/sameer-al-dahidi-b2031b120/",
-      img: linkedin,
-    },
-    {
-      link: "https://scholar.google.com/citations?user=TdFloggAAAAJ&hl=en%20",
-      img: google,
-    },
-    {
-      link: "https://www.scopus.com/authid/detail.uri?authorId=56271830200",
-      img: scopus,
-    },
-    {
-      link: "https://www.webofscience.com/wos/author/record/AFM-7470-2022",
-      img: webOfScience,
-    },
-    { link: "https://orcid.org/0000-0002-7745-7784", img: orcid },
-    {
-      link: "https://research.ju.edu.jo/research/groups/ERT/Home.aspx",
-      img: energyGroup,
-    },
+   
   ]);
   const [isPaused, setIsPaused] = useState(false);
-  const containerRef = useRef(null);
-  const scrollSpeed = 12; // Adjust for faster/slower scrolling
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-  
-    // Duplicate the cards within the container to create a seamless loop
-    container.innerHTML += container.innerHTML; // Append content twice
-  
-    // Start the scrolling animation
-    const scrollContainer = () => {
-      if (!isPaused) {
-        container.scrollLeft += scrollSpeed; // Adjust the scroll speed here
-  
-        // Reset scroll position for seamless looping
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-          container.scrollLeft = 0;
-        }
+const containerRef = useRef(null);
+const scrollPosition = useRef(0); // Track the current scroll position
+
+useEffect(() => {
+  const container = containerRef.current;
+
+  if (!container) {
+    console.error("Container ref is not attached!");
+    return;
+  }
+
+  let animationFrameId;
+
+  const scrollContainer = () => {
+    if (container && !isPaused) {
+    
+      scrollPosition.current += 1; 
+
+    
+      if (scrollPosition.current >= container.scrollWidth / 2) {
+        scrollPosition.current = 0;
       }
-  
-      requestAnimationFrame(scrollContainer);
-    };
-  
-    scrollContainer(); // Start scrolling
-  
-    return () => cancelAnimationFrame(scrollContainer); // Clean up on component unmount
-  }, [isPaused]);
+
+    
+      container.style.transform = `translateX(-${scrollPosition.current}px)`;
+    }
+
+   
+    animationFrameId = requestAnimationFrame(scrollContainer);
+  };
+
+
+  animationFrameId = requestAnimationFrame(scrollContainer);
+
+ 
+  return () => cancelAnimationFrame(animationFrameId);
+}, [isPaused]);
   // const nextSlide1 = () => {
   //   setCurrentIndex((prevIndex) =>
   //     prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Reset to 0 when reaching the end
@@ -479,13 +460,13 @@ const About = () => {
         <Title MainTitle="Professional Webpages" />
 
         <div
-  className="ProfessionalWebPages-slider"
-  // onMouseEnter={() => setIsPaused(true)} // Pause on hover
-  // onMouseLeave={() => setIsPaused(false)} // Resume on leave
+  className="ProfessionalWebPages-slider "   
+  onMouseEnter={() => setIsPaused(true)} // Pause on hover
+  onMouseLeave={() => setIsPaused(false)} // Resume on leave
 >
-  <div className="ProfessionalWebPages-track" ref={containerRef}>
-    {cards2.concat(cards2).map((card12, idx) => (
-      <div className="ProfessionalWebPages-container-card" key={idx}>
+  <div className="ProfessionalWebPages-track"ref={containerRef}>
+    {cards2.map((card12, idx) => (
+      <div className="ProfessionalWebPages-container-card" key={idx}   >
         <a href={card12.link} target="_blank" rel="noopener noreferrer">
           <img
             src={card12.img}
