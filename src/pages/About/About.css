@@ -347,18 +347,13 @@ ul.timeline-3 > li:before {
   border-radius: 10px;
   padding: 10px;
   background: #fff;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  overflow: hidden; /* Hide the scrollbar */
 }
 
 .ProfessionalWebPages-cards1 {
   display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 50px;
   align-items: center;
   transition: all 0.3s ease;
   width: 100%;
@@ -408,6 +403,22 @@ ul.timeline-3 > li:before {
 .slider-arrow:hover {
   transform: scale(1.2);
 }
+.ProfessionalWebPages-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll 60s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 @media (max-width: 1100px) {
   .arrowAbout-left {
@@ -567,7 +578,13 @@ ul.timeline-3 > li:before {
     height: 30px;
   }
   .ProfessionalWebPages-container-card{
-height: 10vw;
-width: 10vw;
+height: 12vw;
+width: 12vw;
+  }
+  .ProfessionalWebPages-track{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }

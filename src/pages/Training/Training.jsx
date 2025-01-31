@@ -122,13 +122,13 @@ const Training = () => {
         {cards.map((item) => {
           return (
             <div className="TrainingAndMembership-card" key={item._id}>
-              <img src={TrainingIcon} className="trainingPic" alt="pic" />
-              <div className="card-content">
+              {/* <img src={TrainingIcon} className="trainingPic" alt="pic" /> */}
+             
                 <div className="card-title">{item.title}</div>
                 <div className="card-text ">{item.description}</div>
                 <div className="card-location ">{item.location}</div>
                 <div className="card-date">{item.date}</div>
-              </div>
+             
             </div>
           );
         })}

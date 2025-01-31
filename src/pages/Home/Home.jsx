@@ -1187,7 +1187,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="Research-container-cards">
+       {/* <div className="Research-container-cards">
           {visibleResearchCards.slice(0,2).map((item) => {
             return (
               <ResearchCards
@@ -1199,7 +1199,7 @@ const Home = () => {
               />
             );
           })}
-        </div>
+        </div>*/}
       </div>
       {/* END RESEARCH SECTION */}
 
@@ -1224,7 +1224,7 @@ const Home = () => {
             color={"rgba(51, 103, 153, 1)"}
           />
         </div>
-        <div className="Awards-container-cards">
+        {/* <div className="Awards-container-cards">
           {visibleAwardsCards.slice(0,2).map((item) => {
             return (
               <AwardsCards
@@ -1235,7 +1235,7 @@ const Home = () => {
               />
             );
           })}
-        </div>
+        </div> */}
       </div>
       {/* END AWARDS SECTION */}
 
@@ -1257,7 +1257,7 @@ const Home = () => {
         
         </div>
 
-        <div className="Training-container-outer-circle">
+        {/* <div className="Training-container-outer-circle">
           <div className="Training-container-inner-circle"></div>
           {visibleTrainingCards.map((item) => {
             return (
@@ -1266,7 +1266,7 @@ const Home = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
      
         <div className="ProfessionalWebPages-slider">

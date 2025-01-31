@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect,useRef } from "react";
 import "./About.css";
 
 import { FaIdCard, FaBirthdayCake } from "react-icons/fa";
@@ -9,13 +9,9 @@ import matlab from "../../assets/Matlab_Logo.png";
 import { SiLatex } from "react-icons/si";
 import windows from "../../assets/windows.png";
 import microsoft from "../../assets/microsoft.png";
-import { SiResearchgate } from "react-icons/si";
+
 import { FaGoogleScholar, FaGraduationCap } from "react-icons/fa6";
-import { FaUniversity } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
-import { SiScopus } from "react-icons/si";
-import { SiClarivate } from "react-icons/si";
-import { FaOrcid } from "react-icons/fa";
+
 import hu from "../../assets/hu.png";
 import milanoUn from "../../assets/milanouni.svg";
 import franceuni from "../../assets/franceuni.jpeg";
@@ -45,7 +41,7 @@ const About = () => {
   const [ImageSrc, setImageSrc] = useState("");
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [slide1, setSlide1] = useState(0);
   const [aboutText, setAboutText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const fetchData = () => {
@@ -101,7 +97,7 @@ const About = () => {
     setSlide(slide === 0 ? images.length - 1 : slide - 1);
   };
 
-  const cards2 = [
+  const [cards2, setCards2] = useState([
     {
       link: "https://www.researchgate.net/profile/Sameer-Al-Dahidi",
       img: researchGate,
@@ -131,35 +127,83 @@ const About = () => {
       link: "https://research.ju.edu.jo/research/groups/ERT/Home.aspx",
       img: energyGroup,
     },
-  ];
-  const nextSlide1 = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Reset to 0 when reaching the end
-    );
-  };
+    // Duplicate the cards for seamless looping
+    {
+      link: "https://www.researchgate.net/profile/Sameer-Al-Dahidi",
+      img: researchGate,
+    },
+    {
+      link: "https://www.gju.edu.jo/content/dr-sameer-al-dahidi-8520",
+      img: GJU,
+    },
+    {
+      link: "https://www.linkedin.com/in/sameer-al-dahidi-b2031b120/",
+      img: linkedin,
+    },
+    {
+      link: "https://scholar.google.com/citations?user=TdFloggAAAAJ&hl=en%20",
+      img: google,
+    },
+    {
+      link: "https://www.scopus.com/authid/detail.uri?authorId=56271830200",
+      img: scopus,
+    },
+    {
+      link: "https://www.webofscience.com/wos/author/record/AFM-7470-2022",
+      img: webOfScience,
+    },
+    { link: "https://orcid.org/0000-0002-7745-7784", img: orcid },
+    {
+      link: "https://research.ju.edu.jo/research/groups/ERT/Home.aspx",
+      img: energyGroup,
+    },
+  ]);
+  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef(null);
+  const scrollSpeed = 12; // Adjust for faster/slower scrolling
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
   
-  // Function to go to the previous 3 cards
-  const prevSlide1 = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 3 >= 0 ? prevIndex - 3 : cards2.length - 3 // Wrap around to the last 3 cards
-    );
-  };
+    // Duplicate the cards within the container to create a seamless loop
+    container.innerHTML += container.innerHTML; // Append content twice
   
-  // Slice the visible cards
-  const visibleCards = cards2.slice(currentIndex, currentIndex + 3);
+    // Start the scrolling animation
+    const scrollContainer = () => {
+      if (!isPaused) {
+        container.scrollLeft += scrollSpeed; // Adjust the scroll speed here
+  
+        // Reset scroll position for seamless looping
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      }
+  
+      requestAnimationFrame(scrollContainer);
+    };
+  
+    scrollContainer(); // Start scrolling
+  
+    return () => cancelAnimationFrame(scrollContainer); // Clean up on component unmount
+  }, [isPaused]);
+  // const nextSlide1 = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Reset to 0 when reaching the end
+  //   );
+  // };
+  
+  // // Function to go to the previous 3 cards
+  // const prevSlide1 = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex - 3 >= 0 ? prevIndex - 3 : cards2.length - 3 // Wrap around to the last 3 cards
+  //   );
+  // };
+  
+  // // Slice the visible cards
+  // const visibleCards = cards2.slice(currentIndex, currentIndex + 3);
   
   // Interval effect to automatically cycle through cards
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex + 3 < cards2.length ? prevIndex + 3 : 0 // Same logic for auto-slide
-      );
-    }, 3000); // Set your desired interval time (2 seconds here)
-  
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, [cards2]);
-
-  // Get the visible cards
+ 
   
 
   return (
@@ -434,32 +478,25 @@ const About = () => {
       <div className="ProfessionalWebPages-container ">
         <Title MainTitle="Professional Webpages" />
 
-        <div className="ProfessionalWebPages-slider">
-          <div className="arrows">
-            <BsArrowLeftCircleFill
-              className="slider-arrow slider-arrow-left"
-              onClick={prevSlide1}
-            />
-            <BsArrowRightCircleFill
-              className="slider-arrow slider-arrow-right"
-              onClick={nextSlide1}
-            />
-          </div>
-
-          <div className="ProfessionalWebPages-cards1">
-            {visibleCards.map((card12, idx) => (
-              <div className="ProfessionalWebPages-container-card" key={idx}>
-                <a href={card12.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={card12.img}
-                    alt={`Card12 ${idx}`}
-                    className="logoImage"
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div
+  className="ProfessionalWebPages-slider"
+  // onMouseEnter={() => setIsPaused(true)} // Pause on hover
+  // onMouseLeave={() => setIsPaused(false)} // Resume on leave
+>
+  <div className="ProfessionalWebPages-track" ref={containerRef}>
+    {cards2.concat(cards2).map((card12, idx) => (
+      <div className="ProfessionalWebPages-container-card" key={idx}>
+        <a href={card12.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={card12.img}
+            alt={`Card12 ${idx}`}
+            className="logoImage"
+          />
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </div>
   );

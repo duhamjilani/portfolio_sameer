@@ -111,7 +111,7 @@ const Awards = () => {
         {awards.map((award) => {
           return (
             <div className="Awards-card" key={award._id}>
-              <FaTrophy className="Trophy" />
+              {/* <FaTrophy className="Trophy" /> */}
               <div className="AwardsTItle">{award.title}</div>
               <div className="card-date">{award.date}</div>
               <div className="Awards-text ">{award.description}</div>

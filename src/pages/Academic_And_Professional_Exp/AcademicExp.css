@@ -73,7 +73,7 @@
   width: 100%;
   height: 82px;
   border-radius: 8px 0px 0px 0px;
-  /* background-color: rgba(245, 252, 255, 1); */
+   background-color: rgba(245, 252, 255, 1); 
   display: flex;
   align-items: center;
   gap: 30px;
@@ -89,29 +89,29 @@
  
 }
 
-/* .arrow-icon {
+.arrow-icon {
   font-size: 24px;
   font-weight: 300;
   line-height: 24px;
   text-align: center;
   color: var(--Inks-Dark-64, rgba(0, 11, 37, 0.64));
-} */
+} 
 
-/* .arrow-open {
+.arrow-open {
   transform: rotate(180deg);
   font-size: 24px;
   font-weight: 300;
   line-height: 24px;
   text-align: center;
   color: var(--Inks-Dark-64, rgba(0, 11, 37, 0.64));
-} */
+}
 
 .oneSectionContainer {
   width: 100%;
 }
 
 .Details-container {
-  /* background-color: rgb(220, 232, 245); */
+   background-color: rgb(220, 232, 245); 
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -148,11 +148,11 @@
   text-align: justify;
   white-space: pre-wrap;
 }
-/* .div5 {
+.div5 {
   overflow-y: scroll;
   min-height: 100vh;
   background-color: rgb(220, 232, 245);
-} */
+}
 
 @media (max-width: 810px) {
   .Experience-card-title {
